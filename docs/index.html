@@ -229,12 +229,17 @@ button{cursor:none;border:none;background:none;font:inherit}
 /* LAYER 0 — full bleed atmospheric background (immediately visible from frame 0) */
 .pl-bg{position:absolute;inset:0;z-index:0}
 .pl-bg img{
-  width:100%;height:100%;object-fit:cover;object-position:center 30%;
-  filter:brightness(.28) saturate(.7);
-  transform:scale(1.1);
-  animation:bgKenBurns 5s ease-out forwards;
+  width:100%;height:100%;object-fit:cover;object-position:center 40%;
+  transform:scale(1.08);
+  animation:bgKenBurns 5s ease-out forwards, bgColorReveal 3.4s ease-out .1s forwards;
 }
 @keyframes bgKenBurns{to{transform:scale(1)}}
+/* B&W to colour as the page loads — synced to progress bar */
+@keyframes bgColorReveal{
+  0%  {filter:grayscale(100%) brightness(.45) contrast(1.15)}
+  60% {filter:grayscale(60%)  brightness(.38) contrast(1.08)}
+  100%{filter:grayscale(0%)   brightness(.3)  contrast(1.0)}
+}
 
 /* LAYER 1 — deep veil for contrast */
 .pl-veil{
@@ -438,7 +443,7 @@ button{cursor:none;border:none;background:none;font:inherit}
 #hero{height:100vh;min-height:700px;position:relative;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.08);transition:transform 2s ease-out}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(10,22,40,.96) 0%,rgba(10,22,40,.80) 40%,rgba(10,22,40,.30) 100%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(6,14,26,.82) 0%,rgba(6,14,26,.62) 45%,rgba(6,14,26,.20) 100%)}
 #hero-3d{position:absolute;inset:0;z-index:1;pointer-events:none}
 .hero-grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:200px 200px;mix-blend-mode:overlay}
 .hero-content{position:relative;z-index:3;padding:0 60px;max-width:820px}
@@ -943,9 +948,9 @@ body::before {
 
 <!-- PRELOADER -->
 <div id="preloader">
-  <!-- Layer 0: Atmospheric full-bleed background (visible immediately) -->
+  <!-- Layer 0: Photographic background — B&W to colour as page loads -->
   <div class="pl-bg">
-    <img src="images/hero-bg.jpg" alt="">
+    <img src="images/preloader-court.jpg" alt="">
   </div>
   <!-- Layer 1: Deep navy veil -->
   <div class="pl-veil"></div>
