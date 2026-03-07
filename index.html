@@ -422,38 +422,27 @@ button{cursor:none;border:none;background:none;font:inherit}
 }
 /* ── BACKGROUND IMAGE via pseudo-element — zero z-index conflicts possible ── */
 #seq-sticky{
-  --seq-br:0.60;--seq-sat:0.70;--seq-sc:1.08;
+  --seq-br:0.40;--seq-sat:0.45;--seq-sc:1.10;
 }
 #seq-sticky::before{
   content:'';
   position:absolute;top:0;left:0;right:0;bottom:0;
-  background:url(images/hero-bg.jpg) center 55% / cover no-repeat;
-  filter:brightness(var(--seq-br)) saturate(var(--seq-sat)) contrast(1.05);
+  background:url(images/seq-library.jpg) center 40% / cover no-repeat;
+  filter:brightness(var(--seq-br)) saturate(var(--seq-sat)) contrast(1.08);
   transform:scale(var(--seq-sc));
   z-index:0;
   pointer-events:none;
   will-change:filter,transform;
 }
-/* Subtle dark veil */
+/* Dark veil — gives text breathing room over the library */
 #seq-sticky::after{
   content:'';
   position:absolute;top:0;left:0;right:0;bottom:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.22) 0%,rgba(0,0,0,.06) 45%,rgba(0,0,0,.32) 100%);
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.42) 0%,rgba(0,0,0,.18) 50%,rgba(0,0,0,.52) 100%),
+    radial-gradient(ellipse 70% 55% at 50% 50%,rgba(0,0,0,.0) 0%,rgba(0,0,0,.38) 100%);
   z-index:1;
   pointer-events:none;
-}
-/* Director portrait — slides in from right at mid-scroll */
-#seq-portrait{
-  position:absolute;top:0;right:0;bottom:0;width:38%;
-  z-index:3;overflow:hidden;
-  opacity:0;transform:translateX(50px);
-  transition:opacity .9s ease,transform .9s ease;
-}
-#seq-portrait.visible{opacity:1;transform:translateX(0)}
-#seq-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.6)}
-#seq-portrait::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to left,transparent 35%,rgba(6,14,26,.95) 100%);
 }
 #frame-canvas{display:none}
 .seq-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,transparent 30%,rgba(0,0,0,.55) 100%);pointer-events:none}
@@ -992,9 +981,9 @@ body::before {
   </div>
   <!-- Layer 1: Deep navy veil -->
   <div class="pl-veil"></div>
-  <!-- Layer 2: Director portrait (fades in) -->
+  <!-- Layer 2: Lore image — scales of justice, timeless authority -->
   <div class="pl-portrait">
-    <img src="images/team-director.jpg" alt="Masekela Masenya">
+    <img src="images/preloader-lore.jpg" alt="">
   </div>
   <!-- Gold vertical divider -->
   <div class="pl-divider"></div>
@@ -1066,11 +1055,7 @@ body::before {
 <!-- ===== CINEMATIC SCROLL SEQUENCE ===== -->
 <div id="seq-outer">
   <div id="seq-sticky">
-    <!-- Background: Pretoria City Hall via CSS ::before pseudo-element -->
-    <!-- Director portrait — slides in at mid-scroll -->
-    <div id="seq-portrait">
-      <img src="images/team-director.jpg" alt="Advocate Masekela Masenya">
-    </div>
+    <!-- Background: Grand law library — CSS ::before pseudo-element -->
     <canvas id="frame-canvas"></canvas>
     <div class="seq-vignette"></div>
 
@@ -1651,7 +1636,6 @@ gsap.ticker.lagSmoothing(0);
 gsap.registerPlugin(ScrollTrigger);
 
 const seqSticky = document.getElementById('seq-sticky');
-const seqPortrait = document.getElementById('seq-portrait');
 
 ScrollTrigger.create({
   trigger: '#seq-outer',
@@ -1661,20 +1645,14 @@ ScrollTrigger.create({
   onUpdate(self) {
     const p = self.progress;
 
-    // ── BACKGROUND: warm from desaturated to full golden-hour via CSS var ──
-    const br  = (0.60 + p * 0.28).toFixed(2);   // 0.60 → 0.88
-    const sat = (0.70 + p * 0.40).toFixed(2);   // 0.70 → 1.10
-    const sc  = (1.08 - p * 0.08).toFixed(3);   // 1.08 → 1.00
+    // ── BACKGROUND: dark mystery → warm golden library revelation ──
+    const br  = (0.40 + p * 0.38).toFixed(2);   // 0.40 → 0.78
+    const sat = (0.45 + p * 0.75).toFixed(2);   // 0.45 → 1.20
+    const sc  = (1.10 - p * 0.10).toFixed(3);   // 1.10 → 1.00
     if (seqSticky) {
       seqSticky.style.setProperty('--seq-br',  br);
       seqSticky.style.setProperty('--seq-sat', sat);
       seqSticky.style.setProperty('--seq-sc',  sc);
-    }
-
-    // ── DIRECTOR PORTRAIT: slides in 38-78% ──
-    if (seqPortrait) {
-      if (p > 0.38 && p < 0.78) seqPortrait.classList.add('visible');
-      else seqPortrait.classList.remove('visible');
     }
 
     // ── PROGRESS / SKIP ──
