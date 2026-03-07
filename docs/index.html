@@ -416,8 +416,31 @@ button{cursor:none;border:none;background:none;font:inherit}
 
 /* ===== CANVAS SCROLL SEQUENCE ===== */
 #seq-outer{height:350vh;position:relative}
-#seq-sticky{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:#000}
-#frame-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#seq-sticky{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:#060e1a}
+/* Photographic background — replaces canvas frames */
+#seq-photo{position:absolute;inset:0;z-index:0;overflow:hidden}
+#seq-photo img{width:100%;height:100%;object-fit:cover;object-position:center 55%;
+  transform:scale(1.12);
+  filter:brightness(.3) saturate(.35) contrast(1.15);
+  will-change:transform,filter;
+}
+#seq-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.18) 45%,rgba(0,0,0,.55) 100%);
+}
+/* Director portrait — slides in from right at mid-scroll */
+#seq-portrait{position:absolute;top:0;right:0;bottom:0;width:40%;z-index:2;overflow:hidden;
+  opacity:0;transform:translateX(60px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+#seq-portrait.visible{opacity:1;transform:translateX(0)}
+#seq-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;
+  filter:brightness(.55) contrast(1.05);
+}
+#seq-portrait::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(to left,rgba(6,14,26,0) 40%,rgba(6,14,26,.98) 100%),
+             linear-gradient(to top,rgba(6,14,26,.5) 0%,transparent 30%);
+}
+#frame-canvas{display:none}
 .seq-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,transparent 30%,rgba(0,0,0,.55) 100%);pointer-events:none}
 .seq-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .seq-text{position:absolute;text-align:center;opacity:0;transition:none;will-change:opacity}
@@ -1025,9 +1048,20 @@ body::before {
   </div>
 </div>
 
-<!-- ===== CANVAS SCROLL SEQUENCE ===== -->
+<!-- ===== CINEMATIC SCROLL SEQUENCE ===== -->
 <div id="seq-outer">
   <div id="seq-sticky">
+    <!-- Layer 0: Pretoria City Hall — golden hour, jacarandas -->
+    <div id="seq-photo">
+      <img src="images/hero-bg.jpg" alt="" id="seq-photo-img">
+    </div>
+    <!-- Layer 1: Atmospheric vignette -->
+    <div id="seq-overlay"></div>
+    <!-- Layer 2: Director portrait — emerges at mid-scroll -->
+    <div id="seq-portrait">
+      <img src="images/team-director.jpg" alt="Advocate Masekela Masenya">
+    </div>
+    <!-- Legacy canvas — hidden -->
     <canvas id="frame-canvas"></canvas>
     <div class="seq-vignette"></div>
 
@@ -1604,70 +1638,52 @@ const lenis = new Lenis({ lerp: 0.08, smoothWheel: true, wheelMultiplier: 0.85 }
 gsap.ticker.add(time => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
-/* ===== CANVAS SCROLL SEQUENCE ===== */
-const FRAME_COUNT = 60;
-const canvas = document.getElementById('frame-canvas');
-const ctx = canvas.getContext('2d');
-const frames = [];
-let seqLoaded = 0, seqReady = false;
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  if (seqReady) drawSeqFrame(currentSeqFrame);
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-let currentSeqFrame = 0;
-function drawSeqFrame(idx) {
-  const img = frames[idx];
-  if (!img || !img.complete || img.naturalWidth === 0) return;
-  const cw = canvas.width, ch = canvas.height;
-  const iw = img.naturalWidth, ih = img.naturalHeight;
-  const scale = Math.max(cw / iw, ch / ih);
-  const dx = (cw - iw * scale) / 2;
-  const dy = (ch - ih * scale) / 2;
-  ctx.clearRect(0, 0, cw, ch);
-  ctx.drawImage(img, dx, dy, iw * scale, ih * scale);
-}
-
-// Preload all frames
-for (let i = 0; i < FRAME_COUNT; i++) {
-  const img = new Image();
-  img.src = 'frames/frame_' + String(i).padStart(4, '0') + '.webp';
-  img.onload = () => {
-    seqLoaded++;
-    if (i === 0) { seqReady = true; drawSeqFrame(0); }
-    if (seqLoaded === FRAME_COUNT) console.log('All sequence frames loaded');
-  };
-  frames.push(img);
-}
-
+/* ===== CINEMATIC SCROLL SEQUENCE — photo + CSS reveal (no frames needed) ===== */
 gsap.registerPlugin(ScrollTrigger);
 
-// Wire scroll to frames
+const seqImg = document.getElementById('seq-photo-img');
+const seqPortrait = document.getElementById('seq-portrait');
+
 ScrollTrigger.create({
   trigger: '#seq-outer',
   start: 'top top',
   end: 'bottom bottom',
-  scrub: 0.3,
+  scrub: 0.4,
   onUpdate(self) {
     const p = self.progress;
-    currentSeqFrame = Math.min(FRAME_COUNT - 1, Math.round(p * (FRAME_COUNT - 1)));
-    drawSeqFrame(currentSeqFrame);
-    // Update progress bar
+
+    // ── IMAGE: dark B&W at start → full golden-hour colour at end ──
+    const brightness = 0.30 + p * 0.45;           // 0.30 → 0.75
+    const saturation = 0.30 + p * 0.80;           // 0.30 → 1.10
+    const contrast   = 1.15 - p * 0.12;           // 1.15 → 1.03
+    const scale      = 1.12 - p * 0.12;           // 1.12 → 1.00  (slow de-zoom)
+    if (seqImg) {
+      seqImg.style.filter    = `brightness(${brightness.toFixed(2)}) saturate(${saturation.toFixed(2)}) contrast(${contrast.toFixed(2)})`;
+      seqImg.style.transform = `scale(${scale.toFixed(3)})`;
+    }
+
+    // ── DIRECTOR PORTRAIT: slides in from right at 38-55% ──
+    if (seqPortrait) {
+      if (p > 0.38 && p < 0.78) seqPortrait.classList.add('visible');
+      else seqPortrait.classList.remove('visible');
+    }
+
+    // ── PROGRESS BAR ──
     document.getElementById('seq-progress-fill').style.width = (p * 100) + '%';
-    // Show skip after 5% scroll
+
+    // ── SKIP BUTTON ──
     const skip = document.getElementById('seq-skip');
     if (p > 0.05) skip.classList.add('visible'); else skip.classList.remove('visible');
-    // Text 1: firm name, fades in 0-15%, out 25-35%
+
+    // ── TEXT 1: firm name  0→15% in, 25→35% out ──
     const t1 = p < 0.15 ? p / 0.15 : p < 0.25 ? 1 : p < 0.35 ? 1 - (p - 0.25) / 0.10 : 0;
     document.getElementById('seq-text1').style.opacity = Math.max(0, Math.min(1, t1));
-    // Text 2: tagline, fades in 40-55%, out 70-80%
+
+    // ── TEXT 2: tagline  40→55% in, 70→80% out ──
     const t2 = p < 0.40 ? 0 : p < 0.55 ? (p - 0.40) / 0.15 : p < 0.70 ? 1 : p < 0.80 ? 1 - (p - 0.70) / 0.10 : 0;
     document.getElementById('seq-text2').style.opacity = Math.max(0, Math.min(1, t2));
-    // Text 3: enter prompt, fades in 85-95%
+
+    // ── TEXT 3: enter prompt  85→95% ──
     const t3 = p < 0.85 ? 0 : (p - 0.85) / 0.10;
     document.getElementById('seq-text3').style.opacity = Math.max(0, Math.min(1, t3));
   }
