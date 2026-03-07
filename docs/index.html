@@ -420,12 +420,12 @@ button{cursor:none;border:none;background:none;font:inherit}
 /* Photographic background — replaces canvas frames */
 #seq-photo{position:absolute;inset:0;z-index:0;overflow:hidden}
 #seq-photo img{width:100%;height:100%;object-fit:cover;object-position:center 55%;
-  transform:scale(1.12);
-  filter:brightness(.3) saturate(.35) contrast(1.15);
+  transform:scale(1.08);
+  filter:brightness(.55) saturate(.6) contrast(1.1);
   will-change:transform,filter;
 }
 #seq-overlay{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.18) 45%,rgba(0,0,0,.55) 100%);
+  background:linear-gradient(to bottom,rgba(0,0,0,.30) 0%,rgba(0,0,0,.12) 45%,rgba(0,0,0,.38) 100%);
 }
 /* Director portrait — slides in from right at mid-scroll */
 #seq-portrait{position:absolute;top:0;right:0;bottom:0;width:40%;z-index:2;overflow:hidden;
@@ -1652,11 +1652,11 @@ ScrollTrigger.create({
   onUpdate(self) {
     const p = self.progress;
 
-    // ── IMAGE: dark B&W at start → full golden-hour colour at end ──
-    const brightness = 0.30 + p * 0.45;           // 0.30 → 0.75
-    const saturation = 0.30 + p * 0.80;           // 0.30 → 1.10
-    const contrast   = 1.15 - p * 0.12;           // 1.15 → 1.03
-    const scale      = 1.12 - p * 0.12;           // 1.12 → 1.00  (slow de-zoom)
+    // ── IMAGE: visible from frame 0, warms to full golden-hour colour ──
+    const brightness = 0.55 + p * 0.30;           // 0.55 → 0.85
+    const saturation = 0.60 + p * 0.50;           // 0.60 → 1.10
+    const contrast   = 1.10 - p * 0.08;           // 1.10 → 1.02
+    const scale      = 1.08 - p * 0.08;           // 1.08 → 1.00  (slow de-zoom)
     if (seqImg) {
       seqImg.style.filter    = `brightness(${brightness.toFixed(2)}) saturate(${saturation.toFixed(2)}) contrast(${contrast.toFixed(2)})`;
       seqImg.style.transform = `scale(${scale.toFixed(3)})`;
