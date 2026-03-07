@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Masekela Masenya Inc | Attorneys Since 2012</title>
+<meta name="description" content="Learn about Masekela Masenya Inc - premier Pretoria attorneys since 2012. Meet Founding Director Masekela Masenya, LLB, MBA. 308 High Court appearances. 82% success rate.">
+<style>@font-face{font-family:'Bebas';src:url('fonts/bebas-neue.woff2') format('woff2');font-weight:400;}
+/* ===== MICRO LIGHT + MICRO ANIMATION ===== */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,#C99959,#E4B86A);z-index:9999;box-shadow:0 0 8px rgba(201,153,89,.6);transition:width .1s}
+.tilt-card,.val-card,.cred-card,.timeline-item,.consultant-card{transition:transform .3s,box-shadow .3s}
+.tilt-card:hover,.val-card:hover,.cred-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 45px rgba(0,0,0,.14)}
+.story-img,.profile-img,.dp-img{transition:transform 8s ease-out;transform:scale(1.04)}
+.about-img-wrap:hover .story-img,.profile-wrap:hover .profile-img{transform:scale(1.08)}
+/* Shimmer on headings */
+.ph-h1{background:linear-gradient(90deg,#fff 40%,#C99959 55%,#fff 70%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:headingShimmer 6s linear infinite}
+@keyframes headingShimmer{from{background-position:0% center}to{background-position:200% center}}
+/* Credential cards pulse border */
+.cred-card{border:1px solid rgba(201,153,89,.15);transition:border-color .3s,transform .3s,box-shadow .3s}
+.cred-card:hover{border-color:rgba(201,153,89,.5);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.1),0 0 0 1px rgba(201,153,89,.2)}
+/* Gold number glow */
+.cred-num{transition:text-shadow .3s}
+.cred-card:hover .cred-num{text-shadow:0 0 20px rgba(201,153,89,.7)}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Masekela Masenya Inc">
+<meta property="og:title" content="About Us | Masekela Masenya Inc Attorneys – Pretoria">
+<meta property="og:description" content="Masekela Masenya Inc is a Pretoria-based law firm founded on the belief that every client deserves direct access to experienced legal counsel.">
+<meta property="og:url" content="https://maslaw.co.za/about.html">
+<meta property="og:image" content="https://maslaw.co.za/images/og-share.jpg">
+<meta property="og:image:width" content="1376">
+<meta property="og:image:height" content="768">
+<meta property="og:image:alt" content="Masekela Masenya Inc - Attorneys, Notaries and Conveyancers Pretoria">
+<meta name="twitter:image" content="https://maslaw.co.za/images/og-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Us | Masekela Masenya Inc Attorneys – Pretoria">
+<meta name="twitter:description" content="Masekela Masenya Inc is a Pretoria-based law firm founded on the belief that every client deserves direct access to experienced legal counsel.">
+<link rel="canonical" href="https://maslaw.co.za/about.html">
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0A1628;--navy2:#1B2A4A;--gold:#C99959;--gold2:#E4B86A;--cream:#F5F0E8;--warm:#FDFBF7;--text:#1a1a2e;--muted:#6b7280;--ease:cubic-bezier(0.25,0.46,0.45,0.94)}
+html{scroll-behavior:auto}
+em{font-style:normal;color:var(--gold)}
+body{font-family:'Bebas',Arial,sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;cursor:none}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{cursor:none;border:none;background:none;font:inherit}
+#cursor-dot{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.7;transition:width .3s var(--ease),height .3s var(--ease),opacity .3s}
+.cursor-hover #cursor-ring{width:56px;height:56px;opacity:.4}
+@media(max-width:768px){#cursor-dot,#cursor-ring{display:none}body,button{cursor:auto}}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,40,.96);backdrop-filter:blur(16px);box-shadow:0 2px 30px rgba(0,0,0,.3)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-seal{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:var(--navy2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.nav-seal img{width:28px}
+.nav-wordmark{font-family:'Bebas',Arial,sans-serif;font-size:14px;letter-spacing:3px;color:#fff;line-height:1.1}
+.nav-wordmark span{display:block;font-size:8px;letter-spacing:4px;color:var(--gold);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.7);position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.btn-consult{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:10px 24px;border-radius:2px;font-family:'Bebas',Arial,sans-serif;position:relative;overflow:hidden;display:inline-block}
+.btn-consult::before{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform .4s var(--ease)}
+.btn-consult span{position:relative;z-index:1}
+.btn-consult:hover::before{transform:translateX(0)}
+
+/* PAGE HERO */
+.page-hero{padding:160px 60px 100px;background:var(--navy);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('images/about-office.jpg') center/cover no-repeat;opacity:.15}
+.page-hero-content{position:relative;z-index:2;max-width:700px}
+.ph-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px;opacity:0;transform:translateY(20px)}
+.ph-line{width:32px;height:1px;background:var(--gold)}
+.ph-eye{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.ph-h1{font-family:'Bebas',Arial,sans-serif;font-size:clamp(44px,7vw,88px);line-height:1;color:#fff;margin-bottom:20px;opacity:0;transform:translateY(30px)}
+.ph-h1 em{font-style:normal;color:var(--gold)}
+.ph-desc{font-size:16px;line-height:1.75;color:rgba(255,255,255,.5);max-width:540px;opacity:0;transform:translateY(20px)}
+.page-hero-decoration{position:absolute;right:60px;bottom:0;height:70%;display:flex;align-items:flex-end;z-index:1;opacity:.06}
+.page-hero-decoration span{font-family:'Bebas',Arial,sans-serif;font-size:20vw;letter-spacing:-10px;color:#fff;line-height:1}
+
+/* SECTIONS */
+.section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.s-line{width:32px;height:1px;background:var(--gold)}
+.s-eye-txt{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold)}
+.section-h2{font-family:'Bebas',Arial,sans-serif;font-size:clamp(32px,4vw,50px);line-height:1.15;color:var(--navy);margin-bottom:24px}
+.section-h2 em{font-style:normal;color:var(--gold)}
+.section-body{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:20px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px)}
+
+/* FIRM STORY */
+#story{padding:120px 60px;display:grid;grid-template-columns:1fr 1.2fr;gap:100px;align-items:start;background:var(--warm)}
+.story-sticky{position:sticky;top:120px}
+.story-year{font-family:'Bebas',Arial,sans-serif;font-size:120px;line-height:1;color:rgba(201,153,89,.08);margin-bottom:-40px;display:block}
+.story-img{width:100%;height:420px;object-fit:cover;border-radius:2px;margin-bottom:24px}
+.story-badge{background:var(--gold);padding:20px 24px;display:inline-block}
+.story-badge-num{font-family:'Bebas',Arial,sans-serif;font-size:52px;color:var(--navy);line-height:1}
+.story-badge-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy)}
+.story-blocks{display:flex;flex-direction:column;gap:48px}
+.story-block{padding-left:24px;border-left:2px solid rgba(201,153,89,.2);position:relative}
+.story-block::before{content:'';position:absolute;left:-5px;top:4px;width:8px;height:8px;background:var(--gold);border-radius:50%}
+.story-year-tag{font-family:'Bebas',Arial,sans-serif;font-size:13px;letter-spacing:3px;color:var(--gold);margin-bottom:8px}
+.story-block-h{font-family:'Bebas',Arial,sans-serif;font-size:22px;color:var(--navy);margin-bottom:8px}
+.story-block-p{font-size:14px;line-height:1.7;color:var(--muted)}
+
+/* VALUES */
+#values{padding:100px 60px;background:var(--navy)}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:64px}
+.value-card{background:rgba(255,255,255,.03);padding:44px 32px;border-top:2px solid transparent;transition:border-color .3s,background .3s}
+.value-card:hover{border-top-color:var(--gold);background:rgba(255,255,255,.06)}
+.value-icon{width:48px;height:48px;border:1px solid rgba(201,153,89,.3);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.value-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.value-title{font-family:'Bebas',Arial,sans-serif;font-size:22px;color:#fff;margin-bottom:12px}
+.value-desc{font-size:14px;line-height:1.7;color:rgba(255,255,255,.4)}
+
+/* CREDENTIALS */
+#credentials{padding:100px 60px;background:var(--cream)}
+.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px}
+.cred-card{background:#fff;padding:40px 36px}
+.cred-num{font-family:'Bebas',Arial,sans-serif;font-size:72px;color:var(--gold);line-height:1;margin-bottom:8px}
+.cred-lbl{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+.cred-desc{font-size:13px;line-height:1.7;color:var(--muted)}
+
+/* MISSION */
+#mission{padding:120px 60px;background:var(--warm);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.mission-quote{font-family:'Bebas',Arial,sans-serif;font-size:clamp(28px,3.5vw,44px);line-height:1.25;color:var(--navy);padding-left:32px;border-left:3px solid var(--gold)}
+.mission-quote em{font-style:normal;color:var(--gold)}
+.mission-quote cite{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:20px;font-style:normal}
+
+/* CERTIFICATIONS */
+#certs{padding:80px 60px;background:var(--navy);display:flex;justify-content:center;gap:64px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.05)}
+.cert-item{text-align:center}
+.cert-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:8px}
+.cert-val{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:var(--gold);letter-spacing:2px}
+
+/* CTA STRIP */
+.cta-strip{padding:80px 60px;background:var(--gold);display:flex;justify-content:space-between;align-items:center}
+.cs-text .section-h2{color:var(--navy);margin-bottom:8px;font-size:clamp(28px,3.5vw,44px)}
+.cs-text p{font-size:15px;color:rgba(10,22,40,.65)}
+.btn-navy{background:var(--navy);color:#fff;padding:16px 40px;border-radius:2px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Bebas',Arial,sans-serif;display:inline-block;transition:background .3s}
+.btn-navy:hover{background:var(--navy2)}
+
+/* FOOTER */
+footer{background:var(--navy);padding:60px 60px 32px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px}
+.footer-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,.3);margin-bottom:24px}
+.footer-h{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.35);transition:color .3s;letter-spacing:.5px}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:1px}
+.footer-reg{font-size:10px;color:rgba(255,255,255,.15);letter-spacing:1.5px;text-transform:uppercase}
+
+/* BOOKING MODAL */
+#booking-overlay{position:fixed;inset:0;background:rgba(10,22,40,.75);backdrop-filter:blur(8px);z-index:5000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+#booking-overlay.open{opacity:1;pointer-events:all}
+.booking-modal{background:var(--warm);width:840px;max-width:96vw;max-height:92vh;overflow-y:auto;border-radius:4px;position:relative;transform:translateY(24px) scale(.98);transition:transform .4s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.4)}
+#booking-overlay.open .booking-modal{transform:translateY(0) scale(1)}
+.bm-header{background:var(--navy);padding:28px 36px;display:flex;justify-content:space-between;align-items:center}
+.bm-title{font-family:'Bebas',Arial,sans-serif;font-size:22px;color:#fff;letter-spacing:1px}
+.bm-close{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:none;transition:all .3s}
+.bm-close:hover{border-color:var(--gold)}
+.bm-close svg{width:16px;height:16px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:1.5}
+.bm-body{padding:36px;text-align:center}
+.bm-body p{font-size:15px;line-height:1.7;color:var(--muted);margin-bottom:24px}
+.btn-gold{background:var(--gold);color:var(--navy);padding:16px 40px;border-radius:2px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Bebas',Arial,sans-serif;display:inline-block}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  #nav,#nav.scrolled{padding:18px 32px}
+  .nav-links{display:none}
+  .page-hero{padding:120px 32px 72px}
+  #story{grid-template-columns:1fr;gap:48px;padding:80px 32px}
+  .story-sticky{position:relative;top:auto}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .cred-grid{grid-template-columns:1fr 1fr}
+  #mission{grid-template-columns:1fr;padding:80px 32px}
+  #credentials,#values,#certs,.cta-strip{padding:60px 32px}
+  footer{padding:48px 32px 24px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .cta-strip{flex-direction:column;gap:32px;text-align:center}
+}
+@media(max-width:600px){
+  .page-hero{padding:100px 20px 60px}
+  #story,#values,#credentials,#mission,#certs,footer{padding:60px 20px}
+  .values-grid,.cred-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  #certs{gap:32px}
+  .cta-strip{padding:60px 20px}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-seal"><img src="images/logo.png" alt="MM"></div>
+    <div class="nav-wordmark">Masekela Masenya Inc<span>Attorneys &nbsp;|&nbsp; Est. 2012</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="practice.html">Practice Areas</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="index.html#testimonials">Clients</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="btn-consult js-open-booking"><span>Book Consultation</span></button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="ph-eyebrow">
+      <div class="ph-line"></div>
+      <span class="ph-eye">Our Story</span>
+    </div>
+    <h1 class="ph-h1">A Firm Built on<br><em>Principle &amp; Purpose</em></h1>
+    <p class="ph-desc">From a single office in Pretoria to a trusted multi-discipline practice, Masekela Masenya Inc has been fighting for its clients since 2012. This is our story.</p>
+  </div>
+  <div class="page-hero-decoration"><span>2012</span></div>
+</div>
+
+<!-- FIRM STORY -->
+<section id="story">
+  <div class="story-sticky reveal">
+    <span class="story-year">15+</span>
+    <img class="story-img" src="images/about-office.jpg" alt="Masekela Masenya Inc offices">
+    <div class="story-badge">
+      <div class="story-badge-num">308</div>
+      <div class="story-badge-lbl">High Court Appearances</div>
+    </div>
+  </div>
+  <div>
+    <div class="section-eyebrow reveal"><div class="s-line"></div><span class="s-eye-txt">Our Journey</span></div>
+    <h2 class="section-h2 reveal">From Vision to<br><em>Verified Results</em></h2>
+    <p class="section-body reveal">Masekela Masenya Inc was founded on the conviction that every South African deserves access to excellent legal representation - regardless of the complexity of their matter or the power of their opponent.</p>
+
+    <div class="story-blocks">
+      <div class="story-block reveal">
+        <div class="story-year-tag">2012</div>
+        <div class="story-block-h">The Foundation</div>
+        <p class="story-block-p">Masekela Masenya established the firm after completing his LLB at the University of Limpopo and gaining invaluable experience at Gildenhuys Lessing Malatji Attorneys. The founding principle was simple: put the client first, always.</p>
+      </div>
+      <div class="story-block reveal">
+        <div class="story-year-tag">2014-2016</div>
+        <div class="story-block-h">Building Expertise</div>
+        <p class="story-block-p">The practice expanded its expertise across commercial, family, and labour law - gaining recognition for aggressive representation and nuanced understanding of South African legal frameworks. High Court appearances became routine.</p>
+      </div>
+      <div class="story-block reveal">
+        <div class="story-year-tag">2018-2020</div>
+        <div class="story-block-h">Broadening the Practice</div>
+        <p class="story-block-p">New specialisations in medical malpractice, third-party RAF claims, and insurance law expanded the firm's reach. The director's Certificate in Practice Management and PDBM brought sharper business systems to the legal practice.</p>
+      </div>
+      <div class="story-block reveal">
+        <div class="story-year-tag">2022-Present</div>
+        <div class="story-block-h">MBA and Strategic Growth</div>
+        <p class="story-block-p">The director's MBA reinforced a business-minded approach to legal problem solving. Today, Masekela Masenya Inc combines legal excellence with strategic business thinking - giving clients a decisive edge in every matter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div style="max-width:600px">
+    <div class="section-eyebrow reveal"><div class="s-line"></div><span class="s-eye-txt" style="color:var(--gold)">What Drives Us</span></div>
+    <h2 class="section-h2 reveal" style="color:#fff">The Values Behind<br><em>Every Case</em></h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="value-title">Integrity</div>
+      <p class="value-desc">We never compromise on honesty - with our clients, the courts, or each other. Our reputation is built on doing what we say we will do.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <div class="value-title">Excellence</div>
+      <p class="value-desc">Mediocre effort never wins a case. We approach every matter with rigour, thorough preparation, and a relentless drive for the best outcome.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <div class="value-title">Client Focus</div>
+      <p class="value-desc">Your legal matter is personal to you - and it is personal to us. We provide direct, accessible counsel and communicate clearly at every step.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <div class="value-title">Accessibility</div>
+      <p class="value-desc">Justice should not be a privilege. We strive to make quality legal representation accessible and to explain complex matters in plain language.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">By The Numbers</span></div>
+    <h2 class="section-h2">A Track Record That<br><em>Speaks for Itself</em></h2>
+  </div>
+  <div class="cred-grid">
+    <div class="cred-card reveal">
+      <div class="cred-num">308</div>
+      <div class="cred-lbl">High Court Appearances</div>
+      <p class="cred-desc">Over 308 appearances before the High Court of South Africa, developing deep courtroom expertise across civil and criminal matters.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-num">82%</div>
+      <div class="cred-lbl">Success Rate</div>
+      <p class="cred-desc">An 82% success rate across all contested matters - a testament to thorough preparation, strategic thinking, and aggressive representation.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-num">166</div>
+      <div class="cred-lbl">Clients Served</div>
+      <p class="cred-desc">166 clients and growing - individuals, families, and businesses who trusted us with their most sensitive and high-stakes legal matters.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-num">15+</div>
+      <div class="cred-lbl">Years in Practice</div>
+      <p class="cred-desc">Over 15 years of continuous legal practice in Pretoria, accumulating expertise across nine specialist areas of South African law.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-num">9</div>
+      <div class="cred-lbl">Practice Areas</div>
+      <p class="cred-desc">Nine distinct areas of legal specialisation, from commercial and corporate law to criminal defence, medical malpractice, and estate administration.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-num">2</div>
+      <div class="cred-lbl">Office Locations</div>
+      <p class="cred-desc">Conveniently located at JSL Towers, 259 Pretorius Street, Pretoria - serving clients from across Gauteng and nationally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION QUOTE -->
+<section id="mission">
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Our Mission</span></div>
+    <h2 class="section-h2">Guided by Purpose,<br><em>Driven by Results</em></h2>
+    <p class="section-body">We exist to protect, advance, and deliver justice for every client who walks through our doors. No matter is too small. No opponent is too large. Our mission is to serve - and to win.</p>
+    <p class="section-body">We believe that the law, properly applied, is the greatest equaliser. Our role is to ensure our clients have the best possible application of the law working in their favour.</p>
+    <a href="team.html" class="btn-navy" style="margin-top:24px">Meet the Team</a>
+  </div>
+  <div class="reveal">
+    <blockquote class="mission-quote">
+      No man is above the law, and no man is below it.
+      <cite>- Theodore Roosevelt, guiding principle</cite>
+    </blockquote>
+    <div style="margin-top:48px;display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;gap:16px;align-items:flex-start">
+        <div style="width:2px;height:48px;background:var(--gold);flex-shrink:0;margin-top:4px"></div>
+        <div>
+          <div style="font-family:'Bebas',Arial,sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px">LLB - University of Limpopo</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5">Solid academic foundation in South African and international law</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start">
+        <div style="width:2px;height:48px;background:var(--gold);flex-shrink:0;margin-top:4px"></div>
+        <div>
+          <div style="font-family:'Bebas',Arial,sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px">MBA - Business Strategy</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5">Strategic business acumen applied to every legal matter</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start">
+        <div style="width:2px;height:48px;background:var(--gold);flex-shrink:0;margin-top:4px"></div>
+        <div>
+          <div style="font-family:'Bebas',Arial,sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px">LPC Member: 31523</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5">Registered and in good standing with the Legal Practice Council</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS BAR -->
+<div id="certs">
+  <div class="cert-item"><div class="cert-lbl">LPC Member</div><div class="cert-val">31523</div></div>
+  <div class="cert-item"><div class="cert-lbl">Firm Number</div><div class="cert-val">13887</div></div>
+  <div class="cert-item"><div class="cert-lbl">VAT Number</div><div class="cert-val">4500323045</div></div>
+  <div class="cert-item"><div class="cert-lbl">Established</div><div class="cert-val">2012</div></div>
+  <div class="cert-item"><div class="cert-lbl">Jurisdiction</div><div class="cert-val">South Africa</div></div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip reveal">
+  <div class="cs-text">
+    <h2 class="section-h2" style="color:var(--navy);margin-bottom:8px">Ready to Get Started?</h2>
+    <p style="font-size:15px;color:rgba(10,22,40,.65)">Book a confidential consultation with our team today.</p>
+  </div>
+  <button class="btn-navy js-open-booking">Book a Consultation</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a class="nav-logo" href="index.html" style="margin-bottom:20px;display:flex">
+        <div class="nav-seal"><img src="images/logo.png" alt="MM"></div>
+        <div class="nav-wordmark">Masekela Masenya Inc<span>Attorneys &nbsp;|&nbsp; Est. 2012</span></div>
+      </a>
+      <p class="footer-desc">Premier attorneys in Pretoria. We bring expertise, dedication and a proven track record to every client, every case, every time.</p>
+    </div>
+    <div>
+      <div class="footer-h">Practice Areas</div>
+      <ul class="footer-links">
+        <li><a href="practice.html">Commercial Law</a></li>
+        <li><a href="practice.html">Family Law</a></li>
+        <li><a href="practice.html">Labour Law</a></li>
+        <li><a href="practice.html">Estate Law</a></li>
+        <li><a href="practice.html">Criminal Law</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="practice.html">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" class="js-open-booking">Book Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:0127715832">(012) 771 5832</a></li>
+        <li><a href="tel:0127723392">(012) 772 3392</a></li>
+        <li><a href="mailto:alphy@maslaw.co.za">alphy@maslaw.co.za</a></li>
+        <li>JSL Towers, 259 Pretorius St</li>
+        <li>Pretoria, 0002</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2025 Masekela Masenya Inc. All rights reserved.</span>
+    <span class="footer-reg">LPC: 31523 &nbsp;&middot;&nbsp; Firm: 13887 &nbsp;&middot;&nbsp; VAT: 4500323045</span>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL (simplified) -->
+<div id="booking-overlay">
+  <div class="booking-modal">
+    <div class="bm-header">
+      <div class="bm-title">Book a Consultation</div>
+      <button class="bm-close js-close-booking"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="bm-body">
+      <p>To book a consultation, please call us directly or complete the online form on our contact page.</p>
+      <p style="font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);">(012) 771 5832</p>
+      <p style="margin-bottom:32px;color:var(--muted)">Monday - Friday: 08:00 - 17:00</p>
+      <a href="contact.html" class="btn-gold">Go to Contact Page</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+gsap.ticker.add(time => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+gsap.registerPlugin(ScrollTrigger);
+
+// Cursor
+const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+if(window.innerWidth>768){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+  });
+}
+
+// Page hero entrance
+gsap.timeline({ delay: 0.3, defaults: { ease: 'power3.out' } })
+  .to('.ph-eyebrow', { opacity: 1, y: 0, duration: .7 })
+  .to('.ph-h1', { opacity: 1, y: 0, duration: .8 }, '-=.4')
+  .to('.ph-desc', { opacity: 1, y: 0, duration: .6 }, '-=.4');
+
+// Scroll reveals
+gsap.utils.toArray('.reveal').forEach(el => {
+  gsap.fromTo(el, { opacity: 0, y: 44 }, {
+    opacity: 1, y: 0, duration: .85, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+  });
+});
+
+// Story block stagger
+ScrollTrigger.create({
+  trigger: '.story-blocks',
+  start: 'top 80%',
+  once: true,
+  onEnter() {
+    gsap.fromTo('.story-block', { opacity: 0, x: -20 }, {
+      opacity: 1, x: 0, duration: 0.7, ease: 'power3.out', stagger: 0.15
+    });
+  }
+});
+
+// Values stagger
+ScrollTrigger.create({
+  trigger: '.values-grid',
+  start: 'top 80%',
+  once: true,
+  onEnter() {
+    gsap.fromTo('.value-card', { opacity: 0, y: 30 }, {
+      opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.1
+    });
+  }
+});
+
+// Booking modal
+const overlay = document.getElementById('booking-overlay');
+document.querySelectorAll('.js-open-booking').forEach(b => b.addEventListener('click', () => { overlay.classList.add('open'); document.body.style.overflow='hidden'; }));
+document.querySelectorAll('.js-close-booking').forEach(b => b.addEventListener('click', () => { overlay.classList.remove('open'); document.body.style.overflow=''; }));
+overlay.addEventListener('click', e => { if (e.target === overlay) { overlay.classList.remove('open'); document.body.style.overflow=''; } });
+</script>
+<div id="scroll-progress"></div>
+
+<script>
+/* Scroll progress */
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);
+  const b=document.getElementById('scroll-progress');
+  if(b)b.style.width=(p*100)+'%';
+},{passive:true});
+/* 3D Tilt on cards */
+if(window.innerWidth>768){
+  document.querySelectorAll('.val-card,.cred-card,.consultant-card,.timeline-item').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(700px) rotateX(${-y*8}deg) rotateY(${x*8}deg) translateY(-4px) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+  });
+}
+</script>
+</body>
+</html>

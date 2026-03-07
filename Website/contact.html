@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Masekela Masenya Inc | Book a Consultation</title>
+<meta name="description" content="Contact Masekela Masenya Inc Attorneys. Suite N503-N504 JSL Towers, 259 Pretorius Street, Pretoria. Call (012) 771 5832 or email alphy@maslaw.co.za. Book a consultation online.">
+<style>@font-face{font-family:'Bebas';src:url('fonts/bebas-neue.woff2') format('woff2');font-weight:400;}
+/* ===== MICRO LIGHT + MICRO ANIMATION ===== */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,#C99959,#E4B86A);z-index:9999;box-shadow:0 0 8px rgba(201,153,89,.6);transition:width .1s}
+.tilt-card,.val-card,.cred-card,.timeline-item,.consultant-card{transition:transform .3s,box-shadow .3s}
+.tilt-card:hover,.val-card:hover,.cred-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 45px rgba(0,0,0,.14)}
+.story-img,.profile-img,.dp-img{transition:transform 8s ease-out;transform:scale(1.04)}
+.about-img-wrap:hover .story-img,.profile-wrap:hover .profile-img{transform:scale(1.08)}
+/* Shimmer on headings */
+.ph-h1{background:linear-gradient(90deg,#fff 40%,#C99959 55%,#fff 70%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:headingShimmer 6s linear infinite}
+@keyframes headingShimmer{from{background-position:0% center}to{background-position:200% center}}
+/* Credential cards pulse border */
+.cred-card{border:1px solid rgba(201,153,89,.15);transition:border-color .3s,transform .3s,box-shadow .3s}
+.cred-card:hover{border-color:rgba(201,153,89,.5);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.1),0 0 0 1px rgba(201,153,89,.2)}
+/* Gold number glow */
+.cred-num{transition:text-shadow .3s}
+.cred-card:hover .cred-num{text-shadow:0 0 20px rgba(201,153,89,.7)}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Masekela Masenya Inc">
+<meta property="og:title" content="Contact Us | Masekela Masenya Inc – Book a Consultation">
+<meta property="og:description" content="Book a consultation at Suite N503-N504 JSL Towers, 259 Pretorius Street, Pretoria. Call (012) 771 5832 or email alphy@maslaw.co.za.">
+<meta property="og:url" content="https://maslaw.co.za/contact.html">
+<meta property="og:image" content="https://maslaw.co.za/images/og-share.jpg">
+<meta property="og:image:width" content="1376">
+<meta property="og:image:height" content="768">
+<meta property="og:image:alt" content="Masekela Masenya Inc - Attorneys, Notaries and Conveyancers Pretoria">
+<meta name="twitter:image" content="https://maslaw.co.za/images/og-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Us | Masekela Masenya Inc – Book a Consultation">
+<meta name="twitter:description" content="Book a consultation at Suite N503-N504 JSL Towers, 259 Pretorius Street, Pretoria. Call (012) 771 5832 or email alphy@maslaw.co.za.">
+<link rel="canonical" href="https://maslaw.co.za/contact.html">
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0A1628;--navy2:#1B2A4A;--gold:#C99959;--gold2:#E4B86A;--cream:#F5F0E8;--warm:#FDFBF7;--text:#1a1a2e;--muted:#6b7280;--ease:cubic-bezier(0.25,0.46,0.45,0.94)}
+html{scroll-behavior:auto}
+em{font-style:normal;color:var(--gold)}
+body{font-family:'Bebas',Arial,sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;cursor:none}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{cursor:none;border:none;background:none;font:inherit}
+#cursor-dot{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.7;transition:width .3s,height .3s,opacity .3s}
+.cursor-hover #cursor-ring{width:56px;height:56px;opacity:.4}
+@media(max-width:768px){#cursor-dot,#cursor-ring{display:none}body,button{cursor:auto}}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,40,.96);backdrop-filter:blur(16px);box-shadow:0 2px 30px rgba(0,0,0,.3)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-seal{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:var(--navy2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.nav-seal img{width:28px}
+.nav-wordmark{font-family:'Bebas',Arial,sans-serif;font-size:14px;letter-spacing:3px;color:#fff;line-height:1.1}
+.nav-wordmark span{display:block;font-size:8px;letter-spacing:4px;color:var(--gold);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.7);position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.btn-consult{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:10px 24px;border-radius:2px;font-family:'Bebas',Arial,sans-serif;position:relative;overflow:hidden;display:inline-block}
+.btn-consult::before{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform .4s var(--ease)}
+.btn-consult span{position:relative;z-index:1}
+.btn-consult:hover::before{transform:translateX(0)}
+
+/* PAGE HERO */
+.page-hero{padding:160px 60px 80px;background:var(--navy);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('images/cta-bg.jpg') center/cover no-repeat;opacity:.12}
+.page-hero-content{position:relative;z-index:2;max-width:700px}
+.ph-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px;opacity:0;transform:translateY(20px)}
+.ph-line{width:32px;height:1px;background:var(--gold)}
+.ph-eye{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.ph-h1{font-family:'Bebas',Arial,sans-serif;font-size:clamp(44px,7vw,88px);line-height:1;color:#fff;margin-bottom:20px;opacity:0;transform:translateY(30px)}
+.ph-h1 em{font-style:normal;color:var(--gold)}
+.ph-desc{font-size:16px;line-height:1.75;color:rgba(255,255,255,.5);max-width:540px;opacity:0;transform:translateY(20px)}
+
+/* QUICK CONTACT STRIP */
+.quick-strip{background:var(--gold);padding:28px 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.qs-item{display:flex;align-items:center;gap:16px;padding:0 20px}
+.qs-icon{width:40px;height:40px;background:rgba(10,22,40,.15);flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:2px}
+.qs-icon svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.qs-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(10,22,40,.55);margin-bottom:2px}
+.qs-val{font-family:'Bebas',Arial,sans-serif;font-size:16px;color:var(--navy);letter-spacing:.5px}
+
+/* SECTION */
+.section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.s-line{width:32px;height:1px;background:var(--gold)}
+.s-eye-txt{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold)}
+.section-h2{font-family:'Bebas',Arial,sans-serif;font-size:clamp(32px,4vw,50px);line-height:1.15;color:var(--navy);margin-bottom:24px}
+.section-h2 em{font-style:normal;color:var(--gold)}
+.section-body{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:20px}
+.reveal{opacity:0;transform:translateY(40px)}
+
+/* MAIN CONTACT SECTION */
+#main-contact{padding:100px 60px;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;background:var(--warm)}
+
+/* INFO SIDE */
+.contact-detail-list{display:flex;flex-direction:column;gap:28px;margin-top:40px}
+.cd-item{display:flex;gap:20px;align-items:flex-start}
+.cd-icon{width:48px;height:48px;flex-shrink:0;border:1px solid rgba(201,153,89,.25);display:flex;align-items:center;justify-content:center}
+.cd-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cd-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.cd-val{font-size:15px;color:var(--navy);line-height:1.5}
+.cd-val a{color:var(--navy);transition:color .3s}
+.cd-val a:hover{color:var(--gold)}
+
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:32px}
+.hour-item{background:var(--cream);padding:16px 20px}
+.hour-day{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.hour-time{font-family:'Bebas',Arial,sans-serif;font-size:18px;color:var(--navy)}
+
+/* FORM SIDE */
+.contact-form-card{background:var(--cream);padding:52px 48px;border-radius:2px}
+.cf-title{font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);margin-bottom:8px}
+.cf-sub{font-size:14px;color:var(--muted);margin-bottom:36px;line-height:1.5}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0}
+.cf-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.cf-group label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.cf-group input,.cf-group select,.cf-group textarea{background:#fff;border:1px solid rgba(201,153,89,.2);border-radius:2px;padding:14px 16px;font-size:14px;color:var(--navy);font-family:'Bebas',Arial,sans-serif;outline:none;transition:border-color .3s;width:100%}
+.cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{border-color:var(--gold)}
+.cf-group textarea{resize:none}
+.btn-submit-full{width:100%;background:var(--navy);color:#fff;border:none;padding:18px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Bebas',Arial,sans-serif;position:relative;overflow:hidden;border-radius:2px;margin-top:8px;cursor:none;transition:transform .2s}
+.btn-submit-full::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);transition:transform .4s var(--ease)}
+.btn-submit-full span{position:relative;z-index:1}
+.btn-submit-full:hover::before{transform:translateX(0)}
+.btn-submit-full:hover span{color:var(--navy)}
+.form-success{display:none;background:rgba(201,153,89,.08);border:1px solid rgba(201,153,89,.3);padding:20px 24px;border-radius:2px;margin-top:16px;text-align:center}
+.form-success.show{display:block}
+.form-success div{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:var(--navy);margin-bottom:4px}
+.form-success p{font-size:13px;color:var(--muted)}
+
+/* LOCATIONS */
+#locations{padding:100px 60px;background:var(--cream)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:64px}
+.loc-card{background:#fff;padding:44px 40px;position:relative;overflow:hidden}
+.loc-num{font-family:'Bebas',Arial,sans-serif;font-size:72px;color:rgba(201,153,89,.08);position:absolute;top:16px;right:24px;line-height:1}
+.loc-type{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.loc-name{font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);margin-bottom:8px}
+.loc-address{font-size:15px;line-height:1.7;color:var(--muted);margin-bottom:24px}
+.loc-pin{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gold)}
+.loc-pin svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* MAP PLACEHOLDER */
+.map-placeholder{width:100%;height:320px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:2px;cursor:none;transition:opacity .3s}
+.map-placeholder:hover{opacity:.9}
+.map-icon{width:48px;height:48px;border:1px solid rgba(201,153,89,.4);display:flex;align-items:center;justify-content:center}
+.map-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.map-lbl{font-family:'Bebas',Arial,sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* SOCIAL / QUICK ACTIONS */
+#actions{padding:80px 60px;background:var(--navy)}
+.actions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+.action-card{background:rgba(255,255,255,.03);padding:40px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;transition:background .3s;cursor:none}
+.action-card:hover{background:rgba(255,255,255,.07)}
+.action-icon{width:48px;height:48px;border:1px solid rgba(201,153,89,.25);display:flex;align-items:center;justify-content:center}
+.action-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.action-title{font-family:'Bebas',Arial,sans-serif;font-size:22px;color:#fff}
+.action-desc{font-size:14px;line-height:1.6;color:rgba(255,255,255,.4);flex:1}
+.action-link{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;margin-top:8px}
+.action-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* FOOTER */
+footer{background:var(--navy);padding:60px 60px 32px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px}
+.footer-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,.3);margin-bottom:24px}
+.footer-h{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.35);transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:1px}
+.footer-reg{font-size:10px;color:rgba(255,255,255,.15);letter-spacing:1.5px;text-transform:uppercase}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  #nav{padding:18px 32px}
+  .nav-links{display:none}
+  .page-hero{padding:120px 32px 72px}
+  .quick-strip{padding:20px 32px;grid-template-columns:1fr 1fr}
+  #main-contact{grid-template-columns:1fr;gap:48px;padding:80px 32px}
+  .loc-grid{grid-template-columns:1fr}
+  .actions-grid{grid-template-columns:1fr 1fr}
+  #locations,#actions{padding:60px 32px}
+  footer{padding:48px 32px 24px}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .page-hero{padding:100px 20px 60px}
+  .quick-strip{grid-template-columns:1fr;padding:20px}
+  #main-contact,#locations,#actions{padding:60px 20px}
+  .contact-form-card{padding:32px 24px}
+  .actions-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .cf-row{grid-template-columns:1fr}
+  .hours-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-seal"><img src="images/logo.png" alt="MM"></div>
+    <div class="nav-wordmark">Masekela Masenya Inc<span>Attorneys &nbsp;|&nbsp; Est. 2012</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="practice.html">Practice Areas</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="index.html#testimonials">Clients</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="btn-consult js-open-booking"><span>Book Consultation</span></button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="ph-eyebrow"><div class="ph-line"></div><span class="ph-eye">Get In Touch</span></div>
+    <h1 class="ph-h1">Let's Start<br><em>Your Legal Journey</em></h1>
+    <p class="ph-desc">Whether you need urgent legal assistance or want to discuss a potential matter, we are available and ready to help. Reach out by phone, email, or use the form below.</p>
+  </div>
+</div>
+
+<!-- QUICK STRIP -->
+<div class="quick-strip">
+  <div class="qs-item">
+    <div class="qs-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+    <div><div class="qs-lbl">Main Line</div><div class="qs-val">(012) 771 5832</div></div>
+  </div>
+  <div class="qs-item">
+    <div class="qs-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+    <div><div class="qs-lbl">Direct Line</div><div class="qs-val">(012) 772 3392</div></div>
+  </div>
+  <div class="qs-item">
+    <div class="qs-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+    <div><div class="qs-lbl">Email</div><div class="qs-val">alphy@maslaw.co.za</div></div>
+  </div>
+  <div class="qs-item">
+    <div class="qs-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div><div class="qs-lbl">Hours</div><div class="qs-val">Mon - Fri, 08:00 - 17:00</div></div>
+  </div>
+</div>
+
+<!-- MAIN CONTACT -->
+<section id="main-contact">
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Contact Information</span></div>
+    <h2 class="section-h2">Reach Us<br><em>Any Way You Prefer</em></h2>
+    <p class="section-body">We respond to all enquiries within 2 hours during business hours. For urgent matters, please call us directly - we are available Monday through Friday.</p>
+
+    <div class="contact-detail-list">
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="cd-lbl">Physical Address</div>
+          <div class="cd-val">Suite N503-N504, JSL Towers<br>259 Pretorius Street<br>Pretoria, 0002</div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div>
+          <div class="cd-lbl">Telephone</div>
+          <div class="cd-val">
+            <a href="tel:0127715832">(012) 771 5832</a><br>
+            <a href="tel:0127723392">(012) 772 3392</a>
+          </div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2" ry="2"/><polyline points="3,8 12,14 21,8"/></svg></div>
+        <div>
+          <div class="cd-lbl">Fax</div>
+          <div class="cd-val">086 6781 370</div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div>
+          <div class="cd-lbl">Email</div>
+          <div class="cd-val">
+            <a href="mailto:alphy@maslaw.co.za">alphy@maslaw.co.za</a><br>
+            <a href="mailto:daphney@maslaw.co.za" style="font-size:13px;color:var(--muted)">daphney@maslaw.co.za (Paralegal)</a>
+          </div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 1.1-.9 2-2 2a2 2 0 110 4 2 2 0 110 4 2 2 0 01-2-2c0-1.1.9-2 2-2a2 2 0 000-4 2 2 0 010-4z"/></svg></div>
+        <div>
+          <div class="cd-lbl">Web</div>
+          <div class="cd-val"><a href="http://www.maslaw.co.za" target="_blank">www.maslaw.co.za</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px">
+      <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Office Hours</span></div>
+      <div class="hours-grid">
+        <div class="hour-item">
+          <div class="hour-day">Monday - Thursday</div>
+          <div class="hour-time">08:00 - 17:00</div>
+        </div>
+        <div class="hour-item">
+          <div class="hour-day">Friday</div>
+          <div class="hour-time">08:00 - 16:30</div>
+        </div>
+        <div class="hour-item">
+          <div class="hour-day">Saturday</div>
+          <div class="hour-time">By Appointment</div>
+        </div>
+        <div class="hour-item" style="opacity:.5">
+          <div class="hour-day">Sunday</div>
+          <div class="hour-time">Closed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="reveal">
+    <div class="contact-form-card">
+      <div class="cf-title">Send Us a Message</div>
+      <p class="cf-sub">We respond to all enquiries within 2 business hours. For urgent legal assistance, please call us directly.</p>
+      <form id="contact-form" onsubmit="handleContactSubmit(event)">
+        <div class="cf-row">
+          <div class="cf-group"><label>First Name *</label><input type="text" name="fname" placeholder="Your first name" required></div>
+          <div class="cf-group"><label>Last Name *</label><input type="text" name="lname" placeholder="Your surname" required></div>
+        </div>
+        <div class="cf-group"><label>Email Address *</label><input type="email" name="email" placeholder="Your email address" required></div>
+        <div class="cf-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(012) ..."></div>
+        <div class="cf-group">
+          <label>Area of Law</label>
+          <select name="area">
+            <option value="">Select a practice area</option>
+            <option>Commercial Law</option>
+            <option>Family Law</option>
+            <option>Labour Law</option>
+            <option>Medical Malpractice</option>
+            <option>Estate Law</option>
+            <option>Criminal Law</option>
+            <option>Third-Party Claims</option>
+            <option>Consumer Protection</option>
+            <option>Insurance Law</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="cf-group"><label>Subject *</label><input type="text" name="subject" placeholder="Brief subject of your enquiry" required></div>
+        <div class="cf-group"><label>Message *</label><textarea name="message" rows="5" placeholder="Please describe your legal matter or enquiry in as much detail as you are comfortable sharing..." required></textarea></div>
+        <div class="cf-group" style="flex-direction:row;align-items:center;gap:12px">
+          <input type="checkbox" name="consent" id="consent" required style="width:16px;height:16px;accent-color:var(--gold);cursor:none">
+          <label for="consent" style="font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:none">I understand that this message is subject to attorney-client confidentiality</label>
+        </div>
+        <button type="submit" class="btn-submit-full"><span id="submit-txt">Send Message</span></button>
+        <div class="form-success" id="form-success">
+          <div>Message Sent Successfully</div>
+          <p>Thank you. We will respond to your enquiry within 2 business hours. For urgent matters, please call (012) 771 5832.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Find Us</span></div>
+    <h2 class="section-h2">Our <em>Office Location</em></h2>
+  </div>
+  <div class="loc-grid">
+    <div class="loc-card reveal">
+      <div class="loc-num">01</div>
+      <div class="loc-type">Main Office</div>
+      <div class="loc-name">JSL Towers, Pretoria</div>
+      <p class="loc-address">Suite N503-N504, JSL Towers<br>259 Pretorius Street<br>Pretoria, 0002<br>Gauteng, South Africa</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+        <div style="display:flex;gap:12px;font-size:13px;color:var(--muted);align-items:center">
+          <svg style="width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72"/></svg>
+          <a href="tel:0127715832" style="color:var(--navy)">(012) 771 5832 &nbsp;|&nbsp; (012) 772 3392</a>
+        </div>
+        <div style="display:flex;gap:12px;font-size:13px;color:var(--muted);align-items:center">
+          <svg style="width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <span>Secure building, visitor parking available</span>
+        </div>
+        <div style="display:flex;gap:12px;font-size:13px;color:var(--muted);align-items:center">
+          <svg style="width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon - Fri: 08:00 - 17:00</span>
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=259+Pretorius+Street+Pretoria" target="_blank" class="loc-pin">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Open in Google Maps
+      </a>
+    </div>
+    <div class="map-placeholder reveal" onclick="window.open('https://maps.google.com/?q=259+Pretorius+Street+Pretoria','_blank')">
+      <div class="map-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="map-lbl">259 Pretorius Street, Pretoria</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3)">Click to open Google Maps</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ACTIONS -->
+<section id="actions">
+  <div style="max-width:600px">
+    <div class="section-eyebrow reveal"><div class="s-line"></div><span class="s-eye-txt" style="color:var(--gold)">Next Steps</span></div>
+    <h2 class="section-h2 reveal" style="color:#fff">How Would You Like<br>to <em>Proceed?</em></h2>
+  </div>
+  <div class="actions-grid">
+    <div class="action-card reveal">
+      <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="action-title">Call Us Directly</div>
+      <p class="action-desc">For urgent matters, call us directly on (012) 771 5832. We are available Monday to Friday during office hours.</p>
+      <a href="tel:0127715832" class="action-link">(012) 771 5832 <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+    <div class="action-card reveal">
+      <div class="action-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="action-title">Book a Consultation</div>
+      <p class="action-desc">Schedule a formal consultation at a time that suits you. All consultations are confidential and handled directly by our Founding Director.</p>
+      <button class="action-link js-open-booking">Book Now <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+    </div>
+    <div class="action-card reveal">
+      <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="action-title">Send an Email</div>
+      <p class="action-desc">Email us directly at alphy@maslaw.co.za. We reply to all emails within 2 business hours and treat all correspondence as confidential.</p>
+      <a href="mailto:alphy@maslaw.co.za" class="action-link">alphy@maslaw.co.za <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a class="nav-logo" href="index.html" style="margin-bottom:20px;display:flex">
+        <div class="nav-seal"><img src="images/logo.png" alt="MM"></div>
+        <div class="nav-wordmark">Masekela Masenya Inc<span>Attorneys &nbsp;|&nbsp; Est. 2012</span></div>
+      </a>
+      <p class="footer-desc">Premier attorneys in Pretoria. Suite N503-N504, JSL Towers, 259 Pretorius Street, Pretoria, 0002.</p>
+      <p class="footer-desc" style="margin-top:8px">VAT: 4500323045 &nbsp;&middot;&nbsp; LPC: 31523 &nbsp;&middot;&nbsp; Firm: 13887</p>
+    </div>
+    <div>
+      <div class="footer-h">Practice Areas</div>
+      <ul class="footer-links">
+        <li><a href="practice.html">Commercial Law</a></li>
+        <li><a href="practice.html">Family Law</a></li>
+        <li><a href="practice.html">Labour Law</a></li>
+        <li><a href="practice.html">Medical Malpractice</a></li>
+        <li><a href="practice.html">Estate Law</a></li>
+        <li><a href="practice.html">Criminal Law</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="practice.html">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" class="js-open-booking">Book Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:0127715832">(012) 771 5832</a></li>
+        <li><a href="tel:0127723392">(012) 772 3392</a></li>
+        <li><a href="mailto:alphy@maslaw.co.za">alphy@maslaw.co.za</a></li>
+        <li style="font-size:11px;margin-top:8px;line-height:1.6">Fax: 086 6781 370</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2025 Masekela Masenya Inc. All rights reserved.</span>
+    <span class="footer-reg">Attorneys, Notaries &amp; Conveyancers</span>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div id="booking-overlay">
+  <div class="booking-modal">
+    <div class="bm-header">
+      <div class="bm-title">Book a Consultation</div>
+      <button class="bm-close js-close-booking"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="bm-body">
+      <p>To book a consultation, call us directly or complete the form on this page and mention your preferred appointment time.</p>
+      <p style="font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy)">(012) 771 5832</p>
+      <p style="margin-bottom:16px;color:var(--muted)">Monday - Friday: 08:00 - 17:00</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:32px">Or email: <a href="mailto:alphy@maslaw.co.za" style="color:var(--gold)">alphy@maslaw.co.za</a></p>
+    </div>
+  </div>
+</div>
+
+<style>
+.booking-modal{background:var(--warm);width:540px;max-width:96vw;border-radius:4px;position:relative;transform:translateY(24px) scale(.98);transition:transform .4s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.4)}
+#booking-overlay.open .booking-modal{transform:translateY(0) scale(1)}
+.bm-close svg{display:block}
+</style>
+
+<script>
+const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+gsap.ticker.add(time => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+gsap.registerPlugin(ScrollTrigger);
+const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+if(window.innerWidth>768){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+  document.querySelectorAll('a,button,.action-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'))});
+}
+gsap.timeline({delay:.2,defaults:{ease:'power3.out'}})
+  .to('.ph-eyebrow',{opacity:1,y:0,duration:.7})
+  .to('.ph-h1',{opacity:1,y:0,duration:.8},'-=.4')
+  .to('.ph-desc',{opacity:1,y:0,duration:.6},'-=.4');
+gsap.utils.toArray('.reveal').forEach(el=>{
+  gsap.fromTo(el,{opacity:0,y:44},{opacity:1,y:0,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});
+});
+
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<span>Sending...</span>';
+  btn.disabled = true;
+  // Simulate send - replace with Formspree action when going live
+  setTimeout(() => {
+    btn.innerHTML = '<span>Message Sent - We will be in touch!</span>';
+    e.target.reset();
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.disabled = false;
+    }, 4000);
+  }, 1200);
+}
+
+const overlay=document.getElementById('booking-overlay');
+document.querySelectorAll('.js-open-booking').forEach(b=>b.addEventListener('click',()=>{overlay.classList.add('open');document.body.style.overflow='hidden'}));
+document.querySelectorAll('.js-close-booking').forEach(b=>b.addEventListener('click',()=>{overlay.classList.remove('open');document.body.style.overflow=''}));
+overlay.addEventListener('click',e=>{if(e.target===overlay){overlay.classList.remove('open');document.body.style.overflow=''}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){overlay.classList.remove('open');document.body.style.overflow=''}});
+</script>
+<div id="scroll-progress"></div>
+
+<script>
+/* Scroll progress */
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);
+  const b=document.getElementById('scroll-progress');
+  if(b)b.style.width=(p*100)+'%';
+},{passive:true});
+/* 3D Tilt on cards */
+if(window.innerWidth>768){
+  document.querySelectorAll('.val-card,.cred-card,.consultant-card,.timeline-item').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(700px) rotateX(${-y*8}deg) rotateY(${x*8}deg) translateY(-4px) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masekela Masenya Inc - Attorneys | We Mediate. We Serve. We Involved.</title>
+<meta name="description" content="Masekela Masenya Inc - Premier attorneys in Pretoria. Commercial, Family, Labour, Criminal Law, Medical Malpractice, Estate. 308 High Court appearances. Book a consultation today.">
+<style>@font-face{font-family:'Bebas';src:url('fonts/bebas-neue.woff2') format('woff2');font-weight:400;}
+/* ============================================
+   MICRO LIGHT SYSTEM
+   ============================================ */
+
+/* Ambient cursor blob */
+#ambient-light {
+  position: fixed; pointer-events: none; z-index: 0;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,153,89,.07) 0%, transparent 70%);
+  transform: translate(-50%,-50%);
+  transition: opacity .5s;
+  mix-blend-mode: screen;
+  filter: blur(60px);
+}
+
+/* 3D tilt cards */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(900px) rotateX(0deg) rotateY(0deg);
+  transition: transform .08s linear, box-shadow .3s;
+  will-change: transform;
+}
+.tilt-card .tilt-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 10;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
+  transition: background .08s linear;
+  mix-blend-mode: overlay;
+}
+.tilt-card:hover { box-shadow: 0 28px 60px rgba(0,0,0,.22), 0 0 0 1px rgba(201,153,89,.12); }
+
+/* Gold glow on stat numbers */
+.stat-num { transition: text-shadow .3s; }
+.stat-num.glowing { text-shadow: 0 0 30px rgba(201,153,89,.7), 0 0 60px rgba(201,153,89,.3); }
+
+/* Button shimmer sweep */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,.25) 50%, transparent 100%);
+  transition: left .5s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.btn-shimmer:hover::after { left: 160%; }
+
+/* Image micro-parallax container */
+.img-parallax-wrap {
+  overflow: hidden;
+  border-radius: 2px;
+}
+.img-parallax-wrap img {
+  transform: scale(1.08);
+  transition: transform 8s ease-out;
+  will-change: transform;
+}
+
+/* Glowing gold line decoration */
+.gold-pulse-line {
+  animation: goldPulse 3s ease-in-out infinite;
+}
+@keyframes goldPulse {
+  0%, 100% { opacity: .5; box-shadow: 0 0 0 rgba(201,153,89,0); }
+  50% { opacity: 1; box-shadow: 0 0 12px rgba(201,153,89,.5); }
+}
+
+/* Practice card hover light */
+.practice-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s;
+}
+.practice-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(201,153,89,.08) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity .35s;
+  z-index: 1;
+  pointer-events: none;
+}
+.practice-card:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(0,0,0,.14); }
+.practice-card:hover::before { opacity: 1; }
+
+/* Section heading char hover */
+.char-hover span {
+  display: inline-block;
+  transition: color .2s, transform .2s;
+}
+.char-hover:hover span { color: var(--gold); transform: translateY(-2px); }
+.char-hover span:hover { transform: translateY(-4px) scale(1.05); }
+
+/* Team card hover lift with light */
+.team-card {
+  transition: transform .3s var(--ease), box-shadow .3s;
+  position: relative;
+  overflow: hidden;
+}
+.team-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
+  transform: skewX(-15deg);
+  transition: left .6s ease;
+  pointer-events: none;
+}
+.team-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,.18); }
+.team-card:hover::after { left: 120%; }
+
+/* Testimonial card micro-light */
+.test-card {
+  transition: transform .3s var(--ease), box-shadow .3s, border-color .3s;
+}
+.test-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+  border-color: var(--gold) !important;
+}
+
+/* Gold accent line draw animation */
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.line-draw { transform-origin: left; transform: scaleX(0); }
+.line-draw.drawn { animation: drawLine .8s cubic-bezier(.77,0,.18,1) forwards; }
+
+/* CTA button particle canvas */
+.btn-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  overflow: visible;
+}
+
+/* Scroll progress indicator */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  z-index: 9999;
+  box-shadow: 0 0 8px rgba(201,153,89,.6);
+  transition: width .1s linear;
+}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Masekela Masenya Inc">
+<meta property="og:title" content="Masekela Masenya Inc | Attorneys, Notaries & Conveyancers – Pretoria">
+<meta property="og:description" content="Over a decade of trusted legal representation in Pretoria. Commercial law, family law, labour, criminal defence, estate planning and more. LPC Reg. 31523.">
+<meta property="og:url" content="https://maslaw.co.za/">
+<meta property="og:image" content="https://maslaw.co.za/images/og-share.jpg">
+<meta property="og:image:width" content="1376">
+<meta property="og:image:height" content="768">
+<meta property="og:image:alt" content="Masekela Masenya Inc - Attorneys, Notaries and Conveyancers Pretoria">
+<meta name="twitter:image" content="https://maslaw.co.za/images/og-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Masekela Masenya Inc | Attorneys, Notaries & Conveyancers – Pretoria">
+<meta name="twitter:description" content="Over a decade of trusted legal representation in Pretoria. Commercial law, family law, labour, criminal defence, estate planning and more. LPC Reg. 31523.">
+<link rel="canonical" href="https://maslaw.co.za/">
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0A1628;--navy2:#1B2A4A;
+  --gold:#C99959;--gold2:#E4B86A;
+  --cream:#F5F0E8;--warm:#FDFBF7;
+  --text:#1a1a2e;--muted:#6b7280;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html{scroll-behavior:auto}
+em{font-style:normal;color:var(--gold)}
+body{font-family:'Bebas',Arial,sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;cursor:none}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{cursor:none;border:none;background:none;font:inherit}
+
+/* CURSOR */
+#cursor-dot{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:background .2s;mix-blend-mode:difference}
+#cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.7;transition:width .3s var(--ease),height .3s var(--ease),opacity .3s,border-color .2s}
+.cursor-hover #cursor-ring{width:56px;height:56px;opacity:.4;border-color:var(--gold2)}
+.cursor-hover #cursor-dot{background:var(--gold2)}
+.cursor-text #cursor-ring{width:80px;height:80px;background:rgba(201,153,89,.08);border-color:var(--gold)}
+@media(max-width:768px){#cursor-dot,#cursor-ring{display:none}body,button{cursor:auto}}
+
+/* PRELOADER */
+#preloader{position:fixed;inset:0;background:var(--navy);z-index:9000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .8s,transform .8s}
+.pl-seal{width:80px;height:80px;border-radius:50%;border:2px solid var(--gold);background:var(--navy2);display:flex;align-items:center;justify-content:center;overflow:hidden;animation:plPulse 1.5s ease-in-out infinite}
+.pl-seal img{width:54px}
+@keyframes plPulse{0%,100%{box-shadow:0 0 0 0 rgba(201,153,89,.4)}50%{box-shadow:0 0 0 16px rgba(201,153,89,0)}}
+.pl-name{font-family:'Bebas',Arial,sans-serif;font-size:22px;letter-spacing:6px;color:var(--gold)}
+.pl-bar{width:200px;height:1px;background:rgba(201,153,89,.2);overflow:hidden}
+.pl-bar::after{content:'';display:block;height:100%;background:var(--gold);animation:plBar 1.8s ease-in-out forwards}
+@keyframes plBar{from{width:0}to{width:100%}}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s,box-shadow .4s}
+#nav.scrolled{background:rgba(10,22,40,.96);backdrop-filter:blur(16px);padding:14px 60px;box-shadow:0 2px 30px rgba(0,0,0,.3)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-seal{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:var(--navy2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.nav-seal img{width:28px}
+.nav-wordmark{font-family:'Bebas',Arial,sans-serif;font-size:14px;letter-spacing:3px;color:#fff;line-height:1.1}
+.nav-wordmark span{display:block;font-size:8px;letter-spacing:4px;color:var(--gold);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.7);position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.btn-consult{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:10px 24px;border-radius:2px;transition:background .3s,transform .2s;font-family:'Bebas',Arial,sans-serif;position:relative;overflow:hidden;display:inline-block}
+.btn-consult::before{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform .4s var(--ease)}
+.btn-consult span{position:relative;z-index:1}
+.btn-consult:hover::before{transform:translateX(0)}
+
+/* ===== CANVAS SCROLL SEQUENCE ===== */
+#seq-outer{height:350vh;position:relative}
+#seq-sticky{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:#000}
+#frame-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.seq-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,transparent 30%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.seq-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.seq-text{position:absolute;text-align:center;opacity:0;transition:none;will-change:opacity}
+#seq-text1{width:90%;top:50%;left:50%;transform:translate(-50%,-50%)}
+#seq-text2{width:90%;top:50%;left:50%;transform:translate(-50%,-50%)}
+#seq-text3{width:90%;bottom:18%;left:50%;transform:translateX(-50%)}
+.seq-firm{font-family:'Bebas',Arial,sans-serif;font-size:clamp(48px,8vw,108px);letter-spacing:8px;color:#fff;line-height:1;text-shadow:0 2px 40px rgba(0,0,0,.6)}
+.seq-firm em{font-style:normal;color:var(--gold)}
+.seq-sub{font-family:'Bebas',Arial,sans-serif;font-size:clamp(12px,1.5vw,18px);letter-spacing:7px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:12px}
+.seq-tagline{font-family:'Bebas',Arial,sans-serif;font-size:clamp(28px,5vw,68px);letter-spacing:4px;color:#fff;line-height:1.1;text-shadow:0 2px 40px rgba(0,0,0,.7)}
+.seq-tagline em{color:var(--gold)}
+.seq-enter{font-family:'Bebas',Arial,sans-serif;font-size:clamp(10px,1.2vw,14px);letter-spacing:5px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+.seq-enter::before,.seq-enter::after{content:'';display:block;width:40px;height:1px;background:var(--gold);opacity:.6}
+#seq-progress{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);width:120px;height:1px;background:rgba(255,255,255,.15)}
+#seq-progress-fill{height:100%;background:var(--gold);width:0%;transition:width .1s}
+#seq-skip{position:absolute;bottom:32px;right:48px;font-family:'Bebas',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;opacity:0;pointer-events:none;transition:color .3s,opacity .3s;background:none;border:none;display:flex;align-items:center;gap:8px}
+#seq-skip svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+#seq-skip.visible{opacity:1;pointer-events:auto}
+#seq-skip:hover{color:var(--gold)}
+.seq-gold-line{width:60px;height:1.5px;background:var(--gold);margin:16px auto;opacity:.6}
+
+/* HERO BASE */
+#hero{height:100vh;min-height:700px;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.08);transition:transform 2s ease-out}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(10,22,40,.96) 0%,rgba(10,22,40,.80) 40%,rgba(10,22,40,.30) 100%)}
+#hero-3d{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero-grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:200px 200px;mix-blend-mode:overlay}
+.hero-content{position:relative;z-index:3;padding:0 60px;max-width:820px}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;opacity:0;transform:translateY(16px)}
+.hero-line{width:40px;height:1px;background:var(--gold)}
+.hero-eyebrow-text{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.hero-h1{font-family:'Bebas',Arial,sans-serif;font-size:clamp(58px,8.5vw,116px);line-height:0.95;color:#fff;margin-bottom:0;letter-spacing:-1px}
+.hero-h1 .hw-outer{display:inline-block;overflow:hidden;vertical-align:bottom}
+.hero-h1 .hw-inner{display:inline-block;transform:translateY(110%);will-change:transform}
+.hero-h1 em{font-style:normal;color:var(--gold)}
+.hero-rule{width:72px;height:2px;background:var(--gold);transform-origin:left center;transform:scaleX(0);margin:20px 0 26px;display:block}
+.hero-tagline{font-family:'Bebas',Arial,sans-serif;font-size:clamp(16px,2vw,22px);color:rgba(255,255,255,.45);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;opacity:0;transform:translateY(14px)}
+.hero-desc{font-size:15px;line-height:1.8;color:rgba(255,255,255,.48);max-width:480px;margin-bottom:44px;opacity:0;transform:translateY(14px)}
+.hero-ctas{display:flex;gap:16px;align-items:center;opacity:0;transform:translateY(14px)}
+.btn-primary{background:var(--gold);color:var(--navy);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:16px 36px;border-radius:2px;position:relative;overflow:hidden;display:inline-block;font-family:'Bebas',Arial,sans-serif}
+.btn-primary::before{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform .4s var(--ease)}
+.btn-primary span{position:relative;z-index:1}
+.btn-primary:hover::before{transform:translateX(0)}
+.btn-outline{border:1px solid rgba(255,255,255,.35);color:rgba(255,255,255,.8);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:16px 36px;border-radius:2px;transition:border-color .3s,color .3s;font-family:'Bebas',Arial,sans-serif;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{position:absolute;bottom:48px;right:60px;display:flex;gap:48px;z-index:3;opacity:0}
+.h-stat{text-align:right}
+.h-stat-num{font-family:'Bebas',Arial,sans-serif;font-size:46px;color:var(--gold);line-height:1}
+.h-stat-num .stat-sup{font-size:22px;vertical-align:super;color:var(--gold2)}
+.h-stat-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px}
+.hero-scroll{position:absolute;bottom:48px;left:60px;z-index:3;display:flex;align-items:center;gap:12px;opacity:0}
+.scroll-line{width:40px;height:1px;background:var(--gold);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{transform:scaleX(1);opacity:1}50%{transform:scaleX(.6);opacity:.4}}
+.scroll-txt{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+/* MARQUEE */
+.marquee-strip{background:var(--gold);padding:14px 0;overflow:hidden;position:relative;z-index:5}
+.marquee-track{display:flex;animation:marqueeScroll 28s linear infinite;width:max-content}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:32px;padding:0 32px;white-space:nowrap}
+.marquee-txt{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--navy)}
+.marquee-dot{width:4px;height:4px;background:var(--navy);border-radius:50%;opacity:.5}
+
+/* ABOUT */
+#about{padding:120px 60px;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;background:var(--warm)}
+.about-img-wrap{position:relative}
+.about-img-main{width:100%;height:560px;object-fit:cover;border-radius:2px}
+.about-img-accent{position:absolute;bottom:-30px;right:-30px;width:160px;height:160px;background:var(--gold);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.acc-num{font-family:'Bebas',Arial,sans-serif;font-size:52px;color:var(--navy);line-height:1}
+.acc-lbl{font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);text-align:center;padding:0 8px}
+.about-gold-line{position:absolute;top:30px;left:-20px;width:3px;height:80px;background:var(--gold);border-radius:2px}
+.section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.s-line{width:32px;height:1px;background:var(--gold)}
+.s-eye-txt{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold)}
+.section-h2{font-family:'Bebas',Arial,sans-serif;font-size:clamp(34px,4vw,52px);line-height:1.15;color:var(--navy);margin-bottom:24px}
+.section-h2 em{font-style:normal;color:var(--gold)}
+.section-body{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:20px}
+.about-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.badge{border:1px solid rgba(201,153,89,.3);padding:8px 18px;border-radius:2px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+
+/* PRACTICE AREAS */
+#practice{padding:120px 60px;background:var(--cream);position:relative}
+.practice-header{text-align:center;max-width:600px;margin:0 auto 72px}
+.practice-header .section-eyebrow{justify-content:center}
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.practice-card{background:#fff;padding:44px 36px;position:relative;overflow:hidden;transition:transform .3s var(--ease)}
+.practice-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.practice-card:hover{transform:translateY(-4px)}
+.practice-card:hover::before{transform:scaleX(1)}
+.pc-num{font-family:'Bebas',Arial,sans-serif;font-size:64px;color:rgba(201,153,89,.1);line-height:1;position:absolute;top:24px;right:28px}
+.pc-icon{width:44px;height:44px;margin-bottom:20px;display:flex;align-items:center;justify-content:center}
+.pc-icon svg{width:36px;height:36px;stroke:var(--gold);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.pc-title{font-family:'Bebas',Arial,sans-serif;font-size:22px;color:var(--navy);margin-bottom:12px;line-height:1.2}
+.pc-desc{font-size:13.5px;line-height:1.7;color:var(--muted)}
+
+/* STATS */
+#stats{padding:100px 60px;background:var(--navy);display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:60px;align-items:center}
+.stats-intro{border-right:1px solid rgba(255,255,255,.08);padding-right:60px}
+.stats-intro .section-h2{color:#fff;font-size:36px}
+.stats-intro .section-body{color:rgba(255,255,255,.4);margin-bottom:0}
+.stat-item{text-align:center}
+.stat-num{font-family:'Bebas',Arial,sans-serif;font-size:64px;color:var(--gold);line-height:1;display:block}
+.stat-plus{font-size:28px;color:var(--gold);vertical-align:super}
+.stat-lbl{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:8px}
+
+/* TEAM */
+#team{padding:120px 60px;background:var(--warm)}
+.team-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:72px;align-items:end}
+.team-header .section-h2{margin-bottom:0}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.team-card{position:relative;overflow:hidden}
+.team-card-img{width:100%;height:480px;object-fit:cover;object-position:center top;display:block;transition:transform .6s var(--ease)}
+.team-card:hover .team-card-img{transform:scale(1.04)}
+.team-card-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,22,40,.92) 0%,rgba(10,22,40,.5) 60%,transparent);padding:36px 28px 28px}
+.tc-name{font-family:'Bebas',Arial,sans-serif;font-size:26px;color:#fff;margin-bottom:4px}
+.tc-title{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.tc-quals{font-size:11px;letter-spacing:.5px;color:rgba(255,255,255,.5);line-height:1.5}
+
+/* TESTIMONIALS */
+#testimonials{padding:120px 60px;background:var(--cream)}
+.test-header{margin-bottom:64px}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.test-card{background:#fff;padding:40px 32px;position:relative}
+.test-quote-mark{font-family:'Bebas',Arial,sans-serif;font-size:80px;line-height:.6;color:var(--gold);opacity:.25;margin-bottom:16px}
+.test-text{font-family:'Bebas',Arial,sans-serif;font-size:18px;line-height:1.7;color:var(--navy);margin-bottom:28px}
+.test-rule{width:32px;height:1px;background:var(--gold);margin-bottom:16px}
+.test-name{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:3px}
+.test-role{font-size:11px;color:var(--muted);letter-spacing:.5px}
+
+/* CTA */
+#cta{position:relative;padding:140px 60px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cta-bg{position:absolute;inset:0}
+.cta-bg img{width:100%;height:100%;object-fit:cover}
+.cta-bg::after{content:'';position:absolute;inset:0;background:rgba(10,22,40,.86)}
+.cta-content{position:relative;z-index:2;text-align:center;max-width:700px}
+.cta-content .section-eyebrow{justify-content:center}
+.cta-content .section-h2{color:#fff;font-size:clamp(36px,5vw,60px);margin-bottom:20px}
+.cta-content .section-body{color:rgba(255,255,255,.5);margin-bottom:44px;font-size:16px}
+.cta-btn-wrap{display:flex;gap:16px;justify-content:center;align-items:center}
+
+/* CONTACT */
+#contact{padding:120px 60px;background:var(--warm);display:grid;grid-template-columns:1fr 1fr;gap:100px}
+.contact-info .section-body{margin-bottom:40px}
+.contact-items{display:flex;flex-direction:column;gap:24px}
+.c-item{display:flex;gap:16px;align-items:flex-start}
+.c-icon{width:40px;height:40px;flex-shrink:0;border:1px solid rgba(201,153,89,.3);display:flex;align-items:center;justify-content:center}
+.c-icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.c-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.c-val{font-size:14px;color:var(--navy);line-height:1.5}
+.contact-form-wrap{background:var(--cream);padding:48px 44px;border-radius:2px}
+.cf-title{font-family:'Bebas',Arial,sans-serif;font-size:26px;color:var(--navy);margin-bottom:32px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.cf-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.cf-group label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.cf-group input,.cf-group select,.cf-group textarea{background:#fff;border:1px solid rgba(201,153,89,.2);border-radius:2px;padding:12px 14px;font-size:13px;color:var(--navy);font-family:'Bebas',Arial,sans-serif;outline:none;transition:border-color .3s}
+.cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{border-color:var(--gold)}
+.cf-group textarea{resize:none}
+.btn-submit{width:100%;background:var(--navy);color:#fff;border:none;padding:16px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Bebas',Arial,sans-serif;position:relative;overflow:hidden;transition:background .3s,transform .2s;border-radius:2px;margin-top:8px}
+.btn-submit::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);transition:transform .4s var(--ease)}
+.btn-submit span{position:relative;z-index:1}
+.btn-submit:hover::before{transform:translateX(0)}
+.btn-submit:hover span{color:var(--navy)}
+
+/* FOOTER */
+footer{background:var(--navy);padding:60px 60px 32px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px}
+.footer-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,.3);margin-bottom:24px}
+.footer-h{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.35);transition:color .3s;letter-spacing:.5px}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:1px}
+.footer-reg{font-size:10px;color:rgba(255,255,255,.15);letter-spacing:1.5px;text-transform:uppercase}
+
+/* WORD SPLIT REVEAL */
+.word-split .word{display:inline-block;overflow:hidden}
+.word-split .word .inner{display:inline-block;transform:translateY(110%);opacity:0}
+
+/* CHAR SPLIT */
+.char-split .char{display:inline-block;opacity:0;transform:translateY(20px)}
+
+/* MAGNETIC BTN */
+.mag-btn{display:inline-block;position:relative}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px)}
+
+/* BOOKING MODAL */
+#booking-overlay{position:fixed;inset:0;background:rgba(10,22,40,.75);backdrop-filter:blur(8px);z-index:5000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+#booking-overlay.open{opacity:1;pointer-events:all}
+.booking-modal{background:var(--warm);width:840px;max-width:96vw;max-height:92vh;overflow-y:auto;border-radius:4px;position:relative;transform:translateY(24px) scale(.98);transition:transform .4s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.4)}
+#booking-overlay.open .booking-modal{transform:translateY(0) scale(1)}
+.booking-modal::-webkit-scrollbar{width:4px}
+.booking-modal::-webkit-scrollbar-thumb{background:rgba(201,153,89,.3);border-radius:2px}
+.bm-header{background:var(--navy);padding:28px 36px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:2}
+.bm-title{font-family:'Bebas',Arial,sans-serif;font-size:22px;color:#fff;letter-spacing:1px}
+.bm-close{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .3s,background .3s}
+.bm-close:hover{border-color:var(--gold);background:rgba(201,153,89,.1)}
+.bm-close svg{width:16px;height:16px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:1.5}
+.bm-steps{background:var(--cream);padding:20px 36px;display:flex;align-items:center;border-bottom:1px solid rgba(201,153,89,.15)}
+.bm-step{display:flex;align-items:center;gap:10px;flex:1}
+.bm-step-num{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(201,153,89,.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(201,153,89,.4);flex-shrink:0;transition:all .3s}
+.bm-step.active .bm-step-num{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.bm-step.done .bm-step-num{background:var(--navy);border-color:var(--navy);color:#fff}
+.bm-step-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,153,89,.4);transition:color .3s}
+.bm-step.active .bm-step-lbl{color:var(--gold)}
+.bm-step.done .bm-step-lbl{color:var(--navy)}
+.bm-step-connector{flex:1;height:1px;background:rgba(201,153,89,.2);margin:0 8px}
+.bm-body{padding:36px}
+.bm-panel{display:none}
+.bm-panel.active{display:block}
+.bm-panel-title{font-family:'Bebas',Arial,sans-serif;font-size:24px;color:var(--navy);margin-bottom:6px}
+.bm-panel-sub{font-size:13px;color:var(--muted);margin-bottom:28px}
+.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.area-card{border:1.5px solid rgba(201,153,89,.2);border-radius:2px;padding:20px 16px;cursor:none;transition:border-color .3s,background .3s;text-align:left}
+.area-card:hover,.area-card.selected{border-color:var(--gold);background:rgba(201,153,89,.06)}
+.area-card.selected .area-card-name{color:var(--gold)}
+.area-card-icon{width:32px;height:32px;margin-bottom:10px}
+.area-card-icon svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.area-card-name{font-family:'Bebas',Arial,sans-serif;font-size:16px;color:var(--navy);margin-bottom:4px;line-height:1.2}
+.area-card-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.calendar-wrap{display:grid;grid-template-columns:1fr 260px;gap:28px}
+.cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.cal-month{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:var(--navy)}
+.cal-nav-btn{width:32px;height:32px;border:1px solid rgba(201,153,89,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:none;transition:all .3s}
+.cal-nav-btn:hover{border-color:var(--gold);background:rgba(201,153,89,.1)}
+.cal-nav-btn svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-day-header{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:center;padding:4px 0}
+.cal-day{width:100%;aspect-ratio:1;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--navy);cursor:none;transition:all .2s;border:1px solid transparent}
+.cal-day:hover:not(.disabled):not(.empty){border-color:var(--gold);background:rgba(201,153,89,.08)}
+.cal-day.selected{background:var(--gold);color:var(--navy)}
+.cal-day.today{color:var(--gold)}
+.cal-day.disabled,.cal-day.empty{color:rgba(0,0,0,.15);cursor:default}
+.cal-selected-info{background:var(--cream);padding:20px;border-radius:2px}
+.cal-sel-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.cal-sel-date{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:var(--navy);margin-bottom:16px;min-height:28px}
+.cal-tip{font-size:11px;color:var(--muted);line-height:1.6}
+.time-slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.time-slot{border:1.5px solid rgba(201,153,89,.2);border-radius:2px;padding:14px 10px;text-align:center;cursor:none;transition:all .2s}
+.time-slot:hover:not(.unavailable),.time-slot.selected{border-color:var(--gold);background:rgba(201,153,89,.08)}
+.time-slot.selected .ts-time{color:var(--gold)}
+.time-slot.unavailable{opacity:.35;cursor:default}
+.ts-time{font-family:'Bebas',Arial,sans-serif;font-size:18px;color:var(--navy);margin-bottom:3px}
+.ts-dur{font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+.ts-avail{font-size:9px;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-top:4px}
+.time-slot.unavailable .ts-avail{color:var(--muted)}
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.full-span{grid-column:1 / -1}
+.bm-field{display:flex;flex-direction:column;gap:6px}
+.bm-field label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.bm-field input,.bm-field select,.bm-field textarea{background:#fff;border:1px solid rgba(201,153,89,.2);border-radius:2px;padding:12px 14px;font-size:13px;color:var(--navy);font-family:'Bebas',Arial,sans-serif;outline:none;transition:border-color .3s;cursor:none}
+.bm-field input:focus,.bm-field select:focus,.bm-field textarea:focus{border-color:var(--gold)}
+.bm-field textarea{resize:none}
+.confirm-seal{width:80px;height:80px;border-radius:50%;background:rgba(201,153,89,.1);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.confirm-seal svg{width:36px;height:36px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.confirm-title{font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);text-align:center;margin-bottom:8px}
+.confirm-sub{text-align:center;font-size:14px;color:var(--muted);margin-bottom:32px}
+.confirm-ref{background:var(--cream);padding:20px 28px;border-radius:2px;text-align:center;margin-bottom:28px;border:1px solid rgba(201,153,89,.2)}
+.ref-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.ref-num{font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);letter-spacing:3px}
+.confirm-details-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:28px}
+.cd-item{background:#fff;padding:16px 20px}
+.cd-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.cd-val{font-size:14px;color:var(--navy)}
+.confirm-notice{background:rgba(201,153,89,.08);border:1px solid rgba(201,153,89,.2);border-radius:2px;padding:16px 20px;font-size:12px;color:var(--muted);line-height:1.6}
+.bm-footer{padding:24px 36px;border-top:1px solid rgba(201,153,89,.15);display:flex;justify-content:space-between;align-items:center;background:var(--cream);position:sticky;bottom:0}
+.bm-back{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:none;transition:color .3s;padding:12px 0;font-family:'Bebas',Arial,sans-serif;background:none;border:none}
+.bm-back:hover{color:var(--navy)}
+.bm-next{background:var(--navy);color:#fff;padding:14px 36px;border-radius:2px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Bebas',Arial,sans-serif;cursor:none;border:none;transition:background .3s,transform .2s}
+.bm-next:hover{background:var(--gold);color:var(--navy);transform:translateY(-1px)}
+.bm-error{font-size:11px;color:#c0392b;letter-spacing:.5px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  #nav,#nav.scrolled{padding:18px 32px}
+  .nav-links{display:none}
+  .hero-content{padding:0 32px}
+  .hero-stats{right:32px;gap:32px}
+  .hero-scroll{left:32px}
+  #about{grid-template-columns:1fr;gap:48px;padding:80px 32px}
+  .about-img-main{height:380px}
+  .practice-grid{grid-template-columns:1fr 1fr}
+  #stats{grid-template-columns:1fr 1fr;gap:40px;padding:80px 32px}
+  .stats-intro{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:40px;grid-column:1/-1}
+  .team-grid,.team-header{grid-template-columns:1fr}
+  .test-grid{grid-template-columns:1fr 1fr}
+  #contact{grid-template-columns:1fr;gap:48px;padding:80px 32px}
+  footer{padding:48px 32px 24px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .area-grid,.calendar-wrap{grid-template-columns:1fr}
+  .time-slots-grid{grid-template-columns:repeat(3,1fr)}
+  .details-grid,.confirm-details-grid{grid-template-columns:1fr}
+  #practice,#team,#testimonials,#cta{padding:80px 32px}
+  .seq-firm{font-size:clamp(36px,7vw,80px)}
+}
+/* HERO MOBILE */
+@media(max-width:1024px){
+  .hero-stats{bottom:32px;right:24px;gap:28px}
+  .h-stat-num{font-size:36px}
+  #hero-content{padding:0 32px}
+}
+@media(max-width:600px){
+  .hero-content{padding:0 24px!important}
+  .hero-h1{font-size:clamp(52px,14vw,80px)!important;letter-spacing:0}
+  .hero-stats{bottom:24px;right:20px;gap:20px}
+  .h-stat-num{font-size:28px}
+  #hero-3d{display:none}
+  .hero-scroll{left:24px}
+}
+@media(max-width:600px){
+  .hero-content{padding:0 20px;max-width:100%}
+  .hero-stats{flex-direction:column;gap:16px;right:20px;bottom:100px}
+  .hero-scroll{left:20px}
+  #about,#practice,#stats,#team,#testimonials,#contact,footer{padding:60px 20px}
+  .practice-grid,.test-grid{grid-template-columns:1fr}
+  .time-slots-grid{grid-template-columns:repeat(2,1fr)}
+  .area-grid{grid-template-columns:1fr}
+  .bm-step-lbl{display:none}
+  .bm-body,.bm-footer{padding:20px}
+  .footer-top{grid-template-columns:1fr}
+  .cf-row{grid-template-columns:1fr}
+  #cta{padding:80px 20px}
+  .cta-btn-wrap{flex-direction:column}
+  #seq-text1 .seq-firm{font-size:clamp(32px,9vw,56px);letter-spacing:4px}
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div id="ambient-light"></div>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pl-seal"><img src="images/logo.png" alt="MM"></div>
+  <div class="pl-name">Masekela Masenya</div>
+  <div class="pl-bar"></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-seal"><img src="images/logo.png" alt="MM"></div>
+    <div class="nav-wordmark">Masekela Masenya Inc<span>Attorneys &nbsp;|&nbsp; Est. 2012</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="practice.html">Practice Areas</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="index.html#testimonials">Clients</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="btn-consult js-open-booking"><span>Book Consultation</span></button>
+</nav>
+
+<!-- ===== CANVAS SCROLL SEQUENCE ===== -->
+<div id="seq-outer">
+  <div id="seq-sticky">
+    <canvas id="frame-canvas"></canvas>
+    <div class="seq-vignette"></div>
+
+    <!-- TEXT STATE 1: Firm Identity -->
+    <div id="seq-text1" class="seq-text">
+      <div class="seq-firm">MASEKELA<br><em>MASENYA</em> INC</div>
+      <div class="seq-sub">Attorneys, Notaries &amp; Conveyancers &nbsp;&middot;&nbsp; Pretoria</div>
+    </div>
+
+    <!-- TEXT STATE 2: Tagline -->
+    <div id="seq-text2" class="seq-text">
+      <div class="seq-tagline">We Mediate.<br>We Serve.<br><em>We Involved.</em></div>
+      <div class="seq-gold-line"></div>
+      <div class="seq-sub" style="color:rgba(255,255,255,.4)">Strong Representation. Proven Results.</div>
+    </div>
+
+    <!-- TEXT STATE 3: Enter prompt -->
+    <div id="seq-text3" class="seq-text">
+      <div class="seq-enter">Discover Our Practice</div>
+    </div>
+
+    <!-- Progress bar -->
+    <div id="seq-progress"><div id="seq-progress-fill"></div></div>
+
+    <!-- Skip button -->
+    <button id="seq-skip" onclick="skipSequence()">
+      Skip
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <!-- Layer 0: Photo background -->
+  <div class="hero-bg"><div class="img-parallax-wrap" style="position:absolute;inset:0"><img src="images/hero-bg.jpg" alt="Masekela Masenya Attorneys" id="hero-bg-img"></div></div>
+  <!-- Layer 1: Three.js particle canvas -->
+  <canvas id="hero-3d"></canvas>
+  <!-- Layer 2: Film grain -->
+  <div class="hero-grain"></div>
+  <!-- Layer 3: Content -->
+  <div class="hero-content" id="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-line"></div>
+      <span class="hero-eyebrow-text">Pretoria &nbsp;&middot;&nbsp; Est. 2012 &nbsp;&middot;&nbsp; LPC Reg. 31523</span>
+    </div>
+    <!-- Word-mask headline: each .hw-outer clips, .hw-inner slides up -->
+    <h1 class="hero-h1">
+      <span class="hw-outer"><span class="hw-inner">MASEKELA</span></span><br>
+      <span class="hw-outer"><span class="hw-inner">MASENYA</span></span>&nbsp;<em><span class="hw-outer"><span class="hw-inner">INC</span></span></em>
+    </h1>
+    <!-- Animated gold rule -->
+    <span class="hero-rule" id="hero-rule"></span>
+    <p class="hero-tagline">We Mediate. We Serve. We Involved.</p>
+    <p class="hero-desc">No man is above the law, and no man is below it. Over a decade of dedicated representation across commercial, family, labour, criminal law and more.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary mag-btn js-open-booking btn-shimmer"><span>Book a Consultation</span></button>
+      <a href="practice.html" class="btn-outline mag-btn btn-shimmer">Our Practice Areas</a>
+    </div>
+  </div>
+  <!-- Stats -->
+  <div class="hero-stats" id="hero-stats">
+    <div class="h-stat">
+      <div class="h-stat-num">308<span class="stat-sup">+</span></div>
+      <div class="h-stat-lbl">HC Appearances</div>
+    </div>
+    <div class="h-stat">
+      <div class="h-stat-num">166<span class="stat-sup">+</span></div>
+      <div class="h-stat-lbl">Clients Served</div>
+    </div>
+    <div class="h-stat">
+      <div class="h-stat-num">82<span class="stat-sup">%</span></div>
+      <div class="h-stat-lbl">Success Rate</div>
+    </div>
+  </div>
+  <div class="hero-scroll" id="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-txt">Scroll to explore</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      <span class="marquee-txt">Commercial Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Family Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Labour Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Medical Malpractice</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Estate Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Criminal Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Third-Party Claims</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Consumer Protection</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Insurance Law</span><div class="marquee-dot"></div>
+    </div>
+    <div class="marquee-item" aria-hidden="true">
+      <span class="marquee-txt">Commercial Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Family Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Labour Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Medical Malpractice</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Estate Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Criminal Law</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Third-Party Claims</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Consumer Protection</span><div class="marquee-dot"></div>
+      <span class="marquee-txt">Insurance Law</span><div class="marquee-dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap reveal">
+    <img class="about-img-main" src="images/about-office.jpg" alt="Masekela Masenya Inc offices">
+    <div class="about-gold-line"></div>
+    <div class="about-img-accent"><span class="acc-num">15</span><span class="acc-lbl">Years of Excellence</span></div>
+  </div>
+  <div class="about-text reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Who We Are</span></div>
+    <h2 class="section-h2">Your Legal Partner,<br><em>Since 2012</em></h2>
+    <p class="section-body">Masekela Masenya Inc is a premier full-service law firm in Pretoria, founded on the principle that every client deserves exceptional representation and results that matter.</p>
+    <p class="section-body">Led by a Founding Director with an LLB from the University of Limpopo, and experience at Gildenhuys Lessing Malatji Attorneys and a former legal advisory role at Outsurance, we combine deep legal expertise with sound business acumen.</p>
+    <p class="section-body">With 308 High Court appearances and an 82% success rate, our track record speaks for itself. We serve individuals, families and corporations from our Pretoria offices with equal dedication.</p>
+    <div class="about-badges">
+      <span class="badge">LPC Member: 31523</span>
+      <span class="badge">Firm No: 13887</span>
+      <span class="badge">VAT: 4500323045</span>
+      <span class="badge">Est. 2012</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section id="practice">
+  <div class="practice-header reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">What We Do</span></div>
+    <h2 class="section-h2">Areas of <em>Legal Practice</em></h2>
+    <p class="section-body" style="max-width:500px;margin:0 auto;">Nine specialist areas of law, handled by a team equipped to protect your rights and advance your interests at every stage.</p>
+  </div>
+  <div class="practice-grid">
+    <div class="practice-card reveal">
+      <div class="pc-num">01</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+      <h3 class="pc-title">Commercial Law</h3>
+      <p class="pc-desc">Contracts, company formation, shareholder disputes, mergers and acquisitions, and ongoing corporate governance for SMEs and large enterprises.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">02</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3 class="pc-title">Family Law</h3>
+      <p class="pc-desc">Divorce proceedings, antenuptial contracts, maintenance, custody arrangements, and adoption. Sensitive counsel during life's most challenging moments.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">03</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h3 class="pc-title">Labour Law</h3>
+      <p class="pc-desc">CCMA representation, unfair dismissal, retrenchments, employment contracts and workplace dispute resolution for both employers and employees.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">04</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <h3 class="pc-title">Medical Malpractice</h3>
+      <p class="pc-desc">Holding healthcare providers accountable for negligence. Expert claims handling for patients who have suffered harm due to medical error.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">05</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <h3 class="pc-title">Estate Law</h3>
+      <p class="pc-desc">Will drafting, estate administration, deceased estate distribution, and trust formation. Protecting your legacy and your family's future.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">06</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <h3 class="pc-title">Criminal Law</h3>
+      <p class="pc-desc">Bail applications, criminal trial representation, High Court appearances, plea negotiations and parole applications. Vigorous defence of your rights.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">07</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <h3 class="pc-title">Third-Party Claims</h3>
+      <p class="pc-desc">Road accident fund claims, personal injury litigation, and third-party insurance claims. Getting you the compensation you deserve.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">08</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3 class="pc-title">Consumer Protection</h3>
+      <p class="pc-desc">CPA compliance, consumer disputes, credit agreements, and debt review matters. Protecting your rights as a consumer under South African law.</p>
+    </div>
+    <div class="practice-card reveal">
+      <div class="pc-num">09</div>
+      <div class="pc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h3 class="pc-title">Insurance Law</h3>
+      <p class="pc-desc">Policy interpretation, claim disputes, short-term and life insurance matters, and insurer litigation. We know insurance law and we know how to win.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:56px">
+    <a href="practice.html" class="btn-primary mag-btn" style="display:inline-block"><span>Explore All Practice Areas</span></a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-intro reveal">
+    <div class="section-eyebrow"><div class="s-line" style="background:var(--gold)"></div><span class="s-eye-txt">Our Track Record</span></div>
+    <h2 class="section-h2" style="color:#fff;">A Firm Built on<br><em>Winning Results</em></h2>
+    <p class="section-body" style="color:rgba(255,255,255,.4)">From High Court appearances to community mediation, our numbers tell the story of a firm that fights - and wins - for its clients.</p>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num" data-target="308">0</span>
+    <div class="stat-lbl">High Court Appearances</div>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num" data-target="158">0</span>
+    <div class="stat-lbl">Cases Won</div>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num" data-target="166">0</span>
+    <div class="stat-lbl">Clients Served</div>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num" data-target="82">0<span class="stat-plus" style="font-size:28px;vertical-align:super;color:var(--gold)">%</span></span>
+    <div class="stat-lbl">Success Rate</div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="team-header">
+    <div class="reveal">
+      <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">The People Behind the Results</span></div>
+      <h2 class="section-h2">Meet Our <em>Legal Team</em></h2>
+    </div>
+    <div class="reveal">
+      <p class="section-body">A dedicated team of legal professionals committed to delivering justice. Experienced, strategic, and driven by results.</p>
+      <a href="team.html" class="btn-outline" style="margin-top:16px;display:inline-block">View Full Team</a>
+    </div>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <img class="team-card-img" src="images/team-director.jpg" alt="Masekela Masenya - Founding Director">
+      <div class="team-card-overlay">
+        <div class="tc-name">Masekela Masenya</div>
+        <div class="tc-title">Founding Director</div>
+        <div class="tc-quals">LLB | Certificate in Practice Mgt | PDBM | MBA</div>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <img class="team-card-img" src="images/team-daphney.jpg" alt="Daphney Segoeale - Paralegal">
+      <div class="team-card-overlay">
+        <div class="tc-name">Daphney Segoeale</div>
+        <div class="tc-title">Paralegal &amp; Personal Assistant</div>
+        <div class="tc-quals">Paralegal Diploma | Personal Assistant to Founding Director</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="test-header reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Client Voices</span></div>
+    <h2 class="section-h2">What Our Clients <em>Say</em></h2>
+  </div>
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <div class="test-quote-mark">"</div>
+      <p class="test-text">Masekela Masenya Inc handled my labour dispute with professionalism and achieved a result I did not expect. Their knowledge of employment law is exceptional.</p>
+      <div class="test-rule"></div>
+      <div class="test-name">T. Mahlangu</div>
+      <div class="test-role">Labour Law Client, Pretoria</div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-quote-mark">"</div>
+      <p class="test-text">When I faced a complex estate matter after my father's passing, this firm guided me through every step with compassion and expertise. Forever grateful.</p>
+      <div class="test-rule"></div>
+      <div class="test-name">P. Dlamini</div>
+      <div class="test-role">Estate Law Client, Gauteng</div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-quote-mark">"</div>
+      <p class="test-text">Outstanding commercial law advice that saved my business from a contractual nightmare. Clear communication, strategic thinking, real results.</p>
+      <div class="test-rule"></div>
+      <div class="test-name">R. Sithole</div>
+      <div class="test-role">Commercial Law Client, Pretoria</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-bg"><img src="images/cta-bg.jpg" alt="Masekela Masenya Inc"></div>
+  <div class="cta-content reveal">
+    <div class="section-eyebrow" style="justify-content:center"><div class="s-line"></div><span class="s-eye-txt">Start Today</span></div>
+    <h2 class="section-h2" style="color:#fff;font-size:clamp(36px,5vw,60px)">Your Legal Matter<br><em>Deserves Action</em></h2>
+    <p class="section-body" style="color:rgba(255,255,255,.5);margin-bottom:44px;font-size:16px">Don't wait. Every day without proper legal representation is a day your rights may go unprotected. Book a confidential consultation today.</p>
+    <div class="cta-btn-wrap">
+      <button class="btn-primary mag-btn js-open-booking btn-shimmer"><span>Book a Consultation</span></button>
+      <a href="contact.html" class="btn-outline mag-btn">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Reach Us</span></div>
+    <h2 class="section-h2">Let's Start a<br><em>Conversation</em></h2>
+    <p class="section-body">We are conveniently located in Pretoria and available to assist you Monday to Friday during office hours. Book online or give us a call.</p>
+    <div class="contact-items">
+      <div class="c-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="c-lbl">Address</div>
+          <div class="c-val">Suite N503-N504, JSL Towers<br>259 Pretorius Street, Pretoria, 0002</div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div>
+          <div class="c-lbl">Telephone</div>
+          <div class="c-val">(012) 771 5832 &nbsp;|&nbsp; (012) 772 3392</div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div>
+          <div class="c-lbl">Email</div>
+          <div class="c-val">alphy@maslaw.co.za</div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div>
+          <div class="c-lbl">Office Hours</div>
+          <div class="c-val">Monday - Friday: 08:00 - 17:00<br>Saturdays: By appointment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-wrap reveal">
+    <div class="cf-title">Send a Message</div>
+    <form onsubmit="handleContactForm(event)">
+      <div class="cf-row">
+        <div class="cf-group"><label>First Name</label><input type="text" name="fname" placeholder="First name" required></div>
+        <div class="cf-group"><label>Last Name</label><input type="text" name="lname" placeholder="Surname" required></div>
+      </div>
+      <div class="cf-group"><label>Email Address</label><input type="email" name="email" placeholder="Your email address" required></div>
+      <div class="cf-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(012) ..."></div>
+      <div class="cf-group"><label>Practice Area</label>
+        <select name="area">
+          <option value="">Select area of law</option>
+          <option>Commercial Law</option><option>Family Law</option><option>Labour Law</option>
+          <option>Medical Malpractice</option><option>Estate Law</option><option>Criminal Law</option>
+          <option>Third-Party Claims</option><option>Consumer Protection</option><option>Insurance Law</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="cf-group"><label>Message</label><textarea name="message" rows="4" placeholder="Briefly describe your legal matter..." required></textarea></div>
+      <button type="submit" class="btn-submit"><span id="submit-txt">Send Message</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="nav-logo" style="margin-bottom:20px">
+        <div class="nav-seal"><img src="images/logo.png" alt="MM"></div>
+        <div class="nav-wordmark">Masekela Masenya Inc<span>Attorneys &nbsp;|&nbsp; Est. 2012</span></div>
+      </div>
+      <p class="footer-desc">Premier attorneys in Pretoria. We bring expertise, dedication and a proven track record to every client, every case, every time.</p>
+      <p class="footer-desc" style="font-size:11px">Suite N503-N504, JSL Towers, 259 Pretorius Street, Pretoria, 0002</p>
+    </div>
+    <div>
+      <div class="footer-h">Practice Areas</div>
+      <ul class="footer-links">
+        <li><a href="practice.html">Commercial Law</a></li>
+        <li><a href="practice.html">Family Law</a></li>
+        <li><a href="practice.html">Labour Law</a></li>
+        <li><a href="practice.html">Medical Malpractice</a></li>
+        <li><a href="practice.html">Estate Law</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="practice.html">All Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" class="js-open-booking">Book Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Contact Us</div>
+      <ul class="footer-links">
+        <li><a href="tel:0127715832">(012) 771 5832</a></li>
+        <li><a href="tel:0127723392">(012) 772 3392</a></li>
+        <li><a href="mailto:alphy@maslaw.co.za">alphy@maslaw.co.za</a></li>
+        <li><a href="http://www.maslaw.co.za" target="_blank">www.maslaw.co.za</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2025 Masekela Masenya Inc. All rights reserved.</span>
+    <span class="footer-reg">VAT: 4500323045 &nbsp;&middot;&nbsp; LPC: 31523 &nbsp;&middot;&nbsp; Firm: 13887</span>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div id="booking-overlay">
+  <div class="booking-modal">
+    <div class="bm-header">
+      <div class="bm-title">Book a Consultation</div>
+      <button class="bm-close js-close-booking"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="bm-steps">
+      <div class="bm-step active" id="bm-step-1"><div class="bm-step-num">1</div><div class="bm-step-lbl">Practice Area</div></div>
+      <div class="bm-step-connector"></div>
+      <div class="bm-step" id="bm-step-2"><div class="bm-step-num">2</div><div class="bm-step-lbl">Date</div></div>
+      <div class="bm-step-connector"></div>
+      <div class="bm-step" id="bm-step-3"><div class="bm-step-num">3</div><div class="bm-step-lbl">Time</div></div>
+      <div class="bm-step-connector"></div>
+      <div class="bm-step" id="bm-step-4"><div class="bm-step-num">4</div><div class="bm-step-lbl">Details</div></div>
+      <div class="bm-step-connector"></div>
+      <div class="bm-step" id="bm-step-5"><div class="bm-step-num">5</div><div class="bm-step-lbl">Confirm</div></div>
+    </div>
+    <div class="bm-body">
+      <!-- STEP 1 -->
+      <div class="bm-panel active" id="bm-panel-1">
+        <div class="bm-panel-title">Select Practice Area</div>
+        <p class="bm-panel-sub">Which area of law can we assist you with?</p>
+        <div class="area-grid">
+          <button class="area-card" data-area="Commercial Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div class="area-card-name">Commercial</div><div class="area-card-desc">Business, contracts, corporate</div></button>
+          <button class="area-card" data-area="Family Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="area-card-name">Family</div><div class="area-card-desc">Divorce, custody, maintenance</div></button>
+          <button class="area-card" data-area="Labour Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="area-card-name">Labour</div><div class="area-card-desc">CCMA, dismissal, employment</div></button>
+          <button class="area-card" data-area="Medical Malpractice"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="area-card-name">Medical</div><div class="area-card-desc">Malpractice, negligence</div></button>
+          <button class="area-card" data-area="Estate Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div class="area-card-name">Estates</div><div class="area-card-desc">Wills, trusts, administration</div></button>
+          <button class="area-card" data-area="Criminal Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="area-card-name">Criminal</div><div class="area-card-desc">Defence, bail, trial</div></button>
+          <button class="area-card" data-area="Third-Party Claims"><div class="area-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="area-card-name">Third-Party</div><div class="area-card-desc">RAF claims, personal injury</div></button>
+          <button class="area-card" data-area="Consumer Protection"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="area-card-name">Consumer</div><div class="area-card-desc">CPA, credit, debt review</div></button>
+          <button class="area-card" data-area="Insurance Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div class="area-card-name">Insurance</div><div class="area-card-desc">Policy disputes, claims</div></button>
+        </div>
+      </div>
+      <!-- STEP 2 -->
+      <div class="bm-panel" id="bm-panel-2">
+        <div class="bm-panel-title">Select a Date</div>
+        <p class="bm-panel-sub">Choose a convenient date for your consultation.</p>
+        <div class="calendar-wrap">
+          <div>
+            <div class="cal-nav">
+              <button class="cal-nav-btn" onclick="calNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+              <div class="cal-month" id="cal-month-label"></div>
+              <button class="cal-nav-btn" onclick="calNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            </div>
+            <div class="cal-grid" id="cal-days">
+              <div class="cal-day-header">S</div><div class="cal-day-header">M</div><div class="cal-day-header">T</div><div class="cal-day-header">W</div><div class="cal-day-header">T</div><div class="cal-day-header">F</div><div class="cal-day-header">S</div>
+            </div>
+          </div>
+          <div class="cal-selected-info">
+            <div class="cal-sel-lbl">Selected Date</div>
+            <div class="cal-sel-date" id="cal-selected-display">No date selected</div>
+            <div class="cal-tip">Consultations available Monday to Friday. Same-day bookings require a minimum 2-hour notice.</div>
+          </div>
+        </div>
+      </div>
+      <!-- STEP 3 -->
+      <div class="bm-panel" id="bm-panel-3">
+        <div class="bm-panel-title">Select a Time</div>
+        <p class="bm-panel-sub">Choose your preferred consultation time slot.</p>
+        <div class="time-slots-grid">
+          <button class="time-slot" data-time="08:00"><div class="ts-time">08:00</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot" data-time="08:45"><div class="ts-time">08:45</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot unavailable" data-time="09:30"><div class="ts-time">09:30</div><div class="ts-dur">45 min</div><div class="ts-avail">Booked</div></button>
+          <button class="time-slot" data-time="10:15"><div class="ts-time">10:15</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot" data-time="11:00"><div class="ts-time">11:00</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot unavailable" data-time="11:45"><div class="ts-time">11:45</div><div class="ts-dur">45 min</div><div class="ts-avail">Booked</div></button>
+          <button class="time-slot" data-time="13:15"><div class="ts-time">13:15</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot" data-time="14:00"><div class="ts-time">14:00</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot unavailable" data-time="14:45"><div class="ts-time">14:45</div><div class="ts-dur">45 min</div><div class="ts-avail">Booked</div></button>
+          <button class="time-slot" data-time="15:30"><div class="ts-time">15:30</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot" data-time="16:15"><div class="ts-time">16:15</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+        </div>
+      </div>
+      <!-- STEP 4 -->
+      <div class="bm-panel" id="bm-panel-4">
+        <div class="bm-panel-title">Your Details</div>
+        <p class="bm-panel-sub">Please provide your contact information so we can confirm your appointment.</p>
+        <div class="details-grid">
+          <div class="bm-field"><label>First Name</label><input type="text" id="bm-fname" placeholder="First name" autocomplete="given-name"></div>
+          <div class="bm-field"><label>Last Name</label><input type="text" id="bm-lname" placeholder="Surname" autocomplete="family-name"></div>
+          <div class="bm-field"><label>Email Address</label><input type="email" id="bm-email" placeholder="Your email address" autocomplete="email"></div>
+          <div class="bm-field"><label>Phone Number</label><input type="tel" id="bm-phone" placeholder="(012) ..." autocomplete="tel"></div>
+          <div class="bm-field full-span"><label>ID Number or Company Reg (Optional)</label><input type="text" id="bm-id" placeholder="Your ID or company registration number"></div>
+          <div class="bm-field full-span"><label>Brief Description of Your Matter</label><textarea id="bm-desc" rows="4" placeholder="Please briefly describe what you need legal assistance with..."></textarea></div>
+        </div>
+      </div>
+      <!-- STEP 5 -->
+      <div class="bm-panel" id="bm-panel-5">
+        <div style="text-align:center;padding:8px 0 24px">
+          <div class="confirm-seal"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="confirm-title">Appointment Confirmed!</div>
+          <p class="confirm-sub">Your consultation request has been received. We will confirm within 2 hours during business hours.</p>
+        </div>
+        <div class="confirm-ref">
+          <div class="ref-lbl">Booking Reference</div>
+          <div class="ref-num" id="confirm-ref-num">MM-XXXXXX</div>
+        </div>
+        <div class="confirm-details-grid" id="confirm-details-grid"></div>
+        <div class="confirm-notice">A confirmation will be sent to your email. To reschedule or cancel, contact us at least 24 hours in advance: <strong>(012) 771 5832</strong> or <strong>alphy@maslaw.co.za</strong>.</div>
+      </div>
+    </div>
+    <div class="bm-footer">
+      <button class="bm-back" id="bm-back-btn">Back</button>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span class="bm-error" id="bm-error-msg"></span>
+        <button class="bm-next" id="bm-next-btn">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== CUSTOM CURSOR ===== */
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+if (window.innerWidth > 768) {
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+  (function animRing() { rx += (mx - rx) * .12; ry += (my - ry) * .12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animRing); })();
+  document.querySelectorAll('a,button,.area-card,.cal-day,.time-slot,.practice-card,.team-card,.test-card').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+}
+
+/* ===== LENIS SMOOTH SCROLL ===== */
+const lenis = new Lenis({ lerp: 0.08, smoothWheel: true, wheelMultiplier: 0.85 });
+gsap.ticker.add(time => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+
+/* ===== CANVAS SCROLL SEQUENCE ===== */
+const FRAME_COUNT = 60;
+const canvas = document.getElementById('frame-canvas');
+const ctx = canvas.getContext('2d');
+const frames = [];
+let seqLoaded = 0, seqReady = false;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  if (seqReady) drawSeqFrame(currentSeqFrame);
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+let currentSeqFrame = 0;
+function drawSeqFrame(idx) {
+  const img = frames[idx];
+  if (!img || !img.complete || img.naturalWidth === 0) return;
+  const cw = canvas.width, ch = canvas.height;
+  const iw = img.naturalWidth, ih = img.naturalHeight;
+  const scale = Math.max(cw / iw, ch / ih);
+  const dx = (cw - iw * scale) / 2;
+  const dy = (ch - ih * scale) / 2;
+  ctx.clearRect(0, 0, cw, ch);
+  ctx.drawImage(img, dx, dy, iw * scale, ih * scale);
+}
+
+// Preload all frames
+for (let i = 0; i < FRAME_COUNT; i++) {
+  const img = new Image();
+  img.src = 'frames/frame_' + String(i).padStart(4, '0') + '.webp';
+  img.onload = () => {
+    seqLoaded++;
+    if (i === 0) { seqReady = true; drawSeqFrame(0); }
+    if (seqLoaded === FRAME_COUNT) console.log('All sequence frames loaded');
+  };
+  frames.push(img);
+}
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Wire scroll to frames
+ScrollTrigger.create({
+  trigger: '#seq-outer',
+  start: 'top top',
+  end: 'bottom bottom',
+  scrub: 0.3,
+  onUpdate(self) {
+    const p = self.progress;
+    currentSeqFrame = Math.min(FRAME_COUNT - 1, Math.round(p * (FRAME_COUNT - 1)));
+    drawSeqFrame(currentSeqFrame);
+    // Update progress bar
+    document.getElementById('seq-progress-fill').style.width = (p * 100) + '%';
+    // Show skip after 5% scroll
+    const skip = document.getElementById('seq-skip');
+    if (p > 0.05) skip.classList.add('visible'); else skip.classList.remove('visible');
+    // Text 1: firm name, fades in 0-15%, out 25-35%
+    const t1 = p < 0.15 ? p / 0.15 : p < 0.25 ? 1 : p < 0.35 ? 1 - (p - 0.25) / 0.10 : 0;
+    document.getElementById('seq-text1').style.opacity = Math.max(0, Math.min(1, t1));
+    // Text 2: tagline, fades in 40-55%, out 70-80%
+    const t2 = p < 0.40 ? 0 : p < 0.55 ? (p - 0.40) / 0.15 : p < 0.70 ? 1 : p < 0.80 ? 1 - (p - 0.70) / 0.10 : 0;
+    document.getElementById('seq-text2').style.opacity = Math.max(0, Math.min(1, t2));
+    // Text 3: enter prompt, fades in 85-95%
+    const t3 = p < 0.85 ? 0 : (p - 0.85) / 0.10;
+    document.getElementById('seq-text3').style.opacity = Math.max(0, Math.min(1, t3));
+  }
+});
+
+function skipSequence() {
+  lenis.scrollTo('#hero', { duration: 0.6 });
+}
+
+/* ===== NAV SCROLL EFFECT ===== */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+/* ===== THREE.JS HERO PARTICLE SYSTEM ===== */
+(function initHeroParticles() {
+  if (window.innerWidth < 768 || typeof THREE === 'undefined') return;
+  const canvas = document.getElementById('hero-3d');
+  const hero = document.getElementById('hero');
+  const W = hero.offsetWidth, H = hero.offsetHeight;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  renderer.setSize(W, H);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 500);
+  camera.position.z = 60;
+
+  // 350 gold particles
+  const COUNT = 350;
+  const pos = new Float32Array(COUNT * 3);
+  const vel = [];
+  for (let i = 0; i < COUNT; i++) {
+    pos[i*3]   = (Math.random() - 0.5) * 130;
+    pos[i*3+1] = (Math.random() - 0.5) * 90;
+    pos[i*3+2] = (Math.random() - 0.5) * 50;
+    vel.push({ vy: 0.012 + Math.random() * 0.022, vx: (Math.random() - 0.5) * 0.006 });
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  const mat = new THREE.PointsMaterial({
+    color: 0xC99959, size: 1.4, transparent: true, opacity: 0.55,
+    depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true
+  });
+  const points = new THREE.Points(geo, mat);
+  scene.add(points);
+
+  // Mouse parallax target
+  let mx = 0, my = 0;
+  window.addEventListener('mousemove', e => {
+    mx = (e.clientX / window.innerWidth - 0.5) * 2;
+    my = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+
+  // Resize handler
+  window.addEventListener('resize', () => {
+    const nW = hero.offsetWidth, nH = hero.offsetHeight;
+    camera.aspect = nW / nH; camera.updateProjectionMatrix();
+    renderer.setSize(nW, nH);
+  });
+
+  let frame = 0;
+  function tick() {
+    frame++;
+    // Drift particles upward + gentle sway
+    for (let i = 0; i < COUNT; i++) {
+      pos[i*3]   += vel[i].vx + Math.sin(frame * 0.008 + i) * 0.004;
+      pos[i*3+1] += vel[i].vy;
+      if (pos[i*3+1] > 46) {
+        pos[i*3+1] = -46;
+        pos[i*3] = (Math.random() - 0.5) * 130;
+      }
+    }
+    geo.attributes.position.needsUpdate = true;
+    // Subtle mouse parallax on the scene group
+    points.rotation.y += (mx * 0.04 - points.rotation.y) * 0.04;
+    points.rotation.x += (-my * 0.025 - points.rotation.x) * 0.04;
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* ===== HERO SCROLL PARALLAX ===== */
+ScrollTrigger.create({
+  trigger: '#hero',
+  start: 'top top',
+  end: 'bottom top',
+  scrub: true,
+  onUpdate(self) {
+    const p = self.progress;
+    gsap.set('#hero-content', { y: p * 80 });
+    gsap.set('#hero-stats', { y: p * 40 });
+    gsap.set('#hero-scroll', { opacity: 1 - p * 3 });
+  }
+});
+
+/* ===== PRELOADER + HERO ENTRANCE (word-mask) ===== */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const pl = document.getElementById('preloader');
+    pl.style.opacity = '0'; pl.style.transform = 'translateY(-20px)';
+    setTimeout(() => { pl.style.display = 'none'; }, 800);
+
+    // Cinematic timeline: like a comp with staggered keyframes
+    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+    // Beat 1: background image scale + eyebrow
+    tl.to('#hero-bg-img', { scale: 1, duration: 1.8, ease: 'power2.out' }, 0.2)
+    // Beat 2: eyebrow line fades up
+      .to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.7 }, 0.4)
+    // Beat 3: word-mask reveal - each .hw-inner slides up (the cinematic AE reveal)
+      .to('.hw-inner', {
+        y: '0%',
+        duration: 1.1,
+        ease: 'power4.out',
+        stagger: 0.12
+      }, 0.65)
+    // Beat 4: gold rule draws itself
+      .to('#hero-rule', { scaleX: 1, duration: 0.9, ease: 'power3.inOut' }, 1.1)
+    // Beat 5: tagline + desc fade up
+      .to('.hero-tagline', { opacity: 1, y: 0, duration: 0.7 }, 1.35)
+      .to('.hero-desc',    { opacity: 1, y: 0, duration: 0.7 }, 1.5)
+    // Beat 6: CTAs + stats
+      .to('.hero-ctas',  { opacity: 1, y: 0, duration: 0.6 }, 1.7)
+      .to('#hero-stats', { opacity: 1, duration: 0.8, y: 0  }, 1.85)
+      .to('#hero-scroll',{ opacity: 1, duration: 0.6         }, 2.0);
+  }, 1800);
+});
+
+/* ===== SCROLL REVEALS ===== */
+gsap.utils.toArray('.reveal').forEach(el => {
+  gsap.fromTo(el, { opacity: 0, y: 44 }, {
+    opacity: 1, y: 0, duration: .85, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+  });
+});
+
+/* ===== COUNTER ANIMATIONS ===== */
+gsap.utils.toArray('[data-target]').forEach(el => {
+  const target = parseInt(el.dataset.target);
+  const hasSuffix = el.innerHTML.includes('span');
+  const suffix = hasSuffix ? el.querySelector('span') ? el.querySelector('span').outerHTML : '' : '';
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 82%',
+    once: true,
+    onEnter() {
+      gsap.fromTo({ v: 0 }, { v: target }, {
+        duration: 2.2,
+        ease: 'power2.out',
+        onUpdate() {
+          const val = Math.round(this.targets()[0].v);
+          el.textContent = val;
+          if (suffix) el.insertAdjacentHTML('beforeend', suffix);
+        }
+      });
+    }
+  });
+});
+
+/* ===== MAGNETIC BUTTONS ===== */
+document.querySelectorAll('.mag-btn').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const dx = (e.clientX - (r.left + r.width / 2)) * 0.3;
+    const dy = (e.clientY - (r.top + r.height / 2)) * 0.3;
+    gsap.to(btn, { x: dx, y: dy, duration: 0.35, ease: 'power2.out', overwrite: 'auto' });
+  });
+  btn.addEventListener('mouseleave', () => {
+    gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1,.5)', overwrite: 'auto' });
+  });
+});
+
+/* ===== PRACTICE CARD STAGGER ===== */
+ScrollTrigger.create({
+  trigger: '.practice-grid',
+  start: 'top 85%',
+  once: true,
+  onEnter() {
+    gsap.fromTo('.practice-card', { opacity: 0, y: 30 }, {
+      opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.08
+    });
+  }
+});
+
+/* ===== CONTACT FORM ===== */
+function handleContactForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-txt');
+  btn.textContent = 'Sending...';
+  setTimeout(() => {
+    btn.textContent = 'Message Sent - We will be in touch!';
+    e.target.reset();
+    setTimeout(() => btn.textContent = 'Send Message', 4000);
+  }, 1500);
+}
+
+/* ===== BOOKING MODAL ===== */
+const bState = { step: 1, area: '', date: null, dateLabel: '', time: '', fname: '', lname: '', email: '', phone: '' };
+const overlay = document.getElementById('booking-overlay');
+
+document.querySelectorAll('.js-open-booking').forEach(b => b.addEventListener('click', () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }));
+document.querySelectorAll('.js-close-booking').forEach(b => b.addEventListener('click', closeBooking));
+overlay.addEventListener('click', e => { if (e.target === overlay) closeBooking(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBooking(); });
+
+function closeBooking() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+// Area selection
+document.querySelectorAll('.area-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.area-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    bState.area = card.dataset.area;
+    document.getElementById('bm-error-msg').textContent = '';
+  });
+});
+
+// Calendar
+let calYear = new Date().getFullYear(), calMonth = new Date().getMonth();
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function renderCal() {
+  document.getElementById('cal-month-label').textContent = MONTHS[calMonth] + ' ' + calYear;
+  const grid = document.getElementById('cal-days');
+  const headers = grid.querySelectorAll('.cal-day-header');
+  grid.innerHTML = '';
+  ['S','M','T','W','T','F','S'].forEach(d => { const h = document.createElement('div'); h.className = 'cal-day-header'; h.textContent = d; grid.appendChild(h); });
+  const first = new Date(calYear, calMonth, 1).getDay();
+  const days = new Date(calYear, calMonth + 1, 0).getDate();
+  const today = new Date();
+  for (let i = 0; i < first; i++) { const e = document.createElement('div'); e.className = 'cal-day empty'; grid.appendChild(e); }
+  for (let d = 1; d <= days; d++) {
+    const e = document.createElement('div');
+    e.className = 'cal-day';
+    e.textContent = d;
+    const dt = new Date(calYear, calMonth, d);
+    const dow = dt.getDay();
+    const isPast = dt < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    if (dow === 0 || dow === 6 || isPast) { e.classList.add('disabled'); }
+    else {
+      if (dt.toDateString() === today.toDateString()) e.classList.add('today');
+      if (bState.date && dt.toDateString() === bState.date.toDateString()) e.classList.add('selected');
+      e.addEventListener('click', () => {
+        bState.date = dt;
+        bState.dateLabel = MONTHS[calMonth] + ' ' + d + ', ' + calYear;
+        document.getElementById('cal-selected-display').textContent = bState.dateLabel;
+        grid.querySelectorAll('.cal-day').forEach(x => x.classList.remove('selected'));
+        e.classList.add('selected');
+        document.getElementById('bm-error-msg').textContent = '';
+      });
+    }
+    grid.appendChild(e);
+  }
+}
+function calNav(dir) { calMonth += dir; if (calMonth > 11) { calMonth = 0; calYear++; } if (calMonth < 0) { calMonth = 11; calYear--; } renderCal(); }
+
+// Time selection
+document.querySelectorAll('.time-slot:not(.unavailable)').forEach(slot => {
+  slot.addEventListener('click', () => {
+    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+    slot.classList.add('selected');
+    bState.time = slot.dataset.time;
+    document.getElementById('bm-error-msg').textContent = '';
+  });
+});
+
+// Step navigation
+function updateStepUI() {
+  for (let i = 1; i <= 5; i++) {
+    const el = document.getElementById('bm-step-' + i);
+    const panel = document.getElementById('bm-panel-' + i);
+    el.className = 'bm-step' + (i === bState.step ? ' active' : i < bState.step ? ' done' : '');
+    panel.className = 'bm-panel' + (i === bState.step ? ' active' : '');
+  }
+  document.getElementById('bm-back-btn').style.visibility = bState.step > 1 && bState.step < 5 ? 'visible' : 'hidden';
+  document.getElementById('bm-next-btn').textContent = bState.step === 4 ? 'Confirm Booking' : bState.step === 5 ? 'Close' : 'Continue';
+}
+
+function validateStep() {
+  const err = document.getElementById('bm-error-msg');
+  if (bState.step === 1 && !bState.area) { err.textContent = 'Please select a practice area.'; return false; }
+  if (bState.step === 2 && !bState.date) { err.textContent = 'Please select a date.'; return false; }
+  if (bState.step === 3 && !bState.time) { err.textContent = 'Please select a time slot.'; return false; }
+  if (bState.step === 4) {
+    const fname = document.getElementById('bm-fname').value.trim();
+    const email = document.getElementById('bm-email').value.trim();
+    if (!fname) { err.textContent = 'Please enter your first name.'; return false; }
+    if (!email || !email.includes('@')) { err.textContent = 'Please enter a valid email address.'; return false; }
+    bState.fname = fname;
+    bState.lname = document.getElementById('bm-lname').value.trim();
+    bState.email = email;
+    bState.phone = document.getElementById('bm-phone').value.trim();
+  }
+  err.textContent = '';
+  return true;
+}
+
+function buildConfirmation() {
+  const ref = 'MM-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+  document.getElementById('confirm-ref-num').textContent = ref;
+  const grid = document.getElementById('confirm-details-grid');
+  grid.innerHTML = '';
+  const items = [
+    ['Name', bState.fname + ' ' + bState.lname],
+    ['Email', bState.email],
+    ['Phone', bState.phone || 'Not provided'],
+    ['Practice Area', bState.area],
+    ['Date', bState.dateLabel],
+    ['Time', bState.time + ' (45 min consultation)']
+  ];
+  items.forEach(([lbl, val]) => {
+    const item = document.createElement('div');
+    item.className = 'cd-item';
+    const l = document.createElement('div'); l.className = 'cd-lbl'; l.textContent = lbl;
+    const v = document.createElement('div'); v.className = 'cd-val'; v.textContent = val;
+    item.appendChild(l); item.appendChild(v);
+    grid.appendChild(item);
+  });
+}
+
+document.getElementById('bm-next-btn').addEventListener('click', () => {
+  if (bState.step === 5) { closeBooking(); return; }
+  if (!validateStep()) return;
+  if (bState.step === 4) buildConfirmation();
+  bState.step++;
+  updateStepUI();
+  if (bState.step === 2) renderCal();
+});
+document.getElementById('bm-back-btn').addEventListener('click', () => {
+  if (bState.step > 1) { bState.step--; updateStepUI(); }
+});
+
+/* ============================================================
+   MICRO LIGHT + MICRO ANIMATION ENGINE
+   After Effects-level polish for the web
+   ============================================================ */
+
+/* ---- 1. SCROLL PROGRESS BAR ---- */
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('scroll-progress').style.width = (scrolled / total * 100) + '%';
+}, { passive: true });
+
+/* ---- 2. AMBIENT CURSOR LIGHT ---- */
+(function() {
+  const blob = document.getElementById('ambient-light');
+  if (!blob || window.innerWidth < 768) return;
+  let cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+  let tx = cx, ty = cy;
+  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+  (function moveBlob() {
+    cx += (tx - cx) * 0.06;
+    cy += (ty - cy) * 0.06;
+    blob.style.left = cx + 'px';
+    blob.style.top  = cy + 'px';
+    requestAnimationFrame(moveBlob);
+  })();
+})();
+
+/* ---- 3. 3D CARD TILT + SPECULAR MICRO-LIGHT ---- */
+(function() {
+  if (window.innerWidth < 768) return;
+
+  function initTilt(selector, maxTilt = 10, shineOpacity = 0.12) {
+    document.querySelectorAll(selector).forEach(card => {
+      // Inject shine layer
+      const shine = document.createElement('div');
+      shine.className = 'tilt-shine';
+      card.style.position = 'relative';
+      card.style.overflow = 'hidden';
+      card.appendChild(shine);
+
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width  - 0.5;  // -0.5 to 0.5
+        const y = (e.clientY - r.top)  / r.height - 0.5;
+        const rotX = -y * maxTilt;
+        const rotY =  x * maxTilt;
+        card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
+        // Specular: light appears to come from mouse position
+        const px = ((e.clientX - r.left) / r.width  * 100).toFixed(1);
+        const py = ((e.clientY - r.top)  / r.height * 100).toFixed(1);
+        shine.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(255,255,255,${shineOpacity}) 0%, rgba(255,255,255,0) 65%)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { rotateX: 0, rotateY: 0, scale: 1, duration: 0.6, ease: 'elastic.out(1,.4)', clearProps: 'transform', overwrite: true });
+        shine.style.background = 'none';
+      });
+    });
+  }
+
+  initTilt('.practice-card',   8, 0.10);
+  initTilt('.team-card',       6, 0.08);
+  initTilt('.test-card',       5, 0.07);
+  initTilt('.val-card',        8, 0.10);
+  initTilt('.cred-card',       6, 0.08);
+})();
+
+/* ---- 4. STAT NUMBER GOLD GLOW ON SCROLL ---- */
+gsap.utils.toArray('.stat-num').forEach(el => {
+  ScrollTrigger.create({
+    trigger: el, start: 'top 80%', once: true,
+    onEnter() {
+      el.classList.add('glowing');
+      // Also pulse text-shadow
+      gsap.fromTo(el, 
+        { filter: 'drop-shadow(0 0 0px rgba(201,153,89,0))' },
+        { filter: 'drop-shadow(0 0 20px rgba(201,153,89,.8))', duration: 1.0, ease: 'power2.out',
+          onComplete() { gsap.to(el, { filter: 'drop-shadow(0 0 6px rgba(201,153,89,.4))', duration: 1.5 }); }
+        }
+      );
+    }
+  });
+});
+
+/* ---- 5. SECTION TITLE CHAR-BY-CHAR HOVER ---- */
+(function() {
+  if (window.innerWidth < 768) return;
+  document.querySelectorAll('.section-title').forEach(el => {
+    const text = el.textContent;
+    let html = '';
+    [...text].forEach(char => {
+      html += char === ' '
+        ? '<span style="display:inline-block">&nbsp;</span>'
+        : `<span style="display:inline-block;transition:color .15s,transform .15s">${char}</span>`;
+    });
+    el.innerHTML = html;
+    el.style.cursor = 'default';
+    el.querySelectorAll('span').forEach((span, i, all) => {
+      span.addEventListener('mouseenter', () => {
+        gsap.to(span, { y: -3, color: '#C99959', duration: 0.15, ease: 'power2.out', overwrite: 'auto' });
+        // Ripple to neighbors
+        [-1, 1, -2, 2].forEach((offset, idx) => {
+          const neighbor = all[i + offset];
+          if (neighbor) gsap.to(neighbor, { y: -(2 - Math.abs(offset) * 0.7), color: '#E4B86A', duration: 0.2, delay: idx * 0.02, ease: 'power2.out', overwrite: 'auto' });
+        });
+      });
+      span.addEventListener('mouseleave', () => {
+        gsap.to([span, ...[-1,1,-2,2].map(o => all[i+o]).filter(Boolean)], 
+          { y: 0, color: '', duration: 0.4, ease: 'elastic.out(1,.5)', overwrite: 'auto' });
+      });
+    });
+  });
+})();
+
+/* ---- 6. IMAGE PARALLAX ON SCROLL ---- */
+gsap.utils.toArray('.about-img-main, .cta-bg img').forEach(img => {
+  gsap.to(img, {
+    yPercent: -12,
+    ease: 'none',
+    scrollTrigger: { trigger: img, start: 'top bottom', end: 'bottom top', scrub: 1.5 }
+  });
+});
+
+/* ---- 7. GOLD ACCENT LINES — DRAW ON SCROLL ---- */
+gsap.utils.toArray('.about-accent-line, .section-eyebrow .hero-line').forEach(line => {
+  gsap.fromTo(line, { scaleX: 0, transformOrigin: 'left' }, {
+    scaleX: 1, duration: 0.8, ease: 'power4.inOut',
+    scrollTrigger: { trigger: line, start: 'top 88%', once: true }
+  });
+});
+
+/* ---- 8. HERO STATS COUNTER (on hero visible) ---- */
+ScrollTrigger.create({
+  trigger: '#hero-stats', start: 'top 90%', once: true,
+  onEnter() {
+    [['308', '+'], ['166', '+'], ['82', '%']].forEach((pair, i) => {
+      const el = document.querySelectorAll('#hero-stats .h-stat-num')[i];
+      if (!el) return;
+      const target = parseInt(pair[0]);
+      const sup = el.querySelector('.stat-sup');
+      gsap.fromTo({ v: 0 }, { v: target }, {
+        duration: 2.5, ease: 'power2.out', delay: i * 0.2,
+        onUpdate() {
+          const val = Math.round(this.targets()[0].v);
+          el.firstChild.textContent = val;
+        }
+      });
+    });
+  }
+});
+
+/* ---- 9. MARQUEE PAUSE ON HOVER ---- */
+(function() {
+  const track = document.querySelector('.marquee-track');
+  if (!track) return;
+  track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+  track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+})();
+
+/* ---- 10. MAGNETIC BUTTONS ENHANCED WITH PARTICLE BURST ---- */
+document.querySelectorAll('.btn-primary, .btn-consult').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    // Ripple effect on click
+    const circle = document.createElement('span');
+    const r = btn.getBoundingClientRect();
+    const size = Math.max(r.width, r.height) * 1.5;
+    circle.style.cssText = `
+      position:absolute; width:${size}px; height:${size}px;
+      left:${e.clientX - r.left - size/2}px; top:${e.clientY - r.top - size/2}px;
+      background:rgba(255,255,255,.3); border-radius:50%;
+      transform:scale(0); pointer-events:none; z-index:50;
+      animation: rippleOut .5s ease-out forwards;
+    `;
+    btn.style.position = 'relative';
+    btn.style.overflow = 'hidden';
+    btn.appendChild(circle);
+    setTimeout(() => circle.remove(), 500);
+  });
+});
+
+/* Ripple keyframe */
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = '@keyframes rippleOut { to { transform:scale(1); opacity:0; } }';
+document.head.appendChild(rippleStyle);
+
+/* ---- 11. ABOUT SECTION: IMAGE REVEAL WITH CLIP-PATH ---- */
+ScrollTrigger.create({
+  trigger: '.about-img-wrap', start: 'top 75%', once: true,
+  onEnter() {
+    gsap.fromTo('.about-img-main', 
+      { clipPath: 'inset(0 100% 0 0)', opacity: 0 },
+      { clipPath: 'inset(0 0% 0 0)', opacity: 1, duration: 1.2, ease: 'power4.inOut' }
+    );
+    gsap.fromTo('.about-img-accent',
+      { x: 20, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.8 }
+    );
+  }
+});
+
+/* ---- 12. PRACTICE GRID: STAGGER WITH MICRO-DELAY PER ROW ---- */
+ScrollTrigger.create({
+  trigger: '.practice-grid', start: 'top 80%', once: true,
+  onEnter() {
+    gsap.fromTo('.practice-card',
+      { opacity: 0, y: 40, scale: 0.96 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.65, ease: 'power3.out', stagger: { each: 0.08, from: 'start' } }
+    );
+  }
+});
+
+</script>
+</body>
+</html>
