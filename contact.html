@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Masekela Masenya Inc | Book a Consultation</title>
+<meta name="description" content="Contact Masekela Masenya Inc Attorneys. Suite 2, A.P Ledwaba Office Park, 873 Stanza Bopape Street, Eastwood, Pretoria. Call +27 87 265 1961 or email alphy@maslaw.co.za. Book a consultation online.">
+<style>@font-face{font-family:'Bebas';src:url('fonts/bebas-neue.woff2') format('woff2');font-weight:400;}
+/* ===== MICRO LIGHT + MICRO ANIMATION ===== */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,#C99959,#E4B86A);z-index:9999;box-shadow:0 0 8px rgba(201,153,89,.6);transition:width .1s}
+.tilt-card,.val-card,.cred-card,.timeline-item,.consultant-card{transition:transform .3s,box-shadow .3s}
+.tilt-card:hover,.val-card:hover,.cred-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 20px 45px rgba(0,0,0,.14)}
+.story-img,.profile-img,.dp-img{transition:transform 8s ease-out;transform:scale(1.04)}
+.about-img-wrap:hover .story-img,.profile-wrap:hover .profile-img{transform:scale(1.08)}
+/* Shimmer on headings */
+.ph-h1{background:linear-gradient(90deg,#fff 40%,#C99959 55%,#fff 70%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:headingShimmer 6s linear infinite}
+@keyframes headingShimmer{from{background-position:0% center}to{background-position:200% center}}
+/* Credential cards pulse border */
+.cred-card{border:1px solid rgba(201,153,89,.15);transition:border-color .3s,transform .3s,box-shadow .3s}
+.cred-card:hover{border-color:rgba(201,153,89,.5);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.1),0 0 0 1px rgba(201,153,89,.2)}
+/* Gold number glow */
+.cred-num{transition:text-shadow .3s}
+.cred-card:hover .cred-num{text-shadow:0 0 20px rgba(201,153,89,.7)}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Masekela Masenya Inc">
+<meta property="og:title" content="Contact Us | Masekela Masenya Inc – Book a Consultation">
+<meta property="og:description" content="Book a consultation at Suite 2, A.P Ledwaba Office Park, 873 Stanza Bopape Street, Eastwood, Pretoria. Call +27 87 265 1961 or email alphy@maslaw.co.za.">
+<meta property="og:url" content="https://maslaw.co.za/contact.html">
+<meta property="og:image" content="https://maslaw.co.za/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Masekela Masenya Inc - Attorneys, Notaries and Conveyancers Pretoria">
+<meta name="twitter:image" content="https://maslaw.co.za/images/og-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Us | Masekela Masenya Inc – Book a Consultation">
+<meta name="twitter:description" content="Book a consultation at Suite 2, A.P Ledwaba Office Park, 873 Stanza Bopape Street, Eastwood, Pretoria. Call +27 87 265 1961 or email alphy@maslaw.co.za.">
+<link rel="canonical" href="https://maslaw.co.za/contact.html">
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0A1628;--navy2:#1B2A4A;--gold:#C99959;--gold2:#E4B86A;--cream:#F5F0E8;--warm:#FDFBF7;--text:#1a1a2e;--muted:#6b7280;--ease:cubic-bezier(0.25,0.46,0.45,0.94)}
+html{scroll-behavior:auto}
+em{font-style:normal;color:var(--gold)}
+body{font-family:'Bebas',Arial,sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;cursor:none}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{cursor:none;border:none;background:none;font:inherit}
+#cursor-dot{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.7;transition:width .3s,height .3s,opacity .3s}
+.cursor-hover #cursor-ring{width:56px;height:56px;opacity:.4}
+@media(max-width:768px){#cursor-dot,#cursor-ring{display:none}body,button{cursor:auto}}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,40,.96);backdrop-filter:blur(16px);box-shadow:0 2px 30px rgba(0,0,0,.3)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-seal{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:var(--navy2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.nav-seal img{width:28px}
+.nav-wordmark{font-family:'Bebas',Arial,sans-serif;font-size:14px;letter-spacing:3px;color:#fff;line-height:1.1}
+.nav-wordmark span{display:block;font-size:8px;letter-spacing:4px;color:var(--gold);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.7);position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.btn-consult{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:10px 24px;border-radius:2px;font-family:'Bebas',Arial,sans-serif;position:relative;overflow:hidden;display:inline-block}
+.btn-consult::before{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform .4s var(--ease)}
+.btn-consult span{position:relative;z-index:1}
+.btn-consult:hover::before{transform:translateX(0)}
+
+/* PAGE HERO */
+.page-hero{padding:160px 60px 80px;background:var(--navy);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('images/cta-bg.jpg') center/cover no-repeat;opacity:.12}
+.page-hero-content{position:relative;z-index:2;max-width:700px}
+.ph-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px;opacity:0;transform:translateY(20px)}
+.ph-line{width:32px;height:1px;background:var(--gold)}
+.ph-eye{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.ph-h1{font-family:'Bebas',Arial,sans-serif;font-size:clamp(44px,7vw,88px);line-height:1;color:#fff;margin-bottom:20px;opacity:0;transform:translateY(30px)}
+.ph-h1 em{font-style:normal;color:var(--gold)}
+.ph-desc{font-size:16px;line-height:1.75;color:rgba(255,255,255,.5);max-width:540px;opacity:0;transform:translateY(20px)}
+
+/* QUICK CONTACT STRIP */
+.quick-strip{background:var(--gold);padding:28px 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.qs-item{display:flex;align-items:center;gap:16px;padding:0 20px}
+.qs-icon{width:40px;height:40px;background:rgba(10,22,40,.15);flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:2px}
+.qs-icon svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.qs-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(10,22,40,.55);margin-bottom:2px}
+.qs-val{font-family:'Bebas',Arial,sans-serif;font-size:16px;color:var(--navy);letter-spacing:.5px}
+
+/* SECTION */
+.section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.s-line{width:32px;height:1px;background:var(--gold)}
+.s-eye-txt{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold)}
+.section-h2{font-family:'Bebas',Arial,sans-serif;font-size:clamp(32px,4vw,50px);line-height:1.15;color:var(--navy);margin-bottom:24px}
+.section-h2 em{font-style:normal;color:var(--gold)}
+.section-body{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:20px}
+.reveal{opacity:0;transform:translateY(40px)}
+
+/* MAIN CONTACT SECTION */
+#main-contact{padding:100px 60px;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;background:var(--warm)}
+
+/* INFO SIDE */
+.contact-detail-list{display:flex;flex-direction:column;gap:28px;margin-top:40px}
+.cd-item{display:flex;gap:20px;align-items:flex-start}
+.cd-icon{width:48px;height:48px;flex-shrink:0;border:1px solid rgba(201,153,89,.25);display:flex;align-items:center;justify-content:center}
+.cd-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cd-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.cd-val{font-size:15px;color:var(--navy);line-height:1.5}
+.cd-val a{color:var(--navy);transition:color .3s}
+.cd-val a:hover{color:var(--gold)}
+
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:32px}
+.hour-item{background:var(--cream);padding:16px 20px}
+.hour-day{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.hour-time{font-family:'Bebas',Arial,sans-serif;font-size:18px;color:var(--navy)}
+
+/* FORM SIDE */
+.contact-form-card{background:var(--cream);padding:52px 48px;border-radius:2px}
+.cf-title{font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);margin-bottom:8px}
+.cf-sub{font-size:14px;color:var(--muted);margin-bottom:36px;line-height:1.5}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0}
+.cf-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.cf-group label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.cf-group input,.cf-group select,.cf-group textarea{background:#fff;border:1px solid rgba(201,153,89,.2);border-radius:2px;padding:14px 16px;font-size:14px;color:var(--navy);font-family:'Bebas',Arial,sans-serif;outline:none;transition:border-color .3s;width:100%}
+.cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{border-color:var(--gold)}
+.cf-group textarea{resize:none}
+.btn-submit-full{width:100%;background:var(--navy);color:#fff;border:none;padding:18px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Bebas',Arial,sans-serif;position:relative;overflow:hidden;border-radius:2px;margin-top:8px;cursor:none;transition:transform .2s}
+.btn-submit-full::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);transition:transform .4s var(--ease)}
+.btn-submit-full span{position:relative;z-index:1}
+.btn-submit-full:hover::before{transform:translateX(0)}
+.btn-submit-full:hover span{color:var(--navy)}
+.form-success{display:none;background:rgba(201,153,89,.08);border:1px solid rgba(201,153,89,.3);padding:20px 24px;border-radius:2px;margin-top:16px;text-align:center}
+.form-success.show{display:block}
+.form-success div{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:var(--navy);margin-bottom:4px}
+.form-success p{font-size:13px;color:var(--muted)}
+
+/* LOCATIONS */
+#locations{padding:100px 60px;background:var(--cream)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:64px}
+.loc-card{background:#fff;padding:44px 40px;position:relative;overflow:hidden}
+.loc-num{font-family:'Bebas',Arial,sans-serif;font-size:72px;color:rgba(201,153,89,.08);position:absolute;top:16px;right:24px;line-height:1}
+.loc-type{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.loc-name{font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);margin-bottom:8px}
+.loc-address{font-size:15px;line-height:1.7;color:var(--muted);margin-bottom:24px}
+.loc-pin{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gold)}
+.loc-pin svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* MAP PLACEHOLDER */
+.map-placeholder{width:100%;height:320px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:2px;cursor:none;transition:opacity .3s}
+.map-placeholder:hover{opacity:.9}
+.map-icon{width:48px;height:48px;border:1px solid rgba(201,153,89,.4);display:flex;align-items:center;justify-content:center}
+.map-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.map-lbl{font-family:'Bebas',Arial,sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* SOCIAL / QUICK ACTIONS */
+#actions{padding:80px 60px;background:var(--navy)}
+.actions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+.action-card{background:rgba(255,255,255,.03);padding:40px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;transition:background .3s;cursor:none}
+.action-card:hover{background:rgba(255,255,255,.07)}
+.action-icon{width:48px;height:48px;border:1px solid rgba(201,153,89,.25);display:flex;align-items:center;justify-content:center}
+.action-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.action-title{font-family:'Bebas',Arial,sans-serif;font-size:22px;color:#fff}
+.action-desc{font-size:14px;line-height:1.6;color:rgba(255,255,255,.4);flex:1}
+.action-link{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;margin-top:8px}
+.action-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* FOOTER */
+footer{background:var(--navy);padding:60px 60px 32px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:32px}
+.footer-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,.3);margin-bottom:24px}
+.footer-h{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.35);transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:1px}
+.footer-reg{font-size:10px;color:rgba(255,255,255,.15);letter-spacing:1.5px;text-transform:uppercase}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  #nav{padding:18px 32px}
+  .nav-links{display:none}
+  .btn-consult{display:none}
+  .page-hero{padding:120px 32px 72px}
+  .quick-strip{padding:20px 32px;grid-template-columns:1fr 1fr}
+  #main-contact{grid-template-columns:1fr;gap:48px;padding:80px 32px}
+  .loc-grid{grid-template-columns:1fr}
+  .actions-grid{grid-template-columns:1fr 1fr}
+  #locations,#actions{padding:60px 32px}
+  footer{padding:48px 32px 24px}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .page-hero{padding:100px 20px 60px}
+  .quick-strip{grid-template-columns:1fr;padding:20px}
+  #main-contact,#locations,#actions{padding:60px 20px}
+  .contact-form-card{padding:32px 24px}
+  .actions-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .cf-row{grid-template-columns:1fr}
+  .hours-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-seal"><img src="images/logo.png" alt="MM"></div>
+    <div class="nav-wordmark">Masekela Masenya Inc<span>Attorneys &nbsp;|&nbsp; Est. 2012</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="practice.html">Practice Areas</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="index.html#testimonials">Clients</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <button class="btn-consult js-open-booking"><span>Book Consultation</span></button>
+</nav>
+
+<div id="mobile-overlay"></div>
+<div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <button class="mobile-close-btn" id="mobile-close" aria-label="Close menu">
+    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="practice.html">Practice Areas</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="mobile-contact-strip">
+    <div class="mobile-contact-item">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <a href="tel:+27872651961">+27 87 265 1961</a>
+    </div>
+    <div class="mobile-contact-item">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:alphy@maslaw.co.za">alphy@maslaw.co.za</a>
+    </div>
+    <a href="contact.html" class="mobile-book-btn">Book Consultation</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="ph-eyebrow"><div class="ph-line"></div><span class="ph-eye">Get In Touch</span></div>
+    <h1 class="ph-h1">Let's Start<br><em>Your Legal Journey</em></h1>
+    <p class="ph-desc">Whether you need urgent legal assistance or want to discuss a potential matter, we are available and ready to help. Reach out by phone, email, or use the form below.</p>
+  </div>
+</div>
+
+<!-- QUICK STRIP -->
+<div class="quick-strip">
+  <div class="qs-item">
+    <div class="qs-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+    <div><div class="qs-lbl">Main Line</div><div class="qs-val">+27 87 265 1961</div></div>
+  </div>
+  <div class="qs-item">
+    <div class="qs-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+    <div><div class="qs-lbl">Fax</div><div class="qs-val">086 678 1370</div></div>
+  </div>
+  <div class="qs-item">
+    <div class="qs-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+    <div><div class="qs-lbl">Email</div><div class="qs-val">alphy@maslaw.co.za</div></div>
+  </div>
+  <div class="qs-item">
+    <div class="qs-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div><div class="qs-lbl">Hours</div><div class="qs-val">Mon - Fri, 08:00 - 17:00</div></div>
+  </div>
+</div>
+
+<!-- MAIN CONTACT -->
+<section id="main-contact">
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Contact Information</span></div>
+    <h2 class="section-h2">Reach Us<br><em>Any Way You Prefer</em></h2>
+    <p class="section-body">We respond to all enquiries within 2 hours during business hours. For urgent matters, please call us directly - we are available Monday through Friday.</p>
+
+    <div class="contact-detail-list">
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="cd-lbl">Physical Address</div>
+          <div class="cd-val">Suite 2, A.P Ledwaba Office Park<br>873 Stanza Bopape Street, Eastwood<br>Pretoria, 0132</div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div>
+          <div class="cd-lbl">Telephone</div>
+          <div class="cd-val">
+            <a href="tel:+27872651961">+27 87 265 1961</a>
+          </div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2" ry="2"/><polyline points="3,8 12,14 21,8"/></svg></div>
+        <div>
+          <div class="cd-lbl">Fax</div>
+          <div class="cd-val">086 678 1370</div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div>
+          <div class="cd-lbl">Email</div>
+          <div class="cd-val">
+            <a href="mailto:alphy@maslaw.co.za">alphy@maslaw.co.za</a><br>
+            <a href="mailto:daphney@maslaw.co.za" style="font-size:13px;color:var(--muted)">daphney@maslaw.co.za (Paralegal)</a>
+          </div>
+        </div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 1.1-.9 2-2 2a2 2 0 110 4 2 2 0 110 4 2 2 0 01-2-2c0-1.1.9-2 2-2a2 2 0 000-4 2 2 0 010-4z"/></svg></div>
+        <div>
+          <div class="cd-lbl">Web</div>
+          <div class="cd-val"><a href="http://www.maslaw.co.za" target="_blank">www.maslaw.co.za</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px">
+      <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Office Hours</span></div>
+      <div class="hours-grid">
+        <div class="hour-item">
+          <div class="hour-day">Monday - Thursday</div>
+          <div class="hour-time">08:00 - 17:00</div>
+        </div>
+        <div class="hour-item">
+          <div class="hour-day">Friday</div>
+          <div class="hour-time">08:00 - 16:30</div>
+        </div>
+        <div class="hour-item">
+          <div class="hour-day">Saturday</div>
+          <div class="hour-time">By Appointment</div>
+        </div>
+        <div class="hour-item" style="opacity:.5">
+          <div class="hour-day">Sunday</div>
+          <div class="hour-time">Closed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="reveal">
+    <div class="contact-form-card">
+      <div class="cf-title">Send Us a Message</div>
+      <p class="cf-sub">We respond to all enquiries within 2 business hours. For urgent legal assistance, please call us directly.</p>
+      <form id="contact-form" onsubmit="handleContactSubmit(event)">
+        <div class="cf-row">
+          <div class="cf-group"><label>First Name *</label><input type="text" name="fname" placeholder="Your first name" required></div>
+          <div class="cf-group"><label>Last Name *</label><input type="text" name="lname" placeholder="Your surname" required></div>
+        </div>
+        <div class="cf-group"><label>Email Address *</label><input type="email" name="email" placeholder="Your email address" required></div>
+        <div class="cf-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(012) ..."></div>
+        <div class="cf-group">
+          <label>Area of Law</label>
+          <select name="area">
+            <option value="">Select a practice area</option>
+            <option>Commercial Law</option>
+            <option>Family Law</option>
+            <option>Labour Law</option>
+            <option>Medical Malpractice</option>
+            <option>Estate Law</option>
+            <option>Criminal Law</option>
+            <option>Third-Party Claims</option>
+            <option>Consumer Protection</option>
+            <option>Insurance Law</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="cf-group"><label>Subject *</label><input type="text" name="subject" placeholder="Brief subject of your enquiry" required></div>
+        <div class="cf-group"><label>Message *</label><textarea name="message" rows="5" placeholder="Please describe your legal matter or enquiry in as much detail as you are comfortable sharing..." required></textarea></div>
+        <div class="cf-group" style="flex-direction:row;align-items:center;gap:12px">
+          <input type="checkbox" name="consent" id="consent" required style="width:16px;height:16px;accent-color:var(--gold);cursor:none">
+          <label for="consent" style="font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:none">I understand that this message is subject to attorney-client confidentiality</label>
+        </div>
+        <button type="submit" class="btn-submit-full"><span id="submit-txt">Send Message</span></button>
+        <div class="form-success" id="form-success">
+          <div>Message Sent Successfully</div>
+          <p>Thank you. We will respond to your enquiry within 2 business hours. For urgent matters, please call +27 87 265 1961.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Find Us</span></div>
+    <h2 class="section-h2">Our <em>Office Location</em></h2>
+  </div>
+  <div class="loc-grid">
+    <div class="loc-card reveal">
+      <div class="loc-num">01</div>
+      <div class="loc-type">Main Office</div>
+      <div class="loc-name">A.P Ledwaba Office Park, Eastwood</div>
+      <p class="loc-address">Suite 2, A.P Ledwaba Office Park<br>873 Stanza Bopape Street, Eastwood<br>Pretoria, 0132<br>Gauteng, South Africa</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+        <div style="display:flex;gap:12px;font-size:13px;color:var(--muted);align-items:center">
+          <svg style="width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72"/></svg>
+          <a href="tel:+27872651961" style="color:var(--navy)">+27 87 265 1961</a>
+        </div>
+        <div style="display:flex;gap:12px;font-size:13px;color:var(--muted);align-items:center">
+          <svg style="width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <span>Secure building, visitor parking available</span>
+        </div>
+        <div style="display:flex;gap:12px;font-size:13px;color:var(--muted);align-items:center">
+          <svg style="width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon - Fri: 08:00 - 17:00</span>
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=873+Stanza+Bopape+Street+Eastwood+Pretoria" target="_blank" class="loc-pin">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Open in Google Maps
+      </a>
+    </div>
+    <div class="map-placeholder reveal" onclick="window.open('https://maps.google.com/?q=873+Stanza+Bopape+Street+Eastwood+Pretoria','_blank')">
+      <div class="map-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="map-lbl">873 Stanza Bopape Street, Eastwood, Pretoria</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3)">Click to open Google Maps</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ACTIONS -->
+<section id="actions">
+  <div style="max-width:600px">
+    <div class="section-eyebrow reveal"><div class="s-line"></div><span class="s-eye-txt" style="color:var(--gold)">Next Steps</span></div>
+    <h2 class="section-h2 reveal" style="color:#fff">How Would You Like<br>to <em>Proceed?</em></h2>
+  </div>
+  <div class="actions-grid">
+    <div class="action-card reveal">
+      <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.04 1.2 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="action-title">Call Us Directly</div>
+      <p class="action-desc">For urgent matters, call us directly on +27 87 265 1961. We are available Monday to Friday during office hours.</p>
+      <a href="tel:+27872651961" class="action-link">+27 87 265 1961 <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+    <div class="action-card reveal">
+      <div class="action-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="action-title">Book a Consultation</div>
+      <p class="action-desc">Schedule a formal consultation at a time that suits you. All consultations are confidential and handled directly by our Founding Director.</p>
+      <button class="action-link js-open-booking">Book Now <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+    </div>
+    <div class="action-card reveal">
+      <div class="action-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="action-title">Send an Email</div>
+      <p class="action-desc">Email us directly at alphy@maslaw.co.za. We reply to all emails within 2 business hours and treat all correspondence as confidential.</p>
+      <a href="mailto:alphy@maslaw.co.za" class="action-link">alphy@maslaw.co.za <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a class="nav-logo" href="index.html" style="margin-bottom:20px;display:flex">
+        <div class="nav-seal"><img src="images/logo.png" alt="MM"></div>
+        <div class="nav-wordmark">Masekela Masenya Inc<span>Attorneys &nbsp;|&nbsp; Est. 2012</span></div>
+      </a>
+      <p class="footer-desc">Premier attorneys in Pretoria. Suite 2, A.P Ledwaba Office Park, 873 Stanza Bopape Street, Eastwood, Pretoria, 0132.</p>
+      <p class="footer-desc" style="margin-top:8px">VAT: 4500323045 &nbsp;&middot;&nbsp; LPC: 31523 &nbsp;&middot;&nbsp; Firm: 13887</p>
+    </div>
+    <div>
+      <div class="footer-h">Practice Areas</div>
+      <ul class="footer-links">
+        <li><a href="practice.html">Commercial Law</a></li>
+        <li><a href="practice.html">Family Law</a></li>
+        <li><a href="practice.html">Labour Law</a></li>
+        <li><a href="practice.html">Medical Malpractice</a></li>
+        <li><a href="practice.html">Estate Law</a></li>
+        <li><a href="practice.html">Criminal Law</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="practice.html">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" class="js-open-booking">Book Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+27872651961">+27 87 265 1961</a></li>
+        <li><a href="mailto:alphy@maslaw.co.za">alphy@maslaw.co.za</a></li>
+        <li style="font-size:11px;margin-top:8px;line-height:1.6">Fax: 086 678 1370</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2025 Masekela Masenya Inc. All rights reserved.</span>
+    <span class="footer-reg">Attorneys, Notaries &amp; Conveyancers</span>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL — Full 5-Step System -->
+<div id="booking-overlay">
+  <div class="booking-modal">
+    <div class="bm-header">
+      <div class="bm-title">Book a Consultation</div>
+      <button class="bm-close js-close-booking"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="bm-steps">
+      <div class="bm-step active" id="bm-step-1"><div class="bm-step-num">1</div><div class="bm-step-lbl">Practice Area</div></div>
+      <div class="bm-step-connector"></div>
+      <div class="bm-step" id="bm-step-2"><div class="bm-step-num">2</div><div class="bm-step-lbl">Date</div></div>
+      <div class="bm-step-connector"></div>
+      <div class="bm-step" id="bm-step-3"><div class="bm-step-num">3</div><div class="bm-step-lbl">Time</div></div>
+      <div class="bm-step-connector"></div>
+      <div class="bm-step" id="bm-step-4"><div class="bm-step-num">4</div><div class="bm-step-lbl">Details</div></div>
+      <div class="bm-step-connector"></div>
+      <div class="bm-step" id="bm-step-5"><div class="bm-step-num">5</div><div class="bm-step-lbl">Confirm</div></div>
+    </div>
+    <div class="bm-body">
+      <div class="bm-panel active" id="bm-panel-1">
+        <div class="bm-panel-title">Select Practice Area</div>
+        <p class="bm-panel-sub">Which area of law can we assist you with?</p>
+        <div class="area-grid">
+          <button class="area-card" data-area="Commercial Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div class="area-card-name">Commercial</div><div class="area-card-desc">Business, contracts, corporate</div></button>
+          <button class="area-card" data-area="Family Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="area-card-name">Family</div><div class="area-card-desc">Divorce, custody, maintenance</div></button>
+          <button class="area-card" data-area="Labour Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="area-card-name">Labour</div><div class="area-card-desc">CCMA, dismissal, employment</div></button>
+          <button class="area-card" data-area="Medical Malpractice"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="area-card-name">Medical</div><div class="area-card-desc">Malpractice, negligence</div></button>
+          <button class="area-card" data-area="Estate Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div class="area-card-name">Estates</div><div class="area-card-desc">Wills, trusts, administration</div></button>
+          <button class="area-card" data-area="Criminal Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="area-card-name">Criminal</div><div class="area-card-desc">Defence, bail, trial</div></button>
+          <button class="area-card" data-area="Third-Party Claims"><div class="area-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="area-card-name">Third-Party</div><div class="area-card-desc">RAF claims, personal injury</div></button>
+          <button class="area-card" data-area="Consumer Protection"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="area-card-name">Consumer</div><div class="area-card-desc">CPA, credit, debt review</div></button>
+          <button class="area-card" data-area="Insurance Law"><div class="area-card-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div class="area-card-name">Insurance</div><div class="area-card-desc">Policy disputes, claims</div></button>
+        </div>
+      </div>
+      <div class="bm-panel" id="bm-panel-2">
+        <div class="bm-panel-title">Select a Date</div>
+        <p class="bm-panel-sub">Choose a convenient date for your consultation.</p>
+        <div class="calendar-wrap">
+          <div>
+            <div class="cal-nav">
+              <button class="cal-nav-btn" onclick="calNav(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+              <div class="cal-month" id="cal-month-label"></div>
+              <button class="cal-nav-btn" onclick="calNav(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            </div>
+            <div class="cal-grid" id="cal-days">
+              <div class="cal-day-header">S</div><div class="cal-day-header">M</div><div class="cal-day-header">T</div><div class="cal-day-header">W</div><div class="cal-day-header">T</div><div class="cal-day-header">F</div><div class="cal-day-header">S</div>
+            </div>
+          </div>
+          <div class="cal-selected-info">
+            <div class="cal-sel-lbl">Selected Date</div>
+            <div class="cal-sel-date" id="cal-selected-display">No date selected</div>
+            <div class="cal-tip">Consultations available Monday to Friday. Same-day bookings require a minimum 2-hour notice.</div>
+          </div>
+        </div>
+      </div>
+      <div class="bm-panel" id="bm-panel-3">
+        <div class="bm-panel-title">Select a Time</div>
+        <p class="bm-panel-sub">Choose your preferred consultation time slot.</p>
+        <div class="time-slots-grid">
+          <button class="time-slot" data-time="08:00"><div class="ts-time">08:00</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot" data-time="08:45"><div class="ts-time">08:45</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot unavailable" data-time="09:30"><div class="ts-time">09:30</div><div class="ts-dur">45 min</div><div class="ts-avail">Booked</div></button>
+          <button class="time-slot" data-time="10:15"><div class="ts-time">10:15</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot" data-time="11:00"><div class="ts-time">11:00</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot unavailable" data-time="11:45"><div class="ts-time">11:45</div><div class="ts-dur">45 min</div><div class="ts-avail">Booked</div></button>
+          <button class="time-slot" data-time="13:15"><div class="ts-time">13:15</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot" data-time="14:00"><div class="ts-time">14:00</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot unavailable" data-time="14:45"><div class="ts-time">14:45</div><div class="ts-dur">45 min</div><div class="ts-avail">Booked</div></button>
+          <button class="time-slot" data-time="15:30"><div class="ts-time">15:30</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+          <button class="time-slot" data-time="16:15"><div class="ts-time">16:15</div><div class="ts-dur">45 min</div><div class="ts-avail">Available</div></button>
+        </div>
+      </div>
+      <div class="bm-panel" id="bm-panel-4">
+        <div class="bm-panel-title">Your Details</div>
+        <p class="bm-panel-sub">Please provide your contact information so we can confirm your appointment.</p>
+        <div class="details-grid">
+          <div class="bm-field"><label>First Name</label><input type="text" id="bm-fname" placeholder="First name"></div>
+          <div class="bm-field"><label>Last Name</label><input type="text" id="bm-lname" placeholder="Surname"></div>
+          <div class="bm-field"><label>Email Address</label><input type="email" id="bm-email" placeholder="Your email address"></div>
+          <div class="bm-field"><label>Phone Number</label><input type="tel" id="bm-phone" placeholder="+27 ..."></div>
+          <div class="bm-field full-span"><label>Brief Description of Your Matter</label><textarea id="bm-desc" rows="4" placeholder="Briefly describe what you need legal assistance with..."></textarea></div>
+        </div>
+      </div>
+      <div class="bm-panel" id="bm-panel-5">
+        <div style="text-align:center;padding:8px 0 24px">
+          <div class="confirm-seal"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="confirm-title">Appointment Confirmed!</div>
+          <p class="confirm-sub">Your consultation request has been received. We will confirm within 2 hours during business hours.</p>
+        </div>
+        <div class="confirm-ref"><div class="ref-lbl">Booking Reference</div><div class="ref-num" id="confirm-ref-num">MM-XXXXXX</div></div>
+        <div class="confirm-details-grid" id="confirm-details-grid"></div>
+        <div class="confirm-notice">To reschedule or cancel, contact us at least 24 hours in advance: <strong>+27 87 265 1961</strong> or <strong>alphy@maslaw.co.za</strong>.</div>
+      </div>
+    </div>
+    <div class="bm-footer">
+      <button class="bm-back" id="bm-back-btn">Back</button>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span class="bm-error" id="bm-error-msg"></span>
+        <button class="bm-next" id="bm-next-btn">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+#booking-overlay{position:fixed;inset:0;background:rgba(10,22,40,.75);backdrop-filter:blur(8px);z-index:5000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+#booking-overlay.open{opacity:1;pointer-events:all}
+.booking-modal{background:var(--warm);width:840px;max-width:96vw;max-height:92vh;overflow-y:auto;border-radius:4px;position:relative;transform:translateY(24px) scale(.98);transition:transform .4s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.4)}
+#booking-overlay.open .booking-modal{transform:translateY(0) scale(1)}
+.booking-modal::-webkit-scrollbar{width:4px}.booking-modal::-webkit-scrollbar-thumb{background:rgba(201,153,89,.3);border-radius:2px}
+.bm-header{background:var(--navy);padding:28px 36px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:2}
+.bm-title{font-family:'Bebas',Arial,sans-serif;font-size:22px;color:#fff;letter-spacing:1px}
+.bm-close{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .3s,background .3s}
+.bm-close:hover{border-color:var(--gold);background:rgba(201,153,89,.1)}
+.bm-close svg{width:16px;height:16px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:1.5;display:block}
+.bm-steps{background:var(--cream);padding:20px 36px;display:flex;align-items:center;border-bottom:1px solid rgba(201,153,89,.15)}
+.bm-step{display:flex;align-items:center;gap:10px;flex:1}
+.bm-step-num{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(201,153,89,.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(201,153,89,.4);flex-shrink:0;transition:all .3s}
+.bm-step.active .bm-step-num{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.bm-step.done .bm-step-num{background:var(--navy);border-color:var(--navy);color:#fff}
+.bm-step-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,153,89,.4);transition:color .3s}
+.bm-step.active .bm-step-lbl{color:var(--gold)}.bm-step.done .bm-step-lbl{color:var(--navy)}
+.bm-step-connector{flex:1;height:1px;background:rgba(201,153,89,.2);margin:0 8px}
+.bm-body{padding:36px}.bm-panel{display:none}.bm-panel.active{display:block}
+.bm-panel-title{font-family:'Bebas',Arial,sans-serif;font-size:24px;color:var(--navy);margin-bottom:6px}
+.bm-panel-sub{font-size:13px;color:var(--muted);margin-bottom:28px}
+.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.area-card{border:1.5px solid rgba(201,153,89,.2);border-radius:2px;padding:20px 16px;cursor:pointer;transition:border-color .3s,background .3s;text-align:left}
+.area-card:hover,.area-card.selected{border-color:var(--gold);background:rgba(201,153,89,.06)}
+.area-card.selected .area-card-name{color:var(--gold)}
+.area-card-icon{width:32px;height:32px;margin-bottom:10px}
+.area-card-icon svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.area-card-name{font-family:'Bebas',Arial,sans-serif;font-size:16px;color:var(--navy);margin-bottom:4px;line-height:1.2}
+.area-card-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.calendar-wrap{display:grid;grid-template-columns:1fr 260px;gap:28px}
+.cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.cal-month{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:var(--navy)}
+.cal-nav-btn{width:32px;height:32px;border:1px solid rgba(201,153,89,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s}
+.cal-nav-btn:hover{border-color:var(--gold);background:rgba(201,153,89,.1)}
+.cal-nav-btn svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-day-header{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:center;padding:4px 0}
+.cal-day{width:100%;aspect-ratio:1;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--navy);cursor:pointer;transition:all .2s;border:1px solid transparent}
+.cal-day:hover:not(.disabled):not(.empty){border-color:var(--gold);background:rgba(201,153,89,.08)}
+.cal-day.selected{background:var(--gold);color:var(--navy)}.cal-day.today{color:var(--gold)}
+.cal-day.disabled,.cal-day.empty{color:rgba(0,0,0,.15);cursor:default}
+.cal-selected-info{background:var(--cream);padding:20px;border-radius:2px}
+.cal-sel-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.cal-sel-date{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:var(--navy);margin-bottom:16px;min-height:28px}
+.cal-tip{font-size:11px;color:var(--muted);line-height:1.6}
+.time-slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.time-slot{border:1.5px solid rgba(201,153,89,.2);border-radius:2px;padding:14px 10px;text-align:center;cursor:pointer;transition:all .2s}
+.time-slot:hover:not(.unavailable),.time-slot.selected{border-color:var(--gold);background:rgba(201,153,89,.08)}
+.time-slot.selected .ts-time{color:var(--gold)}.time-slot.unavailable{opacity:.35;cursor:default}
+.ts-time{font-family:'Bebas',Arial,sans-serif;font-size:18px;color:var(--navy);margin-bottom:3px}
+.ts-dur{font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+.ts-avail{font-size:9px;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-top:4px}
+.time-slot.unavailable .ts-avail{color:var(--muted)}
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.full-span{grid-column:1/-1}
+.bm-field{display:flex;flex-direction:column;gap:6px}
+.bm-field label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.bm-field input,.bm-field textarea{background:#fff;border:1px solid rgba(201,153,89,.2);border-radius:2px;padding:12px 14px;font-size:13px;color:var(--navy);font-family:'Bebas',Arial,sans-serif;outline:none;transition:border-color .3s}
+.bm-field input:focus,.bm-field textarea:focus{border-color:var(--gold)}.bm-field textarea{resize:none}
+.confirm-seal{width:80px;height:80px;border-radius:50%;background:rgba(201,153,89,.1);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.confirm-seal svg{width:36px;height:36px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.confirm-title{font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);text-align:center;margin-bottom:8px}
+.confirm-sub{text-align:center;font-size:14px;color:var(--muted);margin-bottom:32px}
+.confirm-ref{background:var(--cream);padding:20px 28px;border-radius:2px;text-align:center;margin-bottom:28px;border:1px solid rgba(201,153,89,.2)}
+.ref-lbl{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.ref-num{font-family:'Bebas',Arial,sans-serif;font-size:28px;color:var(--navy);letter-spacing:3px}
+.confirm-details-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:28px}
+.cd-item{background:#fff;padding:16px 20px}.cd-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}.cd-val{font-size:14px;color:var(--navy)}
+.confirm-notice{background:rgba(201,153,89,.08);border:1px solid rgba(201,153,89,.2);border-radius:2px;padding:16px 20px;font-size:12px;color:var(--muted);line-height:1.6}
+.bm-footer{padding:24px 36px;border-top:1px solid rgba(201,153,89,.15);display:flex;justify-content:space-between;align-items:center;background:var(--cream);position:sticky;bottom:0}
+.bm-back{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color .3s;padding:12px 0;font-family:'Bebas',Arial,sans-serif;background:none;border:none}
+.bm-back:hover{color:var(--navy)}
+.bm-next{background:var(--navy);color:#fff;padding:14px 36px;border-radius:2px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Bebas',Arial,sans-serif;cursor:pointer;border:none;transition:background .3s,transform .2s}
+.bm-next:hover{background:var(--gold);color:var(--navy);transform:translateY(-1px)}
+.bm-error{font-size:11px;color:#c0392b;letter-spacing:.5px}
+@media(max-width:680px){.area-grid,.time-slots-grid{grid-template-columns:repeat(2,1fr)}.calendar-wrap,.details-grid,.confirm-details-grid{grid-template-columns:1fr}.bm-step-lbl{display:none}.bm-body,.bm-footer{padding:20px}}
+/* MOBILE MENU */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201}
+.nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--gold);transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:1024px){.nav-hamburger{display:flex}}
+#mobile-menu{position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--navy);z-index:300;transform:translateX(100%);transition:transform .35s cubic-bezier(0.25,0.46,0.45,0.94);overflow-y:auto;padding:80px 32px 40px;display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,.4)}
+#mobile-menu.open{transform:translateX(0)}
+#mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:299;opacity:0;pointer-events:none;transition:opacity .35s;backdrop-filter:blur(2px)}
+#mobile-overlay.open{opacity:1;pointer-events:all}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:40px}
+.mobile-nav-links a{display:block;font-family:'Bebas',Arial,sans-serif;font-size:22px;letter-spacing:2px;color:rgba(255,255,255,.7);padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .3s}
+.mobile-nav-links a:hover,.mobile-nav-links a.active{color:var(--gold)}
+.mobile-close-btn{position:absolute;top:24px;right:24px;width:36px;height:36px;background:none;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.mobile-close-btn svg{width:16px;height:16px;stroke:rgba(255,255,255,.6);fill:none;stroke-width:1.5}
+.mobile-contact-strip{border-top:1px solid rgba(201,153,89,.2);padding-top:28px;margin-top:auto}
+.mobile-contact-item{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.mobile-contact-item svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5;flex-shrink:0}
+.mobile-contact-item a,.mobile-contact-item span{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.5px}
+.mobile-book-btn{display:block;background:var(--gold);color:var(--navy);padding:14px 24px;text-align:center;font-family:'Bebas',Arial,sans-serif;font-size:14px;letter-spacing:2px;border-radius:2px;margin-top:20px;transition:background .3s}
+.mobile-book-btn:hover{background:var(--gold2)}
+
+/* WhatsApp floating button */
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4),0 2px 8px rgba(0,0,0,.2);transition:transform .3s,box-shadow .3s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1) translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,.5),0 4px 12px rgba(0,0,0,.2)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.4)}70%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 12px rgba(37,211,102,0)}}
+.wa-float{animation:wa-pulse 2.5s ease-out infinite}
+</style>
+
+<script>
+const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+gsap.ticker.add(time => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+gsap.registerPlugin(ScrollTrigger);
+const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+if(window.innerWidth>768){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+  document.querySelectorAll('a,button,.action-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'))});
+}
+gsap.timeline({delay:.2,defaults:{ease:'power3.out'}})
+  .to('.ph-eyebrow',{opacity:1,y:0,duration:.7})
+  .to('.ph-h1',{opacity:1,y:0,duration:.8},'-=.4')
+  .to('.ph-desc',{opacity:1,y:0,duration:.6},'-=.4');
+gsap.utils.toArray('.reveal').forEach(el=>{
+  gsap.fromTo(el,{opacity:0,y:44},{opacity:1,y:0,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});
+});
+
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<span>Sending...</span>';
+  btn.disabled = true;
+  // Simulate send - replace with Formspree action when going live
+  setTimeout(() => {
+    btn.innerHTML = '<span>Message Sent - We will be in touch!</span>';
+    e.target.reset();
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.disabled = false;
+    }, 4000);
+  }, 1200);
+}
+
+/* ===== BOOKING MODAL — 5-STEP SYSTEM ===== */
+const bState={step:1,area:'',date:null,dateLabel:'',time:'',fname:'',lname:'',email:'',phone:''};
+const overlay=document.getElementById('booking-overlay');
+function closeBooking(){overlay.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.js-open-booking').forEach(b=>b.addEventListener('click',()=>{overlay.classList.add('open');document.body.style.overflow='hidden'}));
+document.querySelectorAll('.js-close-booking').forEach(b=>b.addEventListener('click',closeBooking));
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeBooking()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBooking()});
+document.querySelectorAll('.area-card').forEach(card=>{card.addEventListener('click',()=>{document.querySelectorAll('.area-card').forEach(c=>c.classList.remove('selected'));card.classList.add('selected');bState.area=card.dataset.area;document.getElementById('bm-error-msg').textContent=''})});
+let calYear=new Date().getFullYear(),calMonth=new Date().getMonth();
+const CAL_MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function clearEl(el){while(el.firstChild)el.removeChild(el.firstChild)}
+function renderCal(){
+  document.getElementById('cal-month-label').textContent=CAL_MONTHS[calMonth]+' '+calYear;
+  const grid=document.getElementById('cal-days');
+  clearEl(grid);
+  ['S','M','T','W','T','F','S'].forEach(d=>{const h=document.createElement('div');h.className='cal-day-header';h.textContent=d;grid.appendChild(h)});
+  const first=new Date(calYear,calMonth,1).getDay(),days=new Date(calYear,calMonth+1,0).getDate(),today=new Date();
+  for(let i=0;i<first;i++){const e=document.createElement('div');e.className='cal-day empty';grid.appendChild(e)}
+  for(let d=1;d<=days;d++){
+    const e=document.createElement('div');e.className='cal-day';e.textContent=d;
+    const dt=new Date(calYear,calMonth,d),dow=dt.getDay(),isPast=dt<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    if(dow===0||dow===6||isPast){e.classList.add('disabled')}
+    else{
+      if(dt.toDateString()===today.toDateString())e.classList.add('today');
+      if(bState.date&&dt.toDateString()===bState.date.toDateString())e.classList.add('selected');
+      e.addEventListener('click',()=>{bState.date=dt;bState.dateLabel=CAL_MONTHS[calMonth]+' '+d+', '+calYear;document.getElementById('cal-selected-display').textContent=bState.dateLabel;grid.querySelectorAll('.cal-day').forEach(x=>x.classList.remove('selected'));e.classList.add('selected');document.getElementById('bm-error-msg').textContent=''});
+    }
+    grid.appendChild(e);
+  }
+}
+function calNav(dir){calMonth+=dir;if(calMonth>11){calMonth=0;calYear++}if(calMonth<0){calMonth=11;calYear--}renderCal()}
+document.querySelectorAll('.time-slot:not(.unavailable)').forEach(slot=>{slot.addEventListener('click',()=>{document.querySelectorAll('.time-slot').forEach(s=>s.classList.remove('selected'));slot.classList.add('selected');bState.time=slot.dataset.time;document.getElementById('bm-error-msg').textContent=''})});
+function updateStepUI(){
+  for(let i=1;i<=5;i++){
+    document.getElementById('bm-step-'+i).className='bm-step'+(i===bState.step?' active':i<bState.step?' done':'');
+    document.getElementById('bm-panel-'+i).className='bm-panel'+(i===bState.step?' active':'');
+  }
+  document.getElementById('bm-back-btn').style.visibility=bState.step>1&&bState.step<5?'visible':'hidden';
+  document.getElementById('bm-next-btn').textContent=bState.step===4?'Confirm Booking':bState.step===5?'Close':'Continue';
+}
+function validateStep(){
+  const err=document.getElementById('bm-error-msg');
+  if(bState.step===1&&!bState.area){err.textContent='Please select a practice area.';return false}
+  if(bState.step===2&&!bState.date){err.textContent='Please select a date.';return false}
+  if(bState.step===3&&!bState.time){err.textContent='Please select a time slot.';return false}
+  if(bState.step===4){
+    const fname=document.getElementById('bm-fname').value.trim(),email=document.getElementById('bm-email').value.trim();
+    if(!fname){err.textContent='Please enter your first name.';return false}
+    if(!email||!email.includes('@')){err.textContent='Please enter a valid email address.';return false}
+    bState.fname=fname;bState.lname=document.getElementById('bm-lname').value.trim();bState.email=email;bState.phone=document.getElementById('bm-phone').value.trim();
+  }
+  err.textContent='';return true;
+}
+function buildConfirmation(){
+  const ref='MM-'+Math.random().toString(36).substr(2,6).toUpperCase();
+  document.getElementById('confirm-ref-num').textContent=ref;
+  const grid=document.getElementById('confirm-details-grid');
+  clearEl(grid);
+  [['Name',bState.fname+' '+bState.lname],['Email',bState.email],['Phone',bState.phone||'Not provided'],['Practice Area',bState.area],['Date',bState.dateLabel],['Time',bState.time+' (45 min)']].forEach(([lbl,val])=>{
+    const item=document.createElement('div');item.className='cd-item';
+    const l=document.createElement('div');l.className='cd-lbl';l.textContent=lbl;
+    const v=document.createElement('div');v.className='cd-val';v.textContent=val;
+    item.appendChild(l);item.appendChild(v);grid.appendChild(item);
+  });
+}
+document.getElementById('bm-next-btn').addEventListener('click',()=>{
+  if(bState.step===5){closeBooking();return}
+  if(!validateStep())return;
+  if(bState.step===4)buildConfirmation();
+  bState.step++;updateStepUI();
+  if(bState.step===2)renderCal();
+});
+document.getElementById('bm-back-btn').addEventListener('click',()=>{if(bState.step>1){bState.step--;updateStepUI()}});
+</script>
+<div id="scroll-progress"></div>
+
+<script>
+/* Scroll progress */
+window.addEventListener('scroll',()=>{
+  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);
+  const b=document.getElementById('scroll-progress');
+  if(b)b.style.width=(p*100)+'%';
+},{passive:true});
+/* 3D Tilt on cards */
+if(window.innerWidth>768){
+  document.querySelectorAll('.val-card,.cred-card,.consultant-card,.timeline-item').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(700px) rotateX(${-y*8}deg) rotateY(${x*8}deg) translateY(-4px) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+  });
+}
+</script>
+
+<script>
+// Mobile menu
+(function(){
+  var btn=document.getElementById('nav-hamburger');
+  var menu=document.getElementById('mobile-menu');
+  var overlay=document.getElementById('mobile-overlay');
+  var closeBtn=document.getElementById('mobile-close');
+  function openMenu(){menu.classList.add('open');overlay.classList.add('open');btn.classList.add('open');document.body.style.overflow='hidden';}
+  function closeMenu(){menu.classList.remove('open');overlay.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';}
+  if(btn)btn.addEventListener('click',openMenu);
+  if(closeBtn)closeBtn.addEventListener('click',closeMenu);
+  if(overlay)overlay.addEventListener('click',closeMenu);
+  var links=document.querySelectorAll('.mobile-nav-links a');
+  links.forEach(function(l){if(l.getAttribute('href')===window.location.pathname.split('/').pop()||l.getAttribute('href')===window.location.href.split('/').pop())l.classList.add('active');});
+})();
+</script>
+<a href="https://wa.me/27872651961?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20legal%20services." target="_blank" class="wa-float" aria-label="Chat on WhatsApp" rel="noopener">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</body>
+</html>
