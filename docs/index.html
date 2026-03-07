@@ -416,29 +416,44 @@ button{cursor:none;border:none;background:none;font:inherit}
 
 /* ===== CANVAS SCROLL SEQUENCE ===== */
 #seq-outer{height:350vh;position:relative}
-#seq-sticky{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:#060e1a}
-/* Photographic background — replaces canvas frames */
-#seq-photo{position:absolute;inset:0;z-index:0;overflow:hidden}
-#seq-photo img{width:100%;height:100%;object-fit:cover;object-position:center 55%;
-  transform:scale(1.08);
-  filter:brightness(.55) saturate(.6) contrast(1.1);
-  will-change:transform,filter;
+#seq-sticky{
+  position:sticky;top:0;width:100%;height:100vh;overflow:hidden;
+  background:#060e1a;
 }
-#seq-overlay{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(to bottom,rgba(0,0,0,.30) 0%,rgba(0,0,0,.12) 45%,rgba(0,0,0,.38) 100%);
+/* ── BACKGROUND IMAGE via pseudo-element — zero z-index conflicts possible ── */
+#seq-sticky{
+  --seq-br:0.60;--seq-sat:0.70;--seq-sc:1.08;
+}
+#seq-sticky::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  background:url(images/hero-bg.jpg) center 55% / cover no-repeat;
+  filter:brightness(var(--seq-br)) saturate(var(--seq-sat)) contrast(1.05);
+  transform:scale(var(--seq-sc));
+  z-index:0;
+  pointer-events:none;
+  will-change:filter,transform;
+}
+/* Subtle dark veil */
+#seq-sticky::after{
+  content:'';
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.22) 0%,rgba(0,0,0,.06) 45%,rgba(0,0,0,.32) 100%);
+  z-index:1;
+  pointer-events:none;
 }
 /* Director portrait — slides in from right at mid-scroll */
-#seq-portrait{position:absolute;top:0;right:0;bottom:0;width:40%;z-index:2;overflow:hidden;
-  opacity:0;transform:translateX(60px);
-  transition:opacity .8s ease,transform .8s ease;
+#seq-portrait{
+  position:absolute;top:0;right:0;bottom:0;width:38%;
+  z-index:3;overflow:hidden;
+  opacity:0;transform:translateX(50px);
+  transition:opacity .9s ease,transform .9s ease;
 }
 #seq-portrait.visible{opacity:1;transform:translateX(0)}
-#seq-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;
-  filter:brightness(.55) contrast(1.05);
-}
-#seq-portrait::before{content:'';position:absolute;inset:0;
-  background:linear-gradient(to left,rgba(6,14,26,0) 40%,rgba(6,14,26,.98) 100%),
-             linear-gradient(to top,rgba(6,14,26,.5) 0%,transparent 30%);
+#seq-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.6)}
+#seq-portrait::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to left,transparent 35%,rgba(6,14,26,.95) 100%);
 }
 #frame-canvas{display:none}
 .seq-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,transparent 30%,rgba(0,0,0,.55) 100%);pointer-events:none}
@@ -1051,17 +1066,11 @@ body::before {
 <!-- ===== CINEMATIC SCROLL SEQUENCE ===== -->
 <div id="seq-outer">
   <div id="seq-sticky">
-    <!-- Layer 0: Pretoria City Hall — golden hour, jacarandas -->
-    <div id="seq-photo">
-      <img src="images/hero-bg.jpg" alt="" id="seq-photo-img">
-    </div>
-    <!-- Layer 1: Atmospheric vignette -->
-    <div id="seq-overlay"></div>
-    <!-- Layer 2: Director portrait — emerges at mid-scroll -->
+    <!-- Background: Pretoria City Hall via CSS ::before pseudo-element -->
+    <!-- Director portrait — slides in at mid-scroll -->
     <div id="seq-portrait">
       <img src="images/team-director.jpg" alt="Advocate Masekela Masenya">
     </div>
-    <!-- Legacy canvas — hidden -->
     <canvas id="frame-canvas"></canvas>
     <div class="seq-vignette"></div>
 
@@ -1638,10 +1647,10 @@ const lenis = new Lenis({ lerp: 0.08, smoothWheel: true, wheelMultiplier: 0.85 }
 gsap.ticker.add(time => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
-/* ===== CINEMATIC SCROLL SEQUENCE — photo + CSS reveal (no frames needed) ===== */
+/* ===== CINEMATIC SCROLL SEQUENCE ===== */
 gsap.registerPlugin(ScrollTrigger);
 
-const seqImg = document.getElementById('seq-photo-img');
+const seqSticky = document.getElementById('seq-sticky');
 const seqPortrait = document.getElementById('seq-portrait');
 
 ScrollTrigger.create({
@@ -1652,39 +1661,33 @@ ScrollTrigger.create({
   onUpdate(self) {
     const p = self.progress;
 
-    // ── IMAGE: visible from frame 0, warms to full golden-hour colour ──
-    const brightness = 0.55 + p * 0.30;           // 0.55 → 0.85
-    const saturation = 0.60 + p * 0.50;           // 0.60 → 1.10
-    const contrast   = 1.10 - p * 0.08;           // 1.10 → 1.02
-    const scale      = 1.08 - p * 0.08;           // 1.08 → 1.00  (slow de-zoom)
-    if (seqImg) {
-      seqImg.style.filter    = `brightness(${brightness.toFixed(2)}) saturate(${saturation.toFixed(2)}) contrast(${contrast.toFixed(2)})`;
-      seqImg.style.transform = `scale(${scale.toFixed(3)})`;
+    // ── BACKGROUND: warm from desaturated to full golden-hour via CSS var ──
+    const br  = (0.60 + p * 0.28).toFixed(2);   // 0.60 → 0.88
+    const sat = (0.70 + p * 0.40).toFixed(2);   // 0.70 → 1.10
+    const sc  = (1.08 - p * 0.08).toFixed(3);   // 1.08 → 1.00
+    if (seqSticky) {
+      seqSticky.style.setProperty('--seq-br',  br);
+      seqSticky.style.setProperty('--seq-sat', sat);
+      seqSticky.style.setProperty('--seq-sc',  sc);
     }
 
-    // ── DIRECTOR PORTRAIT: slides in from right at 38-55% ──
+    // ── DIRECTOR PORTRAIT: slides in 38-78% ──
     if (seqPortrait) {
       if (p > 0.38 && p < 0.78) seqPortrait.classList.add('visible');
       else seqPortrait.classList.remove('visible');
     }
 
-    // ── PROGRESS BAR ──
+    // ── PROGRESS / SKIP ──
     document.getElementById('seq-progress-fill').style.width = (p * 100) + '%';
-
-    // ── SKIP BUTTON ──
     const skip = document.getElementById('seq-skip');
     if (p > 0.05) skip.classList.add('visible'); else skip.classList.remove('visible');
 
-    // ── TEXT 1: firm name  0→15% in, 25→35% out ──
+    // ── TEXTS ──
     const t1 = p < 0.15 ? p / 0.15 : p < 0.25 ? 1 : p < 0.35 ? 1 - (p - 0.25) / 0.10 : 0;
-    document.getElementById('seq-text1').style.opacity = Math.max(0, Math.min(1, t1));
-
-    // ── TEXT 2: tagline  40→55% in, 70→80% out ──
     const t2 = p < 0.40 ? 0 : p < 0.55 ? (p - 0.40) / 0.15 : p < 0.70 ? 1 : p < 0.80 ? 1 - (p - 0.70) / 0.10 : 0;
-    document.getElementById('seq-text2').style.opacity = Math.max(0, Math.min(1, t2));
-
-    // ── TEXT 3: enter prompt  85→95% ──
     const t3 = p < 0.85 ? 0 : (p - 0.85) / 0.10;
+    document.getElementById('seq-text1').style.opacity = Math.max(0, Math.min(1, t1));
+    document.getElementById('seq-text2').style.opacity = Math.max(0, Math.min(1, t2));
     document.getElementById('seq-text3').style.opacity = Math.max(0, Math.min(1, t3));
   }
 });
