@@ -121,10 +121,12 @@ button{cursor:none;border:none;background:none;font:inherit}
 .tl-year{font-size:10px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
 .tl-org{font-family:'Bebas',Arial,sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px}
 .tl-role{font-size:13px;color:var(--muted);line-height:1.5}
+.tl-portrait{width:100%;max-width:240px;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;margin-top:16px;filter:grayscale(100%);transition:filter .6s ease;border-left:3px solid var(--gold)}
+.tl-item--featured:hover .tl-portrait{filter:grayscale(0%)}
 
 /* DAPHNEY PROFILE */
 #daphney{padding:100px 60px;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start;background:var(--cream)}
-.dp-img{width:100%;height:500px;object-fit:cover;object-position:center top;border-radius:2px;display:block}
+.dp-img{width:100%;height:500px;object-fit:cover;object-position:center 5%;border-radius:2px;display:block}
 .dp-overlay-card{background:var(--navy);padding:24px 28px;margin-top:-80px;position:relative;z-index:2;margin-right:-20px}
 .dp-card-name{font-family:'Bebas',Arial,sans-serif;font-size:24px;color:#fff;margin-bottom:4px}
 .dp-card-title{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
@@ -384,10 +386,11 @@ footer{background:var(--navy);padding:60px 60px 32px}
         <div class="tl-org">Outsurance - Legal Advisory</div>
         <div class="tl-role">In-house legal advisory role building deep understanding of insurance law, risk management, and corporate legal compliance.</div>
       </div>
-      <div class="tl-item">
+      <div class="tl-item tl-item--featured">
         <div class="tl-year">2012 - Present</div>
         <div class="tl-org">Masekela Masenya Inc - Founding Director</div>
         <div class="tl-role">Founded and built a full-service Pretoria law firm from the ground up. 308 High Court appearances. 82% success rate. 166 clients served.</div>
+        <img class="tl-portrait" src="images/director-robes.jpg" alt="Masekela Masenya - Founding Director in Robes">
       </div>
     </div>
   </div>
