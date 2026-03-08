@@ -461,7 +461,7 @@ button{cursor:none;border:none;background:none;font:inherit}
 }
 @keyframes portraitReveal{to{opacity:1}}
 .pl-portrait img{
-  width:100%;height:100%;object-fit:cover;object-position:center top;
+  width:100%;height:100%;object-fit:cover;object-position:center 10%;
   filter:brightness(.62) contrast(1.08);
   transform:scale(1.06);
   animation:slowZoom 5s ease-out .1s forwards;
@@ -762,7 +762,7 @@ button{cursor:none;border:none;background:none;font:inherit}
 .team-header .section-h2{margin-bottom:0}
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .team-card{position:relative;overflow:hidden}
-.team-card-img{width:100%;height:480px;object-fit:cover;object-position:center top;display:block;transition:transform .6s var(--ease)}
+.team-card-img{width:100%;height:480px;object-fit:cover;object-position:center 10%;display:block;transition:transform .6s var(--ease)}
 .team-card:hover .team-card-img{transform:scale(1.04)}
 .team-card-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,22,40,.92) 0%,rgba(10,22,40,.5) 60%,transparent);padding:36px 28px 28px}
 .tc-name{font-family:'Bebas',Arial,sans-serif;font-size:26px;color:#fff;margin-bottom:4px}
