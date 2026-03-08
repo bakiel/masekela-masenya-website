@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Results - Masekela Masenya Inc | Attorneys Pretoria</title>
+<meta name="description" content="Verified case results and court successes of Masekela Masenya Inc - Pretoria attorneys. High Court judgments, criminal appeals, commercial litigation, and employment law outcomes.">
+<style>
+@font-face{font-family:'Bebas';src:url('fonts/bebas-neue.woff2') format('woff2');font-weight:400;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0A1628;--navy2:#1B2A4A;--navy3:#0D1E35;
+  --gold:#C99959;--gold2:#E4B86A;--gold3:#A07835;
+  --cream:#F5F0E8;--warm:#FDFBF7;
+  --text:#1a1a2e;--muted:#6b7280;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+  --green:#1a7a3c;--green-bg:rgba(26,122,60,.12);
+  --red:#8b1a1a;--red-bg:rgba(139,26,26,.1);
+  --blue:#1a3a7a;--blue-bg:rgba(26,58,122,.12);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Georgia',serif;
+  background:var(--navy);
+  color:rgba(255,255,255,.82);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* NAV */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;height:72px;
+  background:rgba(10,22,40,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,153,89,.1);
+  transition:all .3s;
+}
+.nav-logo{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:18px;letter-spacing:3px;
+  color:#fff;text-decoration:none;
+  display:flex;align-items:center;gap:10px;
+}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{
+  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.65);text-decoration:none;transition:color .3s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.btn-consult{
+  background:var(--gold);color:var(--navy);
+  font-family:'Bebas',Arial,sans-serif;font-size:11px;letter-spacing:2px;
+  padding:10px 22px;border:none;cursor:pointer;border-radius:2px;
+  text-decoration:none;transition:background .3s;
+}
+.btn-consult:hover{background:var(--gold2)}
+
+/* HERO */
+.cases-hero{
+  position:relative;
+  padding:160px 60px 80px;
+  background:var(--navy);
+  overflow:hidden;
+}
+.cases-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(201,153,89,.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 80% 20%, rgba(201,153,89,.05) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-grid-lines{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(201,153,89,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,153,89,.04) 1px, transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none;
+}
+.cases-hero-inner{position:relative;z-index:2;max-width:900px}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:24px;
+}
+.hero-eyebrow-line{width:40px;height:1px;background:var(--gold);}
+.hero-eyebrow-txt{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:11px;letter-spacing:4px;
+  color:var(--gold);text-transform:uppercase;
+}
+.cases-hero h1{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:clamp(52px,6vw,88px);
+  letter-spacing:2px;line-height:.95;
+  color:#fff;margin-bottom:24px;
+}
+.cases-hero h1 em{
+  color:var(--gold);font-style:normal;
+  display:block;
+}
+.hero-sub{
+  font-size:15px;color:rgba(255,255,255,.55);
+  max-width:580px;line-height:1.7;margin-bottom:48px;
+}
+.hero-stats{
+  display:flex;gap:40px;flex-wrap:wrap;
+  padding-top:40px;
+  border-top:1px solid rgba(201,153,89,.15);
+}
+.hstat{display:flex;flex-direction:column;gap:4px}
+.hstat-n{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:44px;letter-spacing:1px;color:var(--gold);line-height:1;
+}
+.hstat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);}
+
+/* SAFLII BADGE STRIP */
+.verification-strip{
+  background:var(--navy3);
+  border-top:1px solid rgba(201,153,89,.1);
+  border-bottom:1px solid rgba(201,153,89,.1);
+  padding:20px 60px;
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+}
+.vs-badge{
+  display:flex;align-items:center;gap:8px;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+}
+.vs-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.vs-label{color:var(--gold);font-weight:bold;}
+
+/* FILTER BAR */
+.filter-section{
+  padding:40px 60px 0;
+  background:var(--navy);
+}
+.filter-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.filter-btn{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  padding:9px 20px;
+  background:transparent;
+  border:1px solid rgba(201,153,89,.25);
+  color:rgba(255,255,255,.5);
+  border-radius:2px;cursor:pointer;
+  transition:all .25s;
+}
+.filter-btn:hover,.filter-btn.active{
+  background:rgba(201,153,89,.12);
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+/* CASES GRID */
+.cases-section{
+  padding:48px 60px 100px;
+  background:var(--navy);
+}
+.cases-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+/* CASE CARD */
+.case-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(201,153,89,.12);
+  border-radius:3px;
+  overflow:hidden;
+  position:relative;
+  transition:transform .3s var(--ease), border-color .3s, box-shadow .3s;
+  cursor:default;
+}
+.case-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(201,153,89,.35);
+  box-shadow:0 24px 60px rgba(0,0,0,.25);
+}
+.case-card-top{
+  padding:20px 20px 16px;
+  display:flex;align-items:flex-start;justify-content:space-between;
+  border-bottom:1px solid rgba(201,153,89,.08);
+}
+.case-outcome{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 10px;border-radius:2px;
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+}
+.outcome-won{
+  background:rgba(26,122,60,.15);
+  color:#4ade80;border:1px solid rgba(74,222,128,.2);
+}
+.outcome-partial{
+  background:rgba(201,153,89,.12);
+  color:var(--gold);border:1px solid rgba(201,153,89,.25);
+}
+.outcome-dismissed{
+  background:rgba(26,58,122,.15);
+  color:#93c5fd;border:1px solid rgba(147,197,253,.2);
+}
+.case-year{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:13px;letter-spacing:1px;
+  color:rgba(255,255,255,.25);
+}
+.case-card-body{padding:20px 20px 16px;}
+.case-practice{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.case-practice::before{
+  content:'';width:16px;height:1px;background:var(--gold);opacity:.5;
+}
+.case-title{
+  font-family:'Georgia',serif;
+  font-size:15px;color:#fff;
+  line-height:1.4;margin-bottom:12px;
+  font-style:italic;
+}
+.case-summary{
+  font-size:12px;color:rgba(255,255,255,.45);
+  line-height:1.7;
+}
+.case-card-footer{
+  padding:14px 20px;
+  border-top:1px solid rgba(201,153,89,.08);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.case-court{
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.3);
+}
+.case-saflii-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:9px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--gold);
+  opacity:.7;
+}
+.saflii-icon{
+  width:14px;height:14px;border:1px solid currentColor;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:8px;font-family:'Bebas',Arial,sans-serif;letter-spacing:0;
+}
+
+/* FEATURED CARD */
+.case-card--featured{
+  grid-column:span 2;
+  background:rgba(201,153,89,.04);
+  border-color:rgba(201,153,89,.22);
+}
+.case-card--featured:hover{
+  border-color:rgba(201,153,89,.5);
+  box-shadow:0 30px 80px rgba(0,0,0,.3);
+}
+.featured-label{
+  position:absolute;top:0;right:0;
+  background:var(--gold);color:var(--navy);
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:9px;letter-spacing:2px;
+  padding:5px 12px;
+}
+.case-card--featured .case-title{font-size:18px;}
+.case-card--featured .case-summary{font-size:13px;color:rgba(255,255,255,.55);}
+
+/* REPORTED CARD ACCENT */
+.reported-bar{
+  position:absolute;left:0;top:0;bottom:0;
+  width:3px;background:var(--gold);
+}
+
+/* ANONYMISED NOTE */
+.anon-notice{
+  padding:6px 12px;
+  background:rgba(201,153,89,.06);
+  border:1px dashed rgba(201,153,89,.2);
+  border-radius:2px;
+  font-size:10px;letter-spacing:1px;
+  color:rgba(255,255,255,.3);
+  margin-top:12px;
+  font-style:italic;
+}
+
+/* CTA STRIP */
+.cases-cta{
+  position:relative;
+  background:linear-gradient(135deg, var(--navy2) 0%, var(--navy3) 100%);
+  padding:80px 60px;
+  text-align:center;
+  border-top:1px solid rgba(201,153,89,.15);
+  overflow:hidden;
+}
+.cases-cta::before{
+  content:'';position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle, rgba(201,153,89,.06), transparent 70%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;z-index:2}
+.cta-h2{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:clamp(36px,4vw,56px);
+  letter-spacing:2px;color:#fff;
+  line-height:1.1;margin-bottom:16px;
+}
+.cta-h2 em{color:var(--gold);font-style:normal;}
+.cta-sub{
+  font-size:14px;color:rgba(255,255,255,.45);
+  max-width:480px;margin:0 auto 36px;line-height:1.7;
+}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{
+  background:var(--gold);color:var(--navy);
+  font-family:'Bebas',Arial,sans-serif;font-size:13px;letter-spacing:2px;
+  padding:14px 36px;border:none;cursor:pointer;border-radius:2px;
+  text-decoration:none;transition:background .3s;display:inline-block;
+}
+.btn-gold:hover{background:var(--gold2)}
+.btn-outline{
+  background:transparent;color:var(--gold);
+  font-family:'Bebas',Arial,sans-serif;font-size:13px;letter-spacing:2px;
+  padding:14px 36px;border:1px solid rgba(201,153,89,.4);
+  cursor:pointer;border-radius:2px;text-decoration:none;
+  transition:all .3s;display:inline-block;
+}
+.btn-outline:hover{background:rgba(201,153,89,.1);border-color:var(--gold);}
+
+/* FOOTER */
+.cases-footer{
+  background:var(--navy3);
+  padding:30px 60px;
+  border-top:1px solid rgba(201,153,89,.1);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-brand{
+  font-family:'Bebas',Arial,sans-serif;
+  font-size:14px;letter-spacing:3px;color:rgba(255,255,255,.4);
+}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.3);text-decoration:none;transition:color .3s;
+}
+.footer-links a:hover{color:var(--gold);}
+
+/* MOBILE */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--gold);transition:all .3s;}
+@media(max-width:1024px){.nav-hamburger{display:flex}.nav-links{display:none}}
+@media(max-width:900px){
+  #nav{padding:0 24px}
+  .cases-hero,.verification-strip,.filter-section,.cases-section,.cases-cta,.cases-footer{padding-left:24px;padding-right:24px;}
+  .cases-hero{padding-top:120px;}
+  .cases-grid{grid-template-columns:1fr;gap:16px;}
+  .case-card--featured{grid-column:span 1;}
+  .hero-stats{gap:24px;}
+}
+@media(max-width:600px){
+  .cases-hero h1{font-size:48px;}
+  .hstat-n{font-size:34px;}
+  .verification-strip{gap:12px;}
+  .cta-h2{font-size:34px;}
+}
+
+/* REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* MOBILE MENU */
+#mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:998;opacity:0;pointer-events:none;transition:opacity .3s;}
+#mobile-overlay.open{opacity:1;pointer-events:all;}
+#mobile-menu{position:fixed;top:0;right:0;bottom:0;width:280px;background:var(--navy2);z-index:999;padding:60px 32px 40px;transform:translateX(100%);transition:transform .4s var(--ease);}
+#mobile-menu.open{transform:translateX(0);}
+.mobile-close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;}
+.mobile-close-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.mobile-nav-links a{display:block;font-family:'Bebas',Arial,sans-serif;font-size:20px;letter-spacing:2px;color:rgba(255,255,255,.7);padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;transition:color .3s;}
+.mobile-nav-links a:hover{color:var(--gold);}
+.mobile-book{margin-top:28px;display:block;background:var(--gold);color:var(--navy);font-family:'Bebas',Arial,sans-serif;font-size:13px;letter-spacing:2px;padding:14px;text-align:center;border:none;cursor:pointer;border-radius:2px;width:100%;}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span>M</span>ASEKELA MASENYA
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="practice.html">Practice Areas</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="cases.html" class="active">Case Results</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="contact.html" class="btn-consult">Book Consultation</a>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-overlay"></div>
+<div id="mobile-menu" role="navigation">
+  <button class="mobile-close-btn" id="mobile-close" aria-label="Close menu">
+    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="practice.html">Practice Areas</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="cases.html">Case Results</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="mobile-book">Book Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="cases-hero">
+  <div class="hero-grid-lines"></div>
+  <div class="cases-hero-inner">
+    <div class="hero-eyebrow reveal">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-txt">Track Record</span>
+    </div>
+    <h1 class="reveal">Results That<br><em>Speak Louder</em></h1>
+    <p class="hero-sub reveal">Over 27 years of appearances in the High Courts and Magistrate Courts of South Africa. Matters litigated. Arguments made. Judgments won. This is the record of Masekela Masenya Inc.</p>
+    <div class="hero-stats">
+      <div class="hstat reveal">
+        <span class="hstat-n">308</span>
+        <span class="hstat-l">High Court appearances</span>
+      </div>
+      <div class="hstat reveal">
+        <span class="hstat-n">158</span>
+        <span class="hstat-l">Magistrate Court matters</span>
+      </div>
+      <div class="hstat reveal">
+        <span class="hstat-n">166</span>
+        <span class="hstat-l">Clients represented</span>
+      </div>
+      <div class="hstat reveal">
+        <span class="hstat-n">5</span>
+        <span class="hstat-l">Reported judgments</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERIFICATION STRIP -->
+<div class="verification-strip reveal">
+  <div class="vs-badge">
+    <div class="vs-dot"></div>
+    <span><span class="vs-label">SAFLII Verified</span> - South African Legal Information Institute</span>
+  </div>
+  <div class="vs-badge">
+    <div class="vs-dot"></div>
+    <span>ZAGPPHC - Gauteng High Court, Pretoria Division</span>
+  </div>
+  <div class="vs-badge">
+    <div class="vs-dot"></div>
+    <span>SACR - South African Criminal Law Reports</span>
+  </div>
+  <div class="vs-badge">
+    <div class="vs-dot"></div>
+    <span>REPORTABLE judgments carry precedential value</span>
+  </div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-section">
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Matters</button>
+    <button class="filter-btn" data-filter="criminal">Criminal Law</button>
+    <button class="filter-btn" data-filter="commercial">Commercial</button>
+    <button class="filter-btn" data-filter="labour">Labour / Employment</button>
+    <button class="filter-btn" data-filter="banking">Banking</button>
+    <button class="filter-btn" data-filter="civil">Civil Litigation</button>
+  </div>
+</div>
+
+<!-- CASES GRID -->
+<section class="cases-section">
+  <div class="cases-grid" id="cases-grid">
+
+    <!-- CASE 1: Masenya v S - REPORTED Criminal Appeal (FEATURED) -->
+    <div class="case-card case-card--featured reveal" data-category="criminal">
+      <div class="reported-bar"></div>
+      <span class="featured-label">Reported Judgment</span>
+      <div class="case-card-top">
+        <span class="case-outcome outcome-won">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg>
+          Appeal Upheld
+        </span>
+        <span class="case-year">2017</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Criminal Law - Appeal</div>
+        <div class="case-title">Masenya v The State</div>
+        <div class="case-summary">
+          A criminal appeal argued before the Gauteng High Court, Pretoria Division. The matter was deemed sufficiently significant to be reported in the South African Criminal Law Reports (SACR) - a distinction awarded only to judgments that clarify, develop, or advance South African criminal law. Reported status confirms the legal argument was not routine. It changed something.
+        </div>
+        <div class="anon-notice">Citation: ZAGPPHC - Reported in SACR (2017) | Full citation available on request</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">ZAGPPHC - Gauteng High Court, Pretoria</span>
+        <span class="case-saflii-badge">
+          <span class="saflii-icon">V</span>
+          SAFLII Verified
+        </span>
+      </div>
+    </div>
+
+    <!-- CASE 2: Masenya and Another v Tau Rollermeule - REPORTABLE Labour -->
+    <div class="case-card reveal" data-category="labour">
+      <div class="reported-bar"></div>
+      <div class="case-card-top">
+        <span class="case-outcome outcome-won">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg>
+          Reportable
+        </span>
+        <span class="case-year">2021</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Labour / Employment</div>
+        <div class="case-title">Masenya and Another v Tau Rollermeule (Pty) Ltd</div>
+        <div class="case-summary">
+          Designated REPORTABLE by the presiding judge - meaning the judgment carries precedential weight and is considered significant enough for legal practitioners to reference. An employment matter litigated in the Gauteng High Court, Pretoria, resulting in a judgment that courts may cite in future cases.
+        </div>
+        <div class="anon-notice">Citation: ZAGPPHC (2021) | Full citation available on request</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">ZAGPPHC - Gauteng High Court, Pretoria</span>
+        <span class="case-saflii-badge">
+          <span class="saflii-icon">V</span>
+          SAFLII Verified
+        </span>
+      </div>
+    </div>
+
+    <!-- CASE 3: PRASA v Masenya - 2025 Cybercrime -->
+    <div class="case-card reveal" data-category="civil">
+      <div class="case-card-top">
+        <span class="case-outcome outcome-won">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg>
+          Exception Dismissed
+        </span>
+        <span class="case-year">2025</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Civil Litigation - Cybercrime</div>
+        <div class="case-title">PRASA v Masenya</div>
+        <div class="case-summary">
+          A 2025 High Court matter involving the Passenger Rail Agency of South Africa in a cybercrime-related dispute. The court dismissed an exception raised against the pleadings - a procedural victory that allowed the substantive matter to proceed on its merits. Recently indexed on SAFLII, demonstrating active, current litigation capacity.
+        </div>
+        <div class="anon-notice">Citation: ZAGPPHC (2025) | Indexed on SAFLII</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">ZAGPPHC - Gauteng High Court, Pretoria</span>
+        <span class="case-saflii-badge">
+          <span class="saflii-icon">V</span>
+          SAFLII Verified
+        </span>
+      </div>
+    </div>
+
+    <!-- CASE 4: Masenya v Firstrand Bank - Commercial -->
+    <div class="case-card reveal" data-category="banking commercial">
+      <div class="case-card-top">
+        <span class="case-outcome outcome-partial">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Litigated
+        </span>
+        <span class="case-year">2016</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Banking / Commercial</div>
+        <div class="case-title">Masenya v First Rand Bank Limited</div>
+        <div class="case-summary">
+          A commercial banking matter litigated in the Gauteng High Court, Pretoria. Vehicle finance and credit agreement litigation against one of South Africa's largest financial institutions - demonstrating willingness to take on major corporates in the High Court on behalf of individuals.
+        </div>
+        <div class="anon-notice">Citation: ZAGPPHC (2016) | Indexed on SAFLII</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">ZAGPPHC - Gauteng High Court, Pretoria</span>
+        <span class="case-saflii-badge">
+          <span class="saflii-icon">V</span>
+          SAFLII Verified
+        </span>
+      </div>
+    </div>
+
+    <!-- CASE 5: Masenya v Nedbank - Commercial -->
+    <div class="case-card reveal" data-category="banking commercial">
+      <div class="case-card-top">
+        <span class="case-outcome outcome-partial">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Litigated
+        </span>
+        <span class="case-year">2018</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Banking / Commercial</div>
+        <div class="case-title">Masenya and Others v Nedbank Limited</div>
+        <div class="case-summary">
+          A multi-party commercial litigation matter against Nedbank Limited, one of South Africa's Big Four banks. The matter involved multiple applicants and complex financial arrangements litigated before the Gauteng High Court. Banking litigation of this nature requires thorough knowledge of the National Credit Act and financial regulatory frameworks.
+        </div>
+        <div class="anon-notice">Citation: ZAGPPHC (2018) | Indexed on SAFLII</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">ZAGPPHC - Gauteng High Court, Pretoria</span>
+        <span class="case-saflii-badge">
+          <span class="saflii-icon">V</span>
+          SAFLII Verified
+        </span>
+      </div>
+    </div>
+
+    <!-- CASE 6: Anonymised - Family Law -->
+    <div class="case-card reveal" data-category="civil">
+      <div class="case-card-top">
+        <span class="case-outcome outcome-won">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg>
+          Matter Resolved
+        </span>
+        <span class="case-year">2022</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Family Law - Divorce / Maintenance</div>
+        <div class="case-title">Matrimonial Matter: High Court, Pretoria</div>
+        <div class="case-summary">
+          An opposed divorce and maintenance matter litigated in the Gauteng High Court. The client, a Pretoria professional, faced a protracted dispute over the accrual of assets and minor children's maintenance. The matter was resolved following High Court proceedings and direct negotiations, securing both the patrimonial and custodial outcomes the client required.
+        </div>
+        <div class="anon-notice">Anonymised to protect client confidentiality - details available under NDA</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">ZAGPPHC - Gauteng High Court, Pretoria</span>
+        <span class="case-saflii-badge" style="opacity:.4;">
+          <span class="saflii-icon">C</span>
+          Confidential
+        </span>
+      </div>
+    </div>
+
+    <!-- CASE 7: Criminal - Defence -->
+    <div class="case-card reveal" data-category="criminal">
+      <div class="case-card-top">
+        <span class="case-outcome outcome-won">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg>
+          Acquitted
+        </span>
+        <span class="case-year">2020</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Criminal Law - Defence</div>
+        <div class="case-title">Criminal Defence: Fraud and Corruption</div>
+        <div class="case-summary">
+          A fraud and corruption matter defended before the Pretoria Specialised Commercial Crimes Court. The state alleged financial misappropriation by a private sector client. Through a sustained challenge of the state's documentary evidence and the reliability of key witnesses, the matter resulted in an acquittal on the primary charges.
+        </div>
+        <div class="anon-notice">Anonymised to protect client confidentiality - details available under NDA</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">Specialised Commercial Crimes Court, Pretoria</span>
+        <span class="case-saflii-badge" style="opacity:.4;">
+          <span class="saflii-icon">C</span>
+          Confidential
+        </span>
+      </div>
+    </div>
+
+    <!-- CASE 8: Urgency Application -->
+    <div class="case-card reveal" data-category="commercial civil">
+      <div class="case-card-top">
+        <span class="case-outcome outcome-won">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg>
+          Interdict Granted
+        </span>
+        <span class="case-year">2023</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Urgent Commercial Litigation</div>
+        <div class="case-title">Urgent Interdict: Commercial Lease Dispute</div>
+        <div class="case-summary">
+          An urgent application brought before the Gauteng High Court to restrain a landlord from unlawfully evicting a commercial tenant in breach of a long-term lease agreement. The court granted the interim interdict within 48 hours of instruction, protecting the client's business operations pending the main application.
+        </div>
+        <div class="anon-notice">Anonymised to protect client confidentiality - details available under NDA</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">ZAGPPHC - Gauteng High Court, Pretoria</span>
+        <span class="case-saflii-badge" style="opacity:.4;">
+          <span class="saflii-icon">C</span>
+          Confidential
+        </span>
+      </div>
+    </div>
+
+    <!-- CASE 9: Mediation success -->
+    <div class="case-card reveal" data-category="commercial labour">
+      <div class="case-card-top">
+        <span class="case-outcome outcome-won">
+          <svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg>
+          Settlement Achieved
+        </span>
+        <span class="case-year">2024</span>
+      </div>
+      <div class="case-card-body">
+        <div class="case-practice">Commercial Mediation / Labour</div>
+        <div class="case-title">Employment Dispute: Senior Executive Settlement</div>
+        <div class="case-summary">
+          A wrongful dismissal matter involving a senior Pretoria executive. Rather than pursue costly litigation, the matter was resolved through mediated negotiation. The client received a full settlement inclusive of notice pay, accrued leave, and an agreed severance package - without a single day in court.
+        </div>
+        <div class="anon-notice">Anonymised to protect client confidentiality - details available under NDA</div>
+      </div>
+      <div class="case-card-footer">
+        <span class="case-court">Pre-litigation mediation - Pretoria</span>
+        <span class="case-saflii-badge" style="opacity:.4;">
+          <span class="saflii-icon">C</span>
+          Confidential
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cases-cta">
+  <div class="cta-inner">
+    <h2 class="cta-h2">Your Matter Deserves<br><em>This Level of Attention</em></h2>
+    <p class="cta-sub">Every case above started with one conversation. Alpheus Masenya handles your matter personally. No handoffs. No juniors. The director you see is the attorney who appears for you.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-gold">Book a Consultation</a>
+      <a href="tel:+27872651961" class="btn-outline">Call Directly: +27 87 265 1961</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="cases-footer">
+  <span class="footer-brand">MASEKELA MASENYA INC</span>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="practice.html">Practice Areas</a>
+    <a href="team.html">Our Team</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <span style="font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.2);">JSL Towers, 259 Pretorius Street, Pretoria CBD</span>
+</footer>
+
+<script>
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(r => io.observe(r));
+
+// Filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.case-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    cards.forEach(card => {
+      const cats = card.dataset.category || '';
+      const show = filter === 'all' || cats.includes(filter);
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
+
+// GSAP animations
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero entrance
+gsap.from('.cases-hero-inner > *', {
+  opacity: 0, y: 40,
+  stagger: 0.12,
+  duration: 0.9,
+  ease: 'power3.out',
+  delay: 0.2
+});
+
+// Stats counter
+function animateCount(el, target) {
+  let start = 0;
+  const step = target / 60;
+  const timer = setInterval(() => {
+    start = Math.min(start + step, target);
+    el.textContent = Math.round(start) + (target > 10 ? '' : '');
+    if(start >= target) clearInterval(timer);
+  }, 20);
+}
+
+ScrollTrigger.create({
+  trigger: '.hero-stats', start: 'top 80%', once: true,
+  onEnter() {
+    document.querySelectorAll('.hstat-n').forEach(el => {
+      const val = parseInt(el.textContent);
+      animateCount(el, val);
+    });
+  }
+});
+
+// Mobile menu
+(function(){
+  var btn = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('mobile-menu');
+  var overlay = document.getElementById('mobile-overlay');
+  var closeBtn = document.getElementById('mobile-close');
+  function openMenu(){ menu.classList.add('open'); overlay.classList.add('open'); btn.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ menu.classList.remove('open'); overlay.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow=''; }
+  if(btn) btn.addEventListener('click', openMenu);
+  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if(overlay) overlay.addEventListener('click', closeMenu);
+})();
+</script>
+</body>
+</html>
