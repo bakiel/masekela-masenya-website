@@ -134,6 +134,15 @@
 .team-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,.18); }
 .team-card:hover::after { left: 120%; }
 
+/* Director portrait: B&W default (honouring original site), colour on hover */
+.team-card-img {
+  filter: grayscale(100%);
+  transition: filter .7s ease, transform .6s ease;
+}
+.team-card:hover .team-card-img {
+  filter: grayscale(0%);
+}
+
 /* Testimonial card micro-light */
 .test-card {
   transition: transform .3s var(--ease), box-shadow .3s, border-color .3s;
@@ -1564,7 +1573,7 @@ body::before {
   <div class="news-grid">
 
     <div class="news-card reveal" onclick="openArticle(0)">
-      <img class="news-card-img" src="images/about-office.jpg" alt="Legal news">
+      <img class="news-card-img" src="images/news-1-jiba.jpg" alt="Nomgcobo Jiba - striking off counsel">
       <div class="news-card-body">
         <div class="news-card-date">May 31, 2016</div>
         <div class="news-card-title">Criticism doesn't warrant striking off</div>
@@ -1574,7 +1583,7 @@ body::before {
     </div>
 
     <div class="news-card reveal" onclick="openArticle(1)">
-      <img class="news-card-img" src="images/practice-commercial.jpg" alt="Legal news">
+      <img class="news-card-img" src="images/news-2-sabc.jpg" alt="SABC Minister Muthambi">
       <div class="news-card-body">
         <div class="news-card-date">May 31, 2016</div>
         <div class="news-card-title">Minister backs SABC censorship decision</div>
@@ -1584,7 +1593,7 @@ body::before {
     </div>
 
     <div class="news-card reveal" onclick="openArticle(2)">
-      <img class="news-card-img" src="images/practice-criminal.jpg" alt="Legal news">
+      <img class="news-card-img" src="images/news-3-habre.jpg" alt="Hissene Habre conviction">
       <div class="news-card-body">
         <div class="news-card-date">May 31, 2016</div>
         <div class="news-card-title">Habre convicted following extraordinary trial</div>
@@ -1594,7 +1603,7 @@ body::before {
     </div>
 
     <div class="news-card reveal" onclick="openArticle(3)">
-      <img class="news-card-img" src="images/practice-labour.jpg" alt="Legal news">
+      <img class="news-card-img" src="images/news-4-egypt.jpg" alt="Egyptian Minister graft">
       <div class="news-card-body">
         <div class="news-card-date">May 30, 2016</div>
         <div class="news-card-title">Former Minister jailed for graft</div>
@@ -1604,7 +1613,7 @@ body::before {
     </div>
 
     <div class="news-card reveal" onclick="openArticle(4)">
-      <img class="news-card-img" src="images/service-bg.jpg" alt="Legal news">
+      <img class="news-card-img" src="images/news-5-pikoli.jpg" alt="Vusi Pikoli NPA appeal">
       <div class="news-card-body">
         <div class="news-card-date">May 30, 2016</div>
         <div class="news-card-title">Pikoli joins doubters on NPA's Zuma appeal</div>
@@ -1614,7 +1623,7 @@ body::before {
     </div>
 
     <div class="news-card reveal" onclick="openArticle(5)">
-      <img class="news-card-img" src="images/practice-family.jpg" alt="Legal news">
+      <img class="news-card-img" src="images/news-6-ghana.jpg" alt="Ghana courts strike">
       <div class="news-card-body">
         <div class="news-card-date">May 30, 2016</div>
         <div class="news-card-title">Courts grind to a halt in Ghana</div>
@@ -1624,7 +1633,7 @@ body::before {
     </div>
 
     <div class="news-card reveal" onclick="openArticle(6)">
-      <img class="news-card-img" src="images/practice-estate.jpg" alt="Legal news">
+      <img class="news-card-img" src="images/news-7-judges.jpg" alt="Law applies to judges">
       <div class="news-card-body">
         <div class="news-card-date">May 25, 2016</div>
         <div class="news-card-title">Yes, the law applies to judges, too</div>
@@ -1634,7 +1643,7 @@ body::before {
     </div>
 
     <div class="news-card reveal" onclick="openArticle(7)">
-      <img class="news-card-img" src="images/practice-medical.jpg" alt="Legal news">
+      <img class="news-card-img" src="images/news-8-rhino.jpg" alt="Rhino horn judgment">
       <div class="news-card-body">
         <div class="news-card-date">May 25, 2016</div>
         <div class="news-card-title">Minister notes rhino horn court judgment</div>
