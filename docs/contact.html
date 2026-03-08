@@ -202,7 +202,30 @@ footer{background:var(--navy);padding:60px 60px 32px;border-top:1px solid rgba(2
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
   .cf-row{grid-template-columns:1fr}
   .hours-grid{grid-template-columns:1fr}
+  #director-intro{padding:60px 20px;grid-template-columns:1fr}
+  .di-img-wrap{height:380px}
 }
+
+/* DIRECTOR INTRO */
+#director-intro{padding:80px 60px;display:grid;grid-template-columns:420px 1fr;gap:72px;align-items:center;background:var(--cream)}
+.di-img-wrap{position:relative;height:520px;overflow:hidden;border-radius:2px}
+.di-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;transition:transform 8s ease-out;transform:scale(1.04)}
+.di-img-wrap:hover img{transform:scale(1.08)}
+.di-badge{position:absolute;bottom:0;left:0;right:0;background:var(--navy);padding:20px 24px;display:flex;justify-content:space-between;align-items:center}
+.di-badge-name{font-family:'Bebas',Arial,sans-serif;font-size:20px;color:#fff;letter-spacing:1.5px}
+.di-badge-title{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.di-gold-bar{width:3px;height:100%;background:var(--gold);position:absolute;left:0;top:0}
+.di-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.di-line{width:32px;height:1px;background:var(--gold)}
+.di-eye{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.di-h2{font-family:'Bebas',Arial,sans-serif;font-size:clamp(32px,4vw,52px);line-height:1.05;color:var(--navy);margin-bottom:20px}
+.di-h2 em{color:var(--gold)}
+.di-quote{font-size:16px;line-height:1.8;color:#4a5568;margin-bottom:28px;font-style:italic;border-left:3px solid var(--gold);padding-left:20px}
+.di-creds{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.di-cred{background:var(--navy);color:var(--gold);padding:6px 16px;font-size:10px;letter-spacing:2px;text-transform:uppercase;border-radius:2px}
+.di-cta{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:14px 32px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Bebas',Arial,sans-serif;border-radius:2px;transition:background .3s,transform .2s}
+.di-cta:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
+.di-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
 </style>
 </head>
 <body>
@@ -282,6 +305,35 @@ footer{background:var(--navy);padding:60px 60px 32px;border-top:1px solid rgba(2
     <div><div class="qs-lbl">Hours</div><div class="qs-val">Mon - Fri, 08:00 - 17:00</div></div>
   </div>
 </div>
+
+<!-- DIRECTOR INTRO -->
+<section id="director-intro">
+  <div class="di-img-wrap reveal">
+    <img src="images/director-robes.jpg" alt="Masekela Masenya - Founding Director">
+    <div class="di-badge">
+      <div>
+        <div class="di-badge-name">Masekela Masenya</div>
+        <div class="di-badge-title">Founding Director &nbsp;|&nbsp; LLB &nbsp;|&nbsp; MBA</div>
+      </div>
+      <div style="color:var(--gold);font-size:10px;letter-spacing:1.5px;text-transform:uppercase">Attorney, Notary &amp; Conveyancer</div>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="di-eyebrow"><div class="di-line"></div><span class="di-eye">Who You'll Speak To</span></div>
+    <h2 class="di-h2">Your Matter is Handled<br><em>Personally. Directly.</em></h2>
+    <p class="di-quote">When you contact Masekela Masenya Inc, you deal directly with me. Not a junior. Not a clerk. Every consultation, every argument, and every strategy is personally handled by a Founding Director with over 308 High Court appearances.</p>
+    <div class="di-creds">
+      <span class="di-cred">308 High Court Appearances</span>
+      <span class="di-cred">82% Success Rate</span>
+      <span class="di-cred">15+ Years in Practice</span>
+      <span class="di-cred">LPC: 31523</span>
+    </div>
+    <button class="di-cta js-open-booking">
+      <span>Book a Consultation</span>
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+  </div>
+</section>
 
 <!-- MAIN CONTACT -->
 <section id="main-contact">

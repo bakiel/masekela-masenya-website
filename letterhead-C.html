@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Masekela Masenya Inc - Letterhead C: Clean White Editorial</title>
+  <style>
+    @page { margin: 0; size: A4 portrait; }
+    @font-face { font-family: 'BebasNeue'; src: url('file:///Users/mac/Documents/Masekela-Masenya/fonts/bebas-neue.woff2') format('woff2'); font-weight: 400; }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 210mm; height: 297mm; overflow: hidden; font-family: 'BebasNeue', Arial, sans-serif !important; background: #fff; }
+    .page {
+      width: 210mm; height: 297mm;
+      position: relative; overflow: hidden;
+      display: flex;
+      background: #ffffff;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(201,153,89,0.022) 0, rgba(201,153,89,0.022) 1px, transparent 1px, transparent 24px),
+        repeating-linear-gradient(90deg, rgba(201,153,89,0.022) 0, rgba(201,153,89,0.022) 1px, transparent 1px, transparent 24px);
+    }
+
+    /* ━━━ GOLD LEFT ACCENT BAR ━━━ */
+    .gold-bar {
+      width: 4px;
+      min-height: 297mm;
+      background: linear-gradient(to bottom, #C99959, #E4B86A 50%, #C99959);
+      flex-shrink: 0;
+    }
+
+    /* ━━━ MAIN LAYOUT ━━━ */
+    .main { flex: 1; display: flex; flex-direction: column; }
+
+    /* ━━━ HEADER ━━━ */
+    .header {
+      padding: 13mm 14mm 10mm 10mm;
+      display: flex;
+      align-items: flex-start;
+      gap: 8mm;
+      border-bottom: 0.5pt solid #E8DCC4;
+      flex-shrink: 0;
+    }
+
+    .logo-seal {
+      width: 22mm; height: 22mm;
+      border-radius: 50%;
+      border: 1pt solid #E8DCC4;
+      background: #F8F5EF;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden;
+    }
+
+    .firm-block { flex: 1; }
+
+    .firm-name {
+      font-family: 'BebasNeue', Impact, sans-serif;
+      font-size: 26pt; color: #1B2A4A;
+      letter-spacing: 4px; line-height: 1;
+    }
+    .firm-subtitle {
+      font-size: 5pt; color: #C99959; letter-spacing: 4px;
+      text-transform: uppercase; margin-top: 2.5mm;
+    }
+    .header-rule {
+      height: 0.5pt;
+      background: linear-gradient(to right, #C99959, #E8DCC4 60%, transparent);
+      margin: 3.5mm 0 3mm;
+    }
+    .contacts {
+      display: flex; gap: 5mm; flex-wrap: wrap;
+    }
+    .c-item { display: flex; align-items: baseline; gap: 2mm; }
+    .c-lbl { font-size: 4.5pt; color: #C99959; letter-spacing: 1.5px; text-transform: uppercase; }
+    .c-val { font-size: 6pt; color: #1B2A4A; }
+
+    /* ━━━ GOLD GRADIENT RULE ━━━ */
+    .gold-rule {
+      height: 2pt;
+      background: linear-gradient(90deg, #C99959 0%, #E4B86A 45%, #C99959 80%, transparent 100%);
+      flex-shrink: 0;
+    }
+
+    /* ━━━ TAGLINE STRIP ━━━ */
+    .tagline-strip {
+      background: #F8F5EF;
+      padding: 3mm 14mm;
+      display: flex; align-items: center; gap: 5mm;
+      border-bottom: 0.5pt solid #E8DCC4;
+      flex-shrink: 0;
+    }
+    .tag-rule { height: 0.5pt; flex: 1; background: #D4B88A; opacity: 0.4; }
+    .tag-text {
+      font-family: 'BebasNeue', Arial, sans-serif;
+      color: #1B2A4A; font-size: 9pt;
+       white-space: nowrap; letter-spacing: 0.3px;
+    }
+
+    /* ━━━ BODY ZONE ━━━ */
+    .body-zone {
+      flex: 1;
+      position: relative;
+      padding: 10mm 14mm 30mm 10mm;
+      overflow: hidden;
+    }
+
+    .date-guide {
+      color: #ccc; font-size: 5pt;
+      letter-spacing: 0.5px;
+      padding-bottom: 3mm;
+      border-bottom: 0.3pt dashed #e0e0e0;
+    }
+
+    .watermark {
+      position: absolute;
+      bottom: 28mm; right: 10mm;
+      width: 60mm; height: 60mm;
+      opacity: 0.035;
+      pointer-events: none;
+    }
+
+    /* ━━━ FOOTER ━━━ */
+    .footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 16mm;
+      background: #F8F5EF;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(201,153,89,0.04) 0, rgba(201,153,89,0.04) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(90deg, rgba(201,153,89,0.04) 0, rgba(201,153,89,0.04) 1px, transparent 1px, transparent 20px);
+      border-top: 0.5pt solid #E8DCC4;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1.5mm;
+      padding: 0 14mm;
+      z-index: 10;
+    }
+
+    .footer-address {
+      font-family: 'BebasNeue', Arial, sans-serif;
+      font-size: 7.5pt; color: #666;
+       letter-spacing: 0.3px;
+    }
+
+    .footer-reg {
+      display: flex; align-items: center; gap: 4mm;
+    }
+    .f-rule { height: 0.5pt; width: 16mm; background: linear-gradient(to right, transparent, #D4B88A); opacity: 0.5; }
+    .f-rule-r { height: 0.5pt; width: 16mm; background: linear-gradient(to left, transparent, #D4B88A); opacity: 0.5; }
+    .f-dot { color: #C99959; font-size: 6pt; }
+    .f-item { font-size: 5.5pt; color: #999; }
+    .f-item strong { color: #666; }
+    .f-web { font-size: 5.5pt; color: #C99959;  }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Gold left accent bar -->
+    <div class="gold-bar"></div>
+
+    <!-- Main layout -->
+    <div class="main">
+
+      <!-- ━━━ HEADER ━━━ -->
+      <div class="header">
+
+        <!-- Logo seal -->
+        <div class="logo-seal">
+          <svg width="14mm" height="14mm" viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg">
+            <path style="fill:#c99959;fill-rule:evenodd" d="m113.27,140.72h178.08v365.91h-109.12v-12.57h96.55V153.29H120.07l43.84,81.06h10.14l-.06,6.05c-.17,17.61-7.48,33.58-19.14,45.13-11.68,11.57-27.71,18.73-45.31,18.73s-33.64-7.17-45.31-18.73c-11.66-11.55-18.97-27.52-19.14-45.13l-.06-6.05h10.14l50.64-93.64h7.46Zm48.17,106.97H57.64c1.74,11.37,7.17,21.58,15.02,29.36,9.48,9.39,22.53,15.21,36.87,15.21s27.39-5.82,36.88-15.21c7.86-7.78,13.29-17.99,15.02-29.36h0Zm-92-13.33h80.21l-20.11-37.18-20-36.98-40.11,74.16h0Z"/>
+            <path style="fill:#c99959" d="m482,140.72h-178.08v353.34h-36.55V198.68c0-9.48-3.87-18.1-10.11-24.34-6.24-6.24-14.86-10.12-24.34-10.12s-18.1,3.88-24.34,10.12c-6.24,6.24-10.11,14.86-10.11,24.34s3.87,18.1,10.11,24.34c6.24,6.24,14.86,10.11,24.34,10.11,1.7,0,3.36-.13,4.99-.36,2.49-.37,4.31-2.47,4.31-4.99v-2.52c0-1.53-.61-2.85-1.77-3.84-1.16-.99-2.56-1.38-4.07-1.14-1.12.18-2.28.28-3.46.28-6.01,0-11.48-2.46-15.45-6.43-3.97-3.97-6.43-9.44-6.43-15.45s2.46-11.48,6.43-15.45c3.97-3.97,9.44-6.43,15.45-6.43s11.48,2.46,15.45,6.43c3.97,3.97,6.43,9.44,6.43,15.45h0v295.38h-76.92c-3.21,0-5.83,2.27-5.83,5.04v2.49c0,2.78,2.62,5.04,5.83,5.04h239.52c3.21,0,5.83-2.27,5.83-5.04v-2.49c0-2.78-2.62-5.04-5.83-5.04h-76.92V198.68h0c0-6.01,2.46-11.48,6.43-15.45,3.97-3.97,9.44-6.43,15.44-6.43s11.48,2.46,15.45,6.43c3.97,3.97,6.43,9.44,6.43,15.45s-2.46,11.48-6.43,15.45c-3.97,3.97-9.44,6.43-15.45,6.43-1.18,0-2.33-.09-3.46-.28-1.51-.24-2.91.15-4.07,1.14-1.17.99-1.77,2.31-1.77,3.84v2.52c0,2.52,1.82,4.62,4.31,4.99,1.63.24,3.3.36,4.99.36,9.48,0,18.1-3.87,24.34-10.11,6.24-6.24,10.11-14.86,10.11-24.34s-3.87-18.1-10.11-24.34c-6.24-6.24-14.86-10.12-24.34-10.12s-18.1,3.88-24.34,10.12c-6.24,6.24-10.11,14.86-10.11,24.34v295.38h-11.4V153.29h158.71l-43.84,81.06h-10.14l.06,6.05c.17,17.61,7.48,33.58,19.14,45.13,11.67,11.56,27.71,18.73,45.31,18.73s33.64-7.17,45.31-18.73c11.66-11.55,18.97-27.52,19.14-45.13l.06-6.05h-10.14l-50.64-93.64h-7.46Zm-48.16,106.97h103.79c-1.74,11.37-7.17,21.58-15.02,29.36-9.49,9.39-22.53,15.21-36.87,15.21s-27.39-5.82-36.88-15.21c-7.85-7.78-13.28-17.99-15.02-29.36h0Zm92-13.33h-80.21l20.11-37.18,20-36.98,40.11,74.16h0Z"/>
+            <path style="fill:#c99959" d="m193.95,117.36h207.37c2.78,0,5.04,2.27,5.04,5.04v2.49c0,2.78-2.27,5.04-5.04,5.04h-207.37c-2.78,0-5.04-2.27-5.04-5.04v-2.49c0-2.78,2.27-5.04,5.04-5.04h0Z"/>
+            <path style="fill:#c99959" d="m133.05,511.59h329.17c2.78,0,5.04,2.27,5.04,5.04v2.49c0,2.78-2.27,5.04-5.04,5.04H133.05c-2.78,0-5.04-2.27-5.04-5.04v-2.49c0-2.78,2.27-5.04,5.04-5.04h0Z"/>
+            <path style="fill:#c99959;fill-rule:evenodd" d="m418.06,486.15h-10.92v-136.57c-2.47,17.91-4.95,35.9-7.41,53.94-2.47,18.09-4.94,36.28-7.41,54.51-3.33-.06-6.66-.14-9.99-.2-2.48-18.65-4.97-37.38-7.45-56.15-2.49-18.85-4.97-37.8-7.45-56.8v141.27h-10.84v-199.03c1.13.18,2.27.34,3.41.5,2.48.36,4.96.72,7.43,1.07,1.08.16,2.16.32,3.24.48,2.78,21.81,5.56,43.53,8.34,65.18,2.77,21.53,5.57,42.99,8.35,64.37,2.77-21,5.54-41.92,8.31-62.75,2.76-20.74,5.54-41.4,8.32-61.98,1.05.16,2.1.3,3.15.46,2.5.36,5,.72,7.51,1.1,1.14.16,2.27.32,3.41.48v190.13h0Z"/>
+            <path style="fill:#c99959;fill-rule:evenodd" d="m238.69,486.15h-10.92v-140.67c-2.47,18.89-4.94,37.76-7.41,56.5-2.47,18.67-4.94,37.3-7.41,55.85-3.33.06-6.66.14-9.99.2-2.48-18.33-4.97-36.62-7.45-54.79-2.48-18.13-4.97-36.22-7.45-54.24v137.15h-10.84v-190.13c1.13-.18,2.27-.34,3.41-.5,2.48-.36,4.96-.72,7.43-1.07,1.08-.16,2.16-.32,3.24-.48,2.78,20.58,5.57,41.24,8.34,61.98,2.78,20.84,5.57,41.76,8.36,62.77,2.77-21.38,5.55-42.85,8.31-64.38,2.77-21.63,5.55-43.37,8.32-65.18,1.05-.14,2.1-.3,3.15-.46,2.5-.36,5-.72,7.51-1.09,1.14-.16,2.27-.32,3.41-.48v199.03h0Z"/>
+          </svg>
+        </div>
+
+        <!-- Firm block -->
+        <div class="firm-block">
+          <div class="firm-name">Masekela Masenya Inc</div>
+          <div class="firm-subtitle">Attorneys</div>
+          <div class="header-rule"></div>
+          <div class="contacts">
+            <div class="c-item"><span class="c-lbl">Tel</span><span class="c-val">+27 87 265 1961</span></div>
+            <div class="c-item"><span class="c-lbl">Fax</span><span class="c-val">086 6781 370</span></div>
+            <div class="c-item"><span class="c-lbl">Email</span><span class="c-val">alphy@maslaw.co.za</span></div>
+            <div class="c-item"><span class="c-lbl">Web</span><span class="c-val">www.maslaw.co.za</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Gold rule -->
+      <div class="gold-rule"></div>
+
+      <!-- Tagline -->
+      <div class="tagline-strip">
+        <div class="tag-rule"></div>
+        <div class="tag-text">"Strong representation, Proven results"</div>
+        <div class="tag-rule"></div>
+      </div>
+
+      <!-- Body zone -->
+      <div class="body-zone">
+        <div class="date-guide">Date &nbsp;/&nbsp; Reference</div>
+
+        <!-- Watermark logo -->
+        <div class="watermark">
+          <svg viewBox="0 0 595.28 595.28" xmlns="http://www.w3.org/2000/svg">
+            <path style="fill:#1B2A4A;fill-rule:evenodd" d="m113.27,140.72h178.08v365.91h-109.12v-12.57h96.55V153.29H120.07l43.84,81.06h10.14l-.06,6.05c-.17,17.61-7.48,33.58-19.14,45.13-11.68,11.57-27.71,18.73-45.31,18.73s-33.64-7.17-45.31-18.73c-11.66-11.55-18.97-27.52-19.14-45.13l-.06-6.05h10.14l50.64-93.64h7.46Zm48.17,106.97H57.64c1.74,11.37,7.17,21.58,15.02,29.36,9.48,9.39,22.53,15.21,36.87,15.21s27.39-5.82,36.88-15.21c7.86-7.78,13.29-17.99,15.02-29.36h0Zm-92-13.33h80.21l-20.11-37.18-20-36.98-40.11,74.16h0Z"/>
+            <path style="fill:#1B2A4A" d="m482,140.72h-178.08v353.34h-36.55V198.68c0-9.48-3.87-18.1-10.11-24.34-6.24-6.24-14.86-10.12-24.34-10.12s-18.1,3.88-24.34,10.12c-6.24,6.24-10.11,14.86-10.11,24.34s3.87,18.1,10.11,24.34c6.24,6.24,14.86,10.11,24.34,10.11,1.7,0,3.36-.13,4.99-.36,2.49-.37,4.31-2.47,4.31-4.99v-2.52c0-1.53-.61-2.85-1.77-3.84-1.16-.99-2.56-1.38-4.07-1.14-1.12.18-2.28.28-3.46.28-6.01,0-11.48-2.46-15.45-6.43-3.97-3.97-6.43-9.44-6.43-15.45s2.46-11.48,6.43-15.45c3.97-3.97,9.44-6.43,15.45-6.43s11.48,2.46,15.45,6.43c3.97,3.97,6.43,9.44,6.43,15.45h0v295.38h-76.92c-3.21,0-5.83,2.27-5.83,5.04v2.49c0,2.78,2.62,5.04,5.83,5.04h239.52c3.21,0,5.83-2.27,5.83-5.04v-2.49c0-2.78-2.62-5.04-5.83-5.04h-76.92V198.68h0c0-6.01,2.46-11.48,6.43-15.45,3.97-3.97,9.44-6.43,15.44-6.43s11.48,2.46,15.45,6.43c3.97,3.97,6.43,9.44,6.43,15.45s-2.46,11.48-6.43,15.45c-3.97,3.97-9.44,6.43-15.45,6.43-1.18,0-2.33-.09-3.46-.28-1.51-.24-2.91.15-4.07,1.14-1.17.99-1.77,2.31-1.77,3.84v2.52c0,2.52,1.82,4.62,4.31,4.99,1.63.24,3.3.36,4.99.36,9.48,0,18.1-3.87,24.34-10.11,6.24-6.24,10.11-14.86,10.11-24.34s-3.87-18.1-10.11-24.34c-6.24-6.24-14.86-10.12-24.34-10.12s-18.1,3.88-24.34,10.12c-6.24,6.24-10.11,14.86-10.11,24.34v295.38h-11.4V153.29h158.71l-43.84,81.06h-10.14l.06,6.05c.17,17.61,7.48,33.58,19.14,45.13,11.67,11.56,27.71,18.73,45.31,18.73s33.64-7.17,45.31-18.73c11.66-11.55,18.97-27.52,19.14-45.13l.06-6.05h-10.14l-50.64-93.64h-7.46Zm-48.16,106.97h103.79c-1.74,11.37-7.17,21.58-15.02,29.36-9.49,9.39-22.53,15.21-36.87,15.21s-27.39-5.82-36.88-15.21c-7.85-7.78-13.28-17.99-15.02-29.36h0Zm92-13.33h-80.21l20.11-37.18,20-36.98,40.11,74.16h0Z"/>
+            <path style="fill:#1B2A4A" d="m193.95,117.36h207.37c2.78,0,5.04,2.27,5.04,5.04v2.49c0,2.78-2.27,5.04-5.04,5.04h-207.37c-2.78,0-5.04-2.27-5.04-5.04v-2.49c0-2.78,2.27-5.04,5.04-5.04h0Z"/>
+            <path style="fill:#1B2A4A" d="m133.05,511.59h329.17c2.78,0,5.04,2.27,5.04,5.04v2.49c0,2.78-2.27,5.04-5.04,5.04H133.05c-2.78,0-5.04-2.27-5.04-5.04v-2.49c0-2.78,2.27-5.04,5.04-5.04h0Z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-address">Suite 2, A.P LEDWABA Office Park, 873 Stanza Bopape Street, Eastwood, Pretoria, 0132</div>
+        <div class="footer-reg">
+          <div class="f-rule"></div>
+          <span class="f-item">VAT &nbsp;<strong>4500323045</strong></span>
+          <span class="f-dot">&middot;</span>
+          <span class="f-item">LPC &nbsp;<strong>31523</strong></span>
+          <span class="f-dot">&middot;</span>
+          <span class="f-item">Firm No &nbsp;<strong>13887</strong></span>
+          <span class="f-dot">&middot;</span>
+          <span class="f-web">www.maslaw.co.za</span>
+          <div class="f-rule-r"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

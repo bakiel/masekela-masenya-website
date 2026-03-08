@@ -134,6 +134,15 @@
 .team-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,.18); }
 .team-card:hover::after { left: 120%; }
 
+/* Director portrait: B&W default (honouring original site), colour on hover */
+.team-card-img {
+  filter: grayscale(100%);
+  transition: filter .7s ease, transform .6s ease;
+}
+.team-card:hover .team-card-img {
+  filter: grayscale(0%);
+}
+
 /* Testimonial card micro-light */
 .test-card {
   transition: transform .3s var(--ease), box-shadow .3s, border-color .3s;
@@ -177,15 +186,211 @@
 <meta property="og:title" content="Masekela Masenya Inc | Attorneys, Notaries & Conveyancers – Pretoria">
 <meta property="og:description" content="Over a decade of trusted legal representation in Pretoria. Commercial law, family law, labour, criminal defence, estate planning and more. LPC Reg. 31523.">
 <meta property="og:url" content="https://bakiel.github.io/masekela-masenya-website/">
-<meta property="og:image" content="https://bakiel.github.io/masekela-masenya-website/images/og-share.jpg">
+<meta property="og:image" content="https://kfarapp.com/masekela-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Masekela Masenya Inc - Attorneys, Notaries and Conveyancers Pretoria">
-<meta name="twitter:image" content="https://bakiel.github.io/masekela-masenya-website/images/og-share.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kfarapp.com/masekela-og.jpg">
 <meta name="twitter:title" content="Masekela Masenya Inc | Attorneys, Notaries & Conveyancers – Pretoria">
 <meta name="twitter:description" content="Over a decade of trusted legal representation in Pretoria. Commercial law, family law, labour, criminal defence, estate planning and more. LPC Reg. 31523.">
-<link rel="canonical" href="https://maslaw.co.za/">
+<link rel="canonical" href="https://bakiel.github.io/masekela-masenya-website/">
+
+/* ── CLIENT PORTRAITS — B&W default, colour on hover ── */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.client-portrait {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  cursor: default;
+}
+.client-portrait img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) brightness(0.85);
+  transition: filter .6s ease, transform .6s ease;
+}
+.client-portrait:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.04);
+}
+.client-portrait-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 16px 14px;
+  background: linear-gradient(to top, rgba(10,22,40,.85) 0%, transparent 100%);
+  font-family: 'Bebas', Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.client-portrait:hover .client-portrait-label { opacity: 1; }
+
+/* ── CURRENT AFFAIRS / NEWS ── */
+#current-affairs {
+  padding: 100px 60px;
+  background: var(--navy);
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+.news-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(201,153,89,.12);
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+}
+.news-card:hover {
+  border-color: rgba(201,153,89,.4);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.2);
+}
+.news-card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter .5s ease;
+}
+.news-card:hover .news-card-img { filter: grayscale(0%); }
+.news-card-body { padding: 18px 16px 20px; }
+.news-card-date {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.news-card-title {
+  font-family: 'Bebas', Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: .5px;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.news-card-excerpt {
+  font-size: 12px;
+  color: rgba(255,255,255,.4);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.news-card:hover .news-read-more { opacity: 1; }
+
+/* ── ARTICLE MODAL ── */
+#article-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,20,42,.92);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s var(--ease);
+  backdrop-filter: blur(6px);
+}
+#article-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.article-modal {
+  background: var(--navy2);
+  width: 680px;
+  max-width: 94vw;
+  max-height: 88vh;
+  overflow-y: auto;
+  border-radius: 4px;
+  border: 1px solid rgba(201,153,89,.2);
+  transform: translateY(20px) scale(.98);
+  transition: transform .35s var(--ease);
+  box-shadow: 0 40px 100px rgba(0,0,0,.5);
+}
+#article-overlay.open .article-modal { transform: translateY(0) scale(1); }
+.article-modal::-webkit-scrollbar { width: 4px; }
+.article-modal::-webkit-scrollbar-thumb { background: rgba(201,153,89,.3); border-radius: 2px; }
+.am-header {
+  position: relative;
+  padding: 36px 40px 28px;
+  border-bottom: 1px solid rgba(201,153,89,.15);
+}
+.am-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 32px; height: 32px;
+  border: 1px solid rgba(201,153,89,.3);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  transition: background .2s, border-color .2s;
+}
+.am-close:hover { background: rgba(201,153,89,.1); border-color: var(--gold); }
+.am-date { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.am-title { font-family: 'Bebas', Arial, sans-serif; font-size: 28px; letter-spacing: 1px; color: #fff; line-height: 1.2; }
+.am-body { padding: 28px 40px 36px; }
+.am-text { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.8; margin-bottom: 20px; }
+.am-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid rgba(201,153,89,.4);
+  border-radius: 2px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: background .2s;
+}
+.am-source-link:hover { background: rgba(201,153,89,.1); }
+
+@media(max-width:900px) {
+  .news-grid { grid-template-columns: repeat(2,1fr); gap: 20px; }
+  #current-affairs { padding: 80px 32px; }
+  .clients-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
+}
+@media(max-width:600px) {
+  .news-grid { grid-template-columns: 1fr; }
+  #current-affairs { padding: 60px 20px; }
+  .clients-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .am-header, .am-body { padding: 24px 20px; }
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -256,7 +461,7 @@ button{cursor:none;border:none;background:none;font:inherit}
 }
 @keyframes portraitReveal{to{opacity:1}}
 .pl-portrait img{
-  width:100%;height:100%;object-fit:cover;object-position:center top;
+  width:100%;height:100%;object-fit:cover;object-position:center 10%;
   filter:brightness(.62) contrast(1.08);
   transform:scale(1.06);
   animation:slowZoom 5s ease-out .1s forwards;
@@ -542,7 +747,7 @@ button{cursor:none;border:none;background:none;font:inherit}
 .pc-desc{font-size:13.5px;line-height:1.7;color:var(--muted)}
 
 /* STATS */
-#stats{padding:100px 60px;background:var(--navy);display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:60px;align-items:center}
+#stats{padding:100px 60px;background:var(--navy);display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:40px;align-items:center}
 .stats-intro{border-right:1px solid rgba(255,255,255,.08);padding-right:60px}
 .stats-intro .section-h2{color:#fff;font-size:36px}
 .stats-intro .section-body{color:rgba(255,255,255,.4);margin-bottom:0}
@@ -557,7 +762,7 @@ button{cursor:none;border:none;background:none;font:inherit}
 .team-header .section-h2{margin-bottom:0}
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .team-card{position:relative;overflow:hidden}
-.team-card-img{width:100%;height:480px;object-fit:cover;object-position:center top;display:block;transition:transform .6s var(--ease)}
+.team-card-img{width:100%;height:480px;object-fit:cover;object-position:center 10%;display:block;transition:transform .6s var(--ease)}
 .team-card:hover .team-card-img{transform:scale(1.04)}
 .team-card-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,22,40,.92) 0%,rgba(10,22,40,.5) 60%,transparent);padding:36px 28px 28px}
 .tc-name{font-family:'Bebas',Arial,sans-serif;font-size:26px;color:#fff;margin-bottom:4px}
@@ -767,7 +972,7 @@ footer{background:var(--navy);padding:60px 60px 32px}
   #about{grid-template-columns:1fr;gap:48px;padding:80px 32px}
   .about-img-main{height:380px}
   .practice-grid{grid-template-columns:1fr 1fr}
-  #stats{grid-template-columns:1fr 1fr;gap:40px;padding:80px 32px}
+  #stats{grid-template-columns:1fr 1fr 1fr;gap:32px;padding:80px 32px}
   .stats-intro{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:40px;grid-column:1/-1}
   .team-grid,.team-header{grid-template-columns:1fr}
   .test-grid{grid-template-columns:1fr 1fr}
@@ -1187,8 +1392,8 @@ body::before {
     <div class="section-eyebrow"><div class="s-line"></div><span class="s-eye-txt">Who We Are</span></div>
     <h2 class="section-h2">Your Legal Partner,<br><em>Since 2012</em></h2>
     <p class="section-body">Masekela Masenya Inc is a premier full-service law firm in Pretoria, founded on the principle that every client deserves exceptional representation and results that matter.</p>
-    <p class="section-body">Led by a Founding Director with an LLB from the University of Limpopo, and experience at Gildenhuys Lessing Malatji Attorneys and a former legal advisory role at Outsurance, we combine deep legal expertise with sound business acumen.</p>
-    <p class="section-body">With 308 High Court appearances and an 82% success rate, our track record speaks for itself. We serve individuals, families and corporations from our Pretoria offices with equal dedication.</p>
+    <p class="section-body">Founded by Masekela Masenya, who holds an LLB from the University of Limpopo and served articles at Gildenhuys Lessing Malatji Attorneys - one of Pretoria's largest firms - before joining Outsurance as Legal Advisor. He resigned to establish Masekela Masenya Attorneys, a firm built on deep legal expertise and sound business acumen.</p>
+    <p class="section-body">With 308 High Court appearances, 158 Magistrate Court appearances and an 82% success rate, our track record speaks for itself. We serve individuals, families and corporations from our Pretoria offices with equal dedication.</p>
     <div class="about-badges">
       <span class="badge">LPC Member: 31523</span>
       <span class="badge">Firm No: 13887</span>
@@ -1279,7 +1484,7 @@ body::before {
   </div>
   <div class="stat-item reveal">
     <span class="stat-num" data-target="158">0</span>
-    <div class="stat-lbl">Cases Won</div>
+    <div class="stat-lbl">Magistrate Court Appearances</div>
   </div>
   <div class="stat-item reveal">
     <span class="stat-num" data-target="166">0</span>
@@ -1288,6 +1493,10 @@ body::before {
   <div class="stat-item reveal">
     <span class="stat-num" data-target="82">0<span class="stat-plus" style="font-size:28px;vertical-align:super;color:var(--gold)">%</span></span>
     <div class="stat-lbl">Success Rate</div>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num" data-target="89">0<span class="stat-plus" style="font-size:28px;vertical-align:super;color:var(--gold)">%</span></span>
+    <div class="stat-lbl">Client Approval Rate</div>
   </div>
 </section>
 
@@ -1305,7 +1514,7 @@ body::before {
   </div>
   <div class="team-grid">
     <div class="team-card reveal">
-      <img class="team-card-img" src="images/team-director.jpg" alt="Masekela Masenya - Founding Director">
+      <img class="team-card-img" src="images/director-robes.jpg" alt="Masekela Masenya - Founding Director">
       <div class="team-card-overlay">
         <div class="tc-name">Masekela Masenya</div>
         <div class="tc-title">Founding Director</div>
@@ -1353,6 +1562,118 @@ body::before {
     </div>
   </div>
 </section>
+
+<!-- CURRENT AFFAIRS -->
+<section id="current-affairs">
+  <div class="reveal" style="text-align:center">
+    <div class="section-eyebrow" style="justify-content:center"><div class="s-line" style="background:var(--gold)"></div><span class="s-eye-txt">Legal Commentary</span></div>
+    <h2 class="section-h2" style="color:#fff">Current <em>Affairs in Law</em></h2>
+    <p class="section-body" style="color:rgba(255,255,255,.4);max-width:520px;margin:0 auto">This is what is current and trending in Law - commentary and developments from across the legal landscape.</p>
+  </div>
+  <div class="news-grid">
+
+    <div class="news-card reveal" onclick="openArticle(0)">
+      <img class="news-card-img" src="images/news-1-jiba.jpg" alt="Nomgcobo Jiba - striking off counsel">
+      <div class="news-card-body">
+        <div class="news-card-date">May 31, 2016</div>
+        <div class="news-card-title">Criticism doesn't warrant striking off</div>
+        <p class="news-card-excerpt">An application that could result in three senior prosecutors, including deputy prosecutions head Nomgcobo Jiba, struck from the roll of advocates got under way in the Gauteng High Court (Pretoria).</p>
+        <span class="news-read-more"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg> Read Article</span>
+      </div>
+    </div>
+
+    <div class="news-card reveal" onclick="openArticle(1)">
+      <img class="news-card-img" src="images/news-2-sabc.jpg" alt="SABC Minister Muthambi">
+      <div class="news-card-body">
+        <div class="news-card-date">May 31, 2016</div>
+        <div class="news-card-title">Minister backs SABC censorship decision</div>
+        <p class="news-card-excerpt">Communications Minister Faith Muthambi backed the SABC decision to place an apartheid-style ban on airing footage of violent protests.</p>
+        <span class="news-read-more"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg> Read Article</span>
+      </div>
+    </div>
+
+    <div class="news-card reveal" onclick="openArticle(2)">
+      <img class="news-card-img" src="images/news-3-habre.jpg" alt="Hissene Habre conviction">
+      <div class="news-card-body">
+        <div class="news-card-date">May 31, 2016</div>
+        <div class="news-card-title">Habre convicted following extraordinary trial</div>
+        <p class="news-card-excerpt">Former Chad President Hissene Habre was convicted of crimes against humanity for ordering the killing and torture of thousands of political opponents during his eight-year rule.</p>
+        <span class="news-read-more"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg> Read Article</span>
+      </div>
+    </div>
+
+    <div class="news-card reveal" onclick="openArticle(3)">
+      <img class="news-card-img" src="images/news-4-egypt.jpg" alt="Egyptian Minister graft">
+      <div class="news-card-body">
+        <div class="news-card-date">May 30, 2016</div>
+        <div class="news-card-title">Former Minister jailed for graft</div>
+        <p class="news-card-excerpt">A Cairo Criminal Court has convicted and sentenced former Information Minister Safwat el-Sharif and two of his sons for corruption.</p>
+        <span class="news-read-more"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg> Read Article</span>
+      </div>
+    </div>
+
+    <div class="news-card reveal" onclick="openArticle(4)">
+      <img class="news-card-img" src="images/news-5-pikoli.jpg" alt="Vusi Pikoli NPA appeal">
+      <div class="news-card-body">
+        <div class="news-card-date">May 30, 2016</div>
+        <div class="news-card-title">Pikoli joins doubters on NPA's Zuma appeal</div>
+        <p class="news-card-excerpt">The former head of the National Prosecuting Authority, Vusi Pikoli, is another legal expert who believes the chances of success are slim in the NPA's decision to seek leave to appeal against the High Court ruling.</p>
+        <span class="news-read-more"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg> Read Article</span>
+      </div>
+    </div>
+
+    <div class="news-card reveal" onclick="openArticle(5)">
+      <img class="news-card-img" src="images/news-6-ghana.jpg" alt="Ghana courts strike">
+      <div class="news-card-body">
+        <div class="news-card-date">May 30, 2016</div>
+        <div class="news-card-title">Courts grind to a halt in Ghana</div>
+        <p class="news-card-excerpt">The Ghana Bar Association asked the government to take immediate steps to address the concerns of striking judiciary workers, as courts across the country came to a standstill.</p>
+        <span class="news-read-more"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg> Read Article</span>
+      </div>
+    </div>
+
+    <div class="news-card reveal" onclick="openArticle(6)">
+      <img class="news-card-img" src="images/news-7-judges.jpg" alt="Law applies to judges">
+      <div class="news-card-body">
+        <div class="news-card-date">May 25, 2016</div>
+        <div class="news-card-title">Yes, the law applies to judges, too</div>
+        <p class="news-card-excerpt">Five judges of Lesotho's highest court laid it on the line: not even an exalted judicial position shields you from facing prosecution or accountability before the law.</p>
+        <span class="news-read-more"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg> Read Article</span>
+      </div>
+    </div>
+
+    <div class="news-card reveal" onclick="openArticle(7)">
+      <img class="news-card-img" src="images/news-8-rhino.jpg" alt="Rhino horn judgment">
+      <div class="news-card-body">
+        <div class="news-card-date">May 25, 2016</div>
+        <div class="news-card-title">Minister notes rhino horn court judgment</div>
+        <p class="news-card-excerpt">An original application challenging a 2009 moratorium on the domestic trade in rhino horn was brought by Johan Kruger in 2012, later joined by John Hume in 2015.</p>
+        <span class="news-read-more"><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2"><path d="M9 18l6-6-6-6"/></svg> Read Article</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ARTICLE MODAL -->
+<div id="article-overlay" onclick="closeArticleIfOutside(event)">
+  <div class="article-modal">
+    <div class="am-header">
+      <button class="am-close" onclick="closeArticle()">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="am-date" id="am-date"></div>
+      <div class="am-title" id="am-title"></div>
+    </div>
+    <div class="am-body">
+      <p class="am-text" id="am-text"></p>
+      <a class="am-source-link" id="am-link" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Read Full Article at Source
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- CTA -->
 <section id="cta" class="section-tex-leather">
@@ -2214,6 +2535,77 @@ ScrollTrigger.create({
 </a>
 
 <script>
+/* ── CURRENT AFFAIRS ARTICLE MODAL ── */
+const ARTICLES = [
+  {
+    date: 'May 31, 2016',
+    title: "Criticism doesn't warrant striking off",
+    text: "An application that could result in three senior prosecutors, including deputy prosecutions head Nomgcobo Jiba, struck from the roll of advocates got under way in the Gauteng High Court (Pretoria). The case tests the boundary between legitimate criticism of senior legal officials and conduct warranting removal from practice. It raises fundamental questions about accountability within the National Prosecuting Authority and the standards expected of those entrusted with prosecutorial power.",
+    url: 'http://legalbrief.co.za/diary/legalbrief-today/story/criticism-doesnt-warrant-striking-off-jiba-counsel/'
+  },
+  {
+    date: 'May 31, 2016',
+    title: 'Minister backs SABC censorship decision',
+    text: "Communications Minister Faith Muthambi backed the SABC decision to place an apartheid-style ban on airing footage of violent protests, saying she unequivocally condemned the destruction of public infrastructure. The decision drew widespread criticism from media freedom groups and opposition parties who argued it constituted state-sanctioned censorship. The matter raised important constitutional questions about freedom of expression and the role of the public broadcaster.",
+    url: 'http://legalbrief.co.za/diary/legalbrief-today/story/minister-backs-sabc-censorship-decision/'
+  },
+  {
+    date: 'May 31, 2016',
+    title: 'Habre convicted following extraordinary trial',
+    text: "Former Chad President Hissene Habre was convicted of crimes against humanity for ordering the killing and torture of thousands of political opponents during his eight-year rule. The trial, conducted in Senegal under a specially constituted African Union court, was considered a landmark moment for international justice - the first time an African court convicted a former head of state for human rights abuses.",
+    url: 'http://legalbrief.co.za/diary/legalbrief-africa-new/story/habre-convicted-following-extraordinary-trial/'
+  },
+  {
+    date: 'May 30, 2016',
+    title: 'Former Minister jailed for graft',
+    text: "A Cairo Criminal Court convicted and sentenced former Egyptian Information Minister Safwat el-Sharif and two of his sons for corruption. El-Sharif, who served under former President Hosni Mubarak, was found guilty of misusing his public position for personal gain. The case was part of a broader anti-corruption drive following the 2011 Arab Spring revolution and sent a strong signal that no public official is above accountability.",
+    url: 'http://legalbrief.co.za/diary/legalbrief-africa-new/story/former-egyptian-minister-jailed-for-graft-2/'
+  },
+  {
+    date: 'May 30, 2016',
+    title: "Pikoli joins doubters on NPA's Zuma appeal",
+    text: "Former National Prosecuting Authority head Vusi Pikoli joined a growing chorus of legal experts who believed the NPA's decision to seek leave to appeal against the High Court ruling in the Jacob Zuma arms deal matter was unlikely to succeed. Pikoli's assessment carried significant weight given his experience at the helm of the NPA. The matter continued to test the independence of prosecutorial decision-making from political influence.",
+    url: 'http://legalbrief.co.za/diary/legalbrief-africa-new/story/pikoli-joins-doubters-on-npas-zuma-appeal-2/'
+  },
+  {
+    date: 'May 30, 2016',
+    title: 'Courts grind to a halt in Ghana',
+    text: "The Ghana Bar Association asked the government to take immediate steps to address the concerns of striking judiciary workers, as courts across the country came to a standstill. The strike by court staff paralysed the justice system, delaying cases and denying citizens access to courts. The situation highlighted the systemic underfunding of justice infrastructure across parts of Africa and the impact industrial action can have on access to justice.",
+    url: 'http://legalbrief.co.za/diary/legalbrief-africa-new/story/ghanas-courts-grind-to-a-halt-2/'
+  },
+  {
+    date: 'May 25, 2016',
+    title: 'Yes, the law applies to judges, too',
+    text: "Five judges of Lesotho's highest court made clear that not even the most senior judicial position shields a person from prosecution or legal accountability. The principle - that the law applies equally to all, regardless of position - is a cornerstone of constitutional democracy. The ruling reaffirmed that judicial independence does not mean judicial impunity, and that the rule of law demands accountability from those entrusted with administering it.",
+    url: 'http://legalbrief.co.za/diary/a-matter-of-justice/story/yes-the-law-applies-to-judges-too-2/'
+  },
+  {
+    date: 'May 25, 2016',
+    title: 'Minister notes rhino horn court judgment',
+    text: "An original application challenging a 2009 moratorium on the domestic trade in rhino horn was brought by Johan Kruger in 2012 and later joined by John Hume in 2015. The Department of Environmental Affairs noted the court judgment, which had significant implications for conservation law, property rights, and South Africa's approach to wildlife protection. The case intersects commercial law, constitutional rights, and environmental regulation at a complex level.",
+    url: 'http://www.bizcommunity.com/Article/196/628/145229.html'
+  }
+];
+
+function openArticle(i) {
+  const a = ARTICLES[i];
+  document.getElementById('am-date').textContent = a.date;
+  document.getElementById('am-title').textContent = a.title;
+  document.getElementById('am-text').textContent = a.text;
+  const link = document.getElementById('am-link');
+  link.href = a.url;
+  document.getElementById('article-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeArticle() {
+  document.getElementById('article-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeArticleIfOutside(e) {
+  if (e.target === document.getElementById('article-overlay')) closeArticle();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
+
 // Mobile menu
 (function(){
   var btn=document.getElementById('nav-hamburger');
